@@ -7,6 +7,8 @@ cli/*
 sql_dumps/*
 *.psd
 *.zip
+.htaccess
+*.ini
 starting_files/*
 administrator/cache/*
 administrator/components/com_admin/*
