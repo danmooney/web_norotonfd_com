@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.6//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension
+        version="2.5"
+        type="template"
+        client="site">
+    <name>noroton</name>
+    <creationDate>1/27/13</creationDate>
+    <author>Dan Mooney</author>
+    <authorEmail>dan.r.mooney@gmail.com</authorEmail>
+    <authorUrl>http://www.danronmoon.com</authorUrl>
+    <copyright>Copyright (C) 2013 All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <version>0.1.0</version>
+    <description>Noroton Template</description>
+    <files>
+        <folder>css</folder>
+        <folder>img</folder>
+        <filename>index.php</filename>
+        <filename>index.html</filename>
+        <!--<filename>favicon.ico</filename>-->
+        <filename>templateDetails.xml</filename>
+    </files>
+</extension>
