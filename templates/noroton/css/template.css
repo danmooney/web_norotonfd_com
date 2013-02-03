@@ -49,7 +49,7 @@ a {
     text-decoration: none;
     height: 100%;
     font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
-    color: #717171;
+    color: #FFF;
 }
 
 p {
@@ -183,6 +183,15 @@ fieldset, legend {
     height: 168px;
 }
 
+#header .logo a {
+    display: block;
+    width: 117px;
+    margin: 0 auto;
+    height: 168px;
+    position: relative;
+    left: -15px;
+}
+
 .content-container {
     width: 960px;
     margin: 0 auto;
@@ -197,8 +206,18 @@ fieldset, legend {
     top: 113px;
 }
 
+#header .menu {
+    position: relative;
+    top: -89px;
+    padding: 0 35px;
+}
+
 #header .menu li {
     float: left;
+}
+
+#header .menu li:nth-child(4) {
+
 }
 
 #header .menu a {
@@ -206,6 +225,12 @@ fieldset, legend {
     color: #FFF;
     font-family: "Share", Helvetica, sans-serif;
     font-size: 16px;
+
+    padding: 0 28px;
+}
+
+#header .menu a:hover {
+    color: #EC9B00;
 }
 
 #hero-image-container {
@@ -215,7 +240,6 @@ fieldset, legend {
     position: relative;
     top: -43px;
     z-index: 3;
-
 }
 
 #hero-image {
@@ -253,7 +277,7 @@ fieldset, legend {
 }
 
 #footer .menu {
-    margin: 0 auto;
+    display: inline-block;
 }
 
 #footer .menu li {
@@ -261,6 +285,19 @@ fieldset, legend {
 }
 
 #footer .menu li a {
-    color:  #FFF;
+    padding: 0 6px;
 }
 
+#footer a,
+#footer p
+{
+    font-size: 12px;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
+#footer .menu .separator {
+    float: left;
+}

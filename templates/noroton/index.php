@@ -11,29 +11,11 @@ defined('_JEXEC') or die('Restricted Access.'); ?>
     <div id="header">
         <div id="header-bg"></div>
         <div class="content-container">
-            <a href="#">
-                <div class="logo"></div>
-            </a>
-            <ul class="menu">
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a href="#">History</a>
-                </li>
-                <li>
-                   <a href="#">Operations</a>
-                </li>
-                <li>
-                    <a href="#">Fire Safety</a>
-                </li>
-                <li>
-                    <a href="#">Fundraising</a>
-                </li>
-                <li>
-                    <a href="#">Join Our Crew</a>
-                </li>
-            </ul>
+            <div class="logo">
+                <a href="#"></a>
+            </div>
+            <jdoc:include type="modules" name="top-menu" />
+            <jdoc:include type="modules" name="main-menu" />
             <div class="clr"></div>
             <div id="hero-image-container">
                 <div id="hero-image"></div>
@@ -50,7 +32,7 @@ defined('_JEXEC') or die('Restricted Access.'); ?>
     </div>
     <div id="footer">
         <div id="footer-bg-top"></div>
-        <div class="content-container">
+        <div class="content-container center">
             <ul class="menu">
                 <li>
                     <a href="#">Home</a>
@@ -76,7 +58,9 @@ defined('_JEXEC') or die('Restricted Access.'); ?>
                     <a href="#">Join Our Crew</a>
                 </li>
             </ul>
+            <div class="clr"></div>
+            <jdoc:include type="modules" name="external-links-menu" />
+            <p>Designed by <a class="bold" target="_blank" href="http://scsdesigninc.com">ScSDesignInc.com</a> and developed by <a target="_blank" class="bold" href="http://www.danronmoon.com/">DanRonMoon.com</a></p>
         </div>
     </div>
 </body>
-</html>
