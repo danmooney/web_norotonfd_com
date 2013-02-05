@@ -10,6 +10,8 @@ sql_dumps/*
 .htaccess
 *.ini
 starting_files/*
+!language/en-GB/en-GB.mod_moo*
+
 administrator/cache/*
 administrator/components/com_admin/*
 administrator/components/com_banners/*
@@ -246,6 +248,9 @@ images/index.html
 images/powered_by.png
 includes/*
 installation/*
+
+
+
 language/en-GB/en-GB.com_finder.ini
 language/en-GB/en-GB.lib_joomla.sys.ini
 language/en-GB/en-GB.finder_cli.ini
