@@ -117,6 +117,12 @@
                     <option
                             value="1">JYES</option>
                 </field>
+                <field
+                        name="wrap-items-interval"
+                        type="text"
+                        default="0"
+                        label="Wrap Every # Of Menu Items"
+                        description="Allows wrapping of a specific interval of menu items for styling purposes" />
 			</fieldset>
 
 			<fieldset

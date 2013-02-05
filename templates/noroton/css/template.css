@@ -160,10 +160,16 @@ fieldset, legend {
     display: none;
 }
 
+.menu a {
+    display: block;
+}
+
 #wrapper {
     width: 960px;
     margin: 0 auto;
 }
+
+
 
 #header {
     background: #000;
@@ -229,10 +235,14 @@ fieldset, legend {
     color: #FFF;
     font-family: "Share", Helvetica, sans-serif;
     font-size: 16px;
-    padding: 0 28px 15px;
+    padding: 0 14px;
 }
 
-#header .menu li.active a {
+.menu li a > * {
+    padding: 0 /*28px - full padding*/ 14px 15px;
+}
+
+#header .menu li.active a > * {
     background: url(../img/header_menu_underline.png) 0 100% repeat-x;
 }
 
@@ -246,7 +256,8 @@ fieldset, legend {
     padding: 6px;
     height: 401px;
     position: relative;
-    top: -43px;
+    /*top: -43px;*/
+    top: -53px;
     z-index: 4;
     box-shadow: 0 -6px 31px #000;
 }
@@ -262,7 +273,8 @@ fieldset, legend {
     height: 333px;
     position: absolute;
     top: 290px;
-    left: -41px;
+    /*left: -41px;*/
+    left: -33px;
     z-index: 3;
 }
 
@@ -324,3 +336,4 @@ fieldset, legend {
 body.home #content p.description {
     width: 70%;
 }
+
