@@ -219,7 +219,8 @@ fieldset, legend {
 #header .menu {
     position: relative;
     top: -89px;
-    padding: 0 35px;
+    /*padding: 0 5px 0 35px;*/
+    padding: 0 20px 0 35px;
 }
 
 #header .menu li {
@@ -242,13 +243,23 @@ fieldset, legend {
     padding: 0 /*28px - full padding*/ 14px 15px;
 }
 
-#header .menu li.active a > * {
+#header .menu li.active a > div {
     background: url(../img/header_menu_underline.png) 0 100% repeat-x;
 }
 
 #header .menu a:hover,
 #header .menu li.active a {
     color: #EC9B00;
+}
+
+#header .menu .wrap-1 {
+    float: right;
+}
+
+#header .menu .wrap-1 a,
+#header .menu .wrap-1 a > div
+{
+    padding: 0 8px;
 }
 
 #hero-image-container {

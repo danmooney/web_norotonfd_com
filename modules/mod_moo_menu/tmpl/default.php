@@ -1,88 +1,104 @@
 <?php
 /**
- * @package		Joomla.Site
- * @subpackage	mod_menu
- * @copyright	Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
- * @license		GNU General Public License version 2 or later; see LICENSE.txt
+ * @package        Joomla.Site
+ * @subpackage    mod_menu
+ * @copyright    Copyright (C) 2005 - 2012 Open Source Matters, Inc. All rights reserved.
+ * @license        GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 // No direct access.
 defined('_JEXEC') or die;
 
 // Note. It is important to remove spaces between elements.
-// TODO - implement $wrap_interval
+// TODO - implement $wrap_interval_num
 ?>
 
 <ul class="menu<?php echo $class_sfx;?>"<?php
-	$tag = '';
-	if ($params->get('tag_id')!=NULL) {
-		$tag = $params->get('tag_id').'';
-		echo ' id="'.$tag.'"';
-	}
+    $tag = '';
+    if ($params->get('tag_id') != NULL) {
+        $tag = $params->get('tag_id') . '';
+        echo ' id="' . $tag . '"';
+    }
 ?>>
+
 <?php
 
-$open_div    = '<div>';
+$open_div = '<div>';
 $closing_div = '</div>';
 
+
+$item_idx = 0;
+
 foreach ($list as $i => &$item) :
-	$class = 'item-'.$item->id;
-	if ($item->id == $active_id) {
-		$class .= ' current';
-	}
 
-	if (in_array($item->id, $path)) {
-		$class .= ' active';
-	}
-	elseif ($item->type == 'alias') {
-		$aliasToId = $item->params->get('aliasoptions');
-		if (count($path) > 0 && $aliasToId == $path[count($path)-1]) {
-			$class .= ' active';
-		}
-		elseif (in_array($aliasToId, $path)) {
-			$class .= ' alias-parent-active';
-		}
-	}
+    if ($item_idx % $wrap_interval_num === 0 &&
+        true === $using_wrap_interval
+    ) {
+        echo '<div class="wrap-' . ($item_idx / $wrap_interval_num) . '">';
+    }
 
-	if ($item->deeper) {
-		$class .= ' deeper';
-	}
+    $class = 'item-' . $item->id;
+    if ($item->id == $active_id) {
+        $class .= ' current';
+    }
 
-	if ($item->parent) {
-		$class .= ' parent';
-	}
+    if (in_array($item->id, $path)) {
+        $class .= ' active';
+    } elseif ($item->type == 'alias') {
+        $aliasToId = $item->params->get('aliasoptions');
+        if (count($path) > 0 && $aliasToId == $path[count($path) - 1]) {
+            $class .= ' active';
+        } elseif (in_array($aliasToId, $path)) {
+            $class .= ' alias-parent-active';
+        }
+    }
 
-	if (!empty($class)) {
-		$class = ' class="'.trim($class) .'"';
-	}
+    if ($item->deeper) {
+        $class .= ' deeper';
+    }
 
-	echo '<li'.$class.'>';
+    if ($item->parent) {
+        $class .= ' parent';
+    }
 
-	// Render the menu item.
-	switch ($item->type) :
-		case 'separator':
-		case 'url':
-		case 'component':
-			require JModuleHelper::getLayoutPath('mod_moo_menu', 'default_'.$item->type);
-			break;
+    if (!empty($class)) {
+        $class = ' class="' . trim($class) . '"';
+    }
 
-		default:
-			require JModuleHelper::getLayoutPath('mod_moo_menu', 'default_url');
-			break;
-	endswitch;
+    echo '<li' . $class . '>';
 
-	// The next item is deeper.
-	if ($item->deeper) {
-		echo '<ul>';
-	}
-	// The next item is shallower.
-	elseif ($item->shallower) {
-		echo '</li>';
-		echo str_repeat('</ul></li>', $item->level_diff);
-	}
-	// The next item is on the same level.
-	else {
-		echo '</li>';
-	}
+    // Render the menu item.
+    switch ($item->type) :
+        case 'separator':
+        case 'url':
+        case 'component':
+            require JModuleHelper::getLayoutPath('mod_moo_menu', 'default_' . $item->type);
+            break;
+
+        default:
+            require JModuleHelper::getLayoutPath('mod_moo_menu', 'default_url');
+            break;
+    endswitch;
+
+    // The next item is deeper.
+    if ($item->deeper) {
+        echo '<ul>';
+    } // The next item is shallower.
+    elseif ($item->shallower) {
+        echo '</li>';
+        echo str_repeat('</ul></li>', $item->level_diff);
+    } // The next item is on the same level.
+    else {
+        echo '</li>';
+    }
+
+    $item_idx += 1;
+    if (($item_idx === count($list) ||
+         $item_idx % $wrap_interval_num === 0) &&
+        true === $using_wrap_interval
+    ) {
+        echo $closing_div;
+    }
+
 endforeach;
 ?></ul>
