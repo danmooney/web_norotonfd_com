@@ -9,9 +9,15 @@ class ModMooEvents
     private $_type;
 
     /**
+     * Header
      * @var string
      */
-    private $_table = 'mod_moo_event';
+    private $_title;
+
+    /**
+     * @var string
+     */
+    private $_table = '#__moo_event';
 
     /**
      * @var array
@@ -68,5 +74,14 @@ class ModMooEvents
         }
 
         return $this->_type;
+    }
+
+    public function getTitle()
+    {
+        if (!isset($this->_title)) {
+            $this->_title = $this->_params->get('header');
+        }
+
+        return $this->_title;
     }
 }
