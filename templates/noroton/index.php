@@ -15,7 +15,9 @@ require_once('setup.php');
 </head>
 <body class="<?= $body_class ?>">
     <div id="header">
-        <div id="header-bg"></div>
+        <div id="header-bg-container">
+            <div id="header-bg"></div>
+        </div>
         <div class="content-container">
             <div class="logo">
                 <a href="#"></a>
@@ -26,7 +28,6 @@ require_once('setup.php');
             <div id="hero-image-container-bg"></div>
             <div id="hero-image-container">
                 <div id="hero-image"></div>
-
             </div>
         </div>
     </div>
