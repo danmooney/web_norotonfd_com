@@ -80,6 +80,14 @@ h4 {
     font-size: 18px;
 }
 
+h5 {
+    font-size: 17px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
 img {
     border: 0;
     outline: 0;
@@ -156,7 +164,9 @@ fieldset, legend {
     padding: 0;
 }
 
-.items-leading .edit-icon {
+.items-leading .edit-icon,
+.item-page .edit-icon
+{
     display: none;
 }
 
@@ -259,7 +269,9 @@ fieldset, legend {
 #header .menu .wrap-1 a,
 #header .menu .wrap-1 a > div
 {
-    padding: 0 8px;
+    /*padding: 0 *//*8*//*10px;*/
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #hero-image-container {
@@ -274,7 +286,7 @@ fieldset, legend {
 }
 
 #hero-image {
-    background: #F00;
+    background: #000;
     height: 100%;
 }
 
@@ -352,3 +364,12 @@ body.home #content p.description {
     width: 70%;
 }
 
+#content .item-page > .float-l,
+#content .item-page > .float-r
+{
+    width: 48%;
+}
+
+#content img {
+    border: 2px solid #FFF;
+}

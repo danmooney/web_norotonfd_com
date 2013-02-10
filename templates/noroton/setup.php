@@ -35,7 +35,7 @@ if ($itemId > 0 && !$isFrontpage) {
     $parent_id = (int) $active_menu->parent_id;
 
     if ('com_content' === $option) {
-        $body_class = $article->get('alias');
+        $body_class = $article->get('alias') . ' article-' . $article->get('id');
     } else {
         $body_class = preg_replace('/(com_)(moo)?/', '', $option);
     }
