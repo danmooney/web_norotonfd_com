@@ -22,6 +22,27 @@ require_once('setup.php');
             <div class="logo">
                 <a href="#"></a>
             </div>
+            <ul class="menu top-menu">
+                <li><a href="#">Members Section</a></li>
+                <li>
+                    <span class="separator"></span>
+                </li>
+                <?php // TODO - obviously use form tokens and stuff ?>
+                <li><a href="#">Log In</a></li>
+                <li>
+                    <span class="separator"></span>
+                </li>
+                <li>
+                    <div id="fb" class="social">
+                        <a href="#"></a>
+                    </div>
+                </li>
+                <li>
+                    <div id="tw" class="social">
+                        <a href="#"></a>
+                    </div>
+                </li>
+            </ul>
             <jdoc:include type="modules" name="top-menu" />
             <jdoc:include type="modules" name="main-menu" />
             <div class="clr"></div>
@@ -42,6 +63,8 @@ require_once('setup.php');
     <div id="footer">
         <div id="footer-bg-top"></div>
         <div class="content-container center">
+            <jdoc:include type="modules" name="bottom-menu" />
+            <?php /*
             <ul class="menu">
                 <li>
                     <a href="#">Home</a>
@@ -66,7 +89,7 @@ require_once('setup.php');
                 <li>
                     <a href="#">Join Our Crew</a>
                 </li>
-            </ul>
+            </ul>*/ ?>
             <div class="clr"></div>
             <jdoc:include type="modules" name="external-links-menu" />
             <p>Designed by <a class="bold" target="_blank" href="http://scsdesigninc.com">ScSDesignInc.com</a> and developed by <a target="_blank" class="bold" href="http://www.danronmoon.com/">DanRonMoon.com</a></p>

@@ -24,6 +24,10 @@ $class_sfx	= htmlspecialchars($params->get('class_sfx'));
 $wrap_interval_num = intval($params->get('wrap-items-interval'));
 $using_wrap_interval = (bool) $wrap_interval_num;
 
+if (false === $using_wrap_interval) { // avoid division by 0 error
+    $wrap_interval_num = 1;
+}
+
 if (count($list)) {
 	require JModuleHelper::getLayoutPath('mod_moo_menu', $params->get('layout', 'default'));
 }
