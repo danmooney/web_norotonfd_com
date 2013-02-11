@@ -345,7 +345,7 @@ fieldset, legend {
     width: 1028px;
     height: 333px;
     position: absolute;
-    top: 290px;
+    top: 299px;
     /*left: -41px;*/
     left: -33px;
     z-index: 3;
@@ -493,4 +493,17 @@ body.article-3 #content ol,
 body.article-3 #content ul
 {
     margin-left: 30px;
+}
+
+/** EVENTS/NEWS Module **/
+.events-header {
+    background: url(../img/content_header_bg.png) repeat-x;
+    height: 48px;
+    width: 100%;
+    line-height: 48px;
+    color: #CCC;
+    font-size: 30px;
+    font-weight: 600;
+    /*padding: 0 12px 0 18px;*/ /* according to psd */
+    padding: 0 18px;
 }
