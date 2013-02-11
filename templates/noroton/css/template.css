@@ -41,7 +41,7 @@ button {
 ul, li {
     list-style-position: inside;
     list-style-type: none;
-    font-size: 13px;
+    font-size: /*13*/14px;
     /*margin: 3px 0;*/
 }
 
@@ -361,7 +361,7 @@ fieldset, legend {
     padding-bottom: /*113*/45px;
     background: url(../img/content_bg.png) repeat;
     position: relative;
-    top: -2px;
+    top: -10px;
     z-index: 2;
 }
 
@@ -377,11 +377,11 @@ fieldset, legend {
     background: url(../img/footer_bg_top.png) repeat-x;
     height: 26px;
     position: relative;
-    top: -2px;
+    top: -10px;
 }
 
 #footer .content-container {
-    padding: 25px 0 40px;
+    padding: /*25*/17px 0 40px;
 }
 
 #footer .menu {
@@ -424,6 +424,15 @@ body.home #content p.description {
     border: 2px solid #FFF;
 }
 
+#content a {
+    color: #FFBA35;
+    text-decoration: underline;
+}
+
+#content a:hover {
+    text-decoration: none;
+}
+
 /** FIRE SAFETY **/
 body.article-4 #content ul {
     margin: 10px 0 30px 35px;
@@ -455,6 +464,7 @@ body.article-4 #content .anchor-pointer-container h5 {
 
 body.article-4 #content .anchor-pointer-container a {
     text-decoration: underline;
+    color: #FFF;
 }
 
 body.article-4 #content .anchor-pointer-container a:hover {
@@ -472,4 +482,15 @@ body.article-4 #content li span {
 
 body.article-4 #content ul li h4.float-l {
     margin-top: 5px;
+}
+
+/** JOIN OUR CREW **/
+body.article-3 #content h4 {
+    margin: 25px 0;
+}
+
+body.article-3 #content ol,
+body.article-3 #content ul
+{
+    margin-left: 30px;
 }
