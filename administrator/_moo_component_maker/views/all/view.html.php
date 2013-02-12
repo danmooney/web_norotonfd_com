@@ -22,10 +22,10 @@ class MooViewAll extends JView
         $this->prepareView();
         $this->assignRefs();
         
-        $state =& $this->get('state');
+        $state = $this->get('state');
         
         $this->lists = array();
-        $lists =& $this->lists;
+        $lists = $this->lists;
         
         $filter_str             = MooConfig::get('current_page') . '_filter_order';
         $filter_Dir_str         = MooConfig::get('current_page') . '_filter_order_Dir';
@@ -33,7 +33,7 @@ class MooViewAll extends JView
         $lists[$filter_Dir_str] = $state->get(MooConfig::get('current_page') . '_filter_order_Dir');
         $this->assignRef('lists', $lists);
         
-        $document =& JFactory::getDocument();
+        $document = JFactory::getDocument();
         $document->addStylesheet(JURI::base() . 'components' . DS . MooConfig::get('option') . DS . 'assets' . DS . 'css'  . DS . 'general_override.css');
 
         // finally, display!
@@ -43,18 +43,18 @@ class MooViewAll extends JView
     public function prepareView()
     {
         $this->view = array();
-        $this->view['search_str']           =& $this->get('searchString');
+        $this->view['search_str']           = $this->get('searchString');
         $this->get('extraQueries');      
-        $this->view['rows']                 =& $this->get('data');
+        $this->view['rows']                 = $this->get('data');
         
-        $this->view['query']                =& $this->toString();
-        $this->view['pagination']           =& $this->get('pagination');
-        $this->view['search']               =& $this->get('search');
-        $this->view['filter_order']         =& $this->get('filterOrder');
-        $this->view['filter_order_Dir']     =& $this->get('filterOrderDir');
-        $this->view['type']                 =& $this->get('type');
-        $this->view['row_count']            =& $this->get('total');
-        $this->view['pageOrd']              =  new JPagination( $this->view['row_count'], 0, $this->view['row_count'] );
+        $this->view['query']                = $this->toString();
+        $this->view['pagination']           = $this->get('pagination');
+        $this->view['search']               = $this->get('search');
+        $this->view['filter_order']         = $this->get('filterOrder');
+        $this->view['filter_order_Dir']     = $this->get('filterOrderDir');
+        $this->view['type']                 = $this->get('type');
+        $this->view['row_count']            = $this->get('total');
+        $this->view['pageOrd']              = new JPagination( $this->view['row_count'], 0, $this->view['row_count'] );
         
         $arr_page = MooConfig::get('arr_current_page');
         $this->view['table_headers']        = $arr_page['view']['all']; 
@@ -69,8 +69,8 @@ class MooViewAll extends JView
     
     public function outputTableHeaders()
     {
-        $filter_order     =& $this->view['filter_order'];
-        $filter_order_Dir =& $this->view['filter_order_Dir'];
+        $filter_order     = $this->view['filter_order'];
+        $filter_order_Dir = $this->view['filter_order_Dir'];
         
         $table_header_html = "<thead><tr><th width='2%'><input type='checkbox' name='toggle' value='' onclick='checkAll({$this->view['row_count']});' /></th>";
         

@@ -98,5 +98,6 @@ require_once('setup.php');
     <div id="image-cache">
         <img src="templates/<?= $this->template ?>/img/header_fb_hover.png" />
         <img src="templates/<?= $this->template ?>/img/header_tw_hover.png" />
+        <img src="templates/<?= $this->template ?>/img/arrow_right_large.png" />
     </div>
 </body>

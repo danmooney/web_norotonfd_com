@@ -214,9 +214,9 @@ class MooController extends JController
     }
 
     /**
-     * Override display and load MooVieAll/MooViewSingle
+     * Override display and load MooViewAll/MooViewSingle
      */
-    public function display()
+    public function display($cachable = false, $urlparams = false)
     {
         $viewName = JRequest::getCmd('view');
 

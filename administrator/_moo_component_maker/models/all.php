@@ -167,7 +167,7 @@ class MooModelAll extends JModel
     
     public function getData() 
     {
-        $pagination =& $this->getPagination();
+        $pagination = $this->getPagination();
         if (!$this->_data) {
             $query = $this->buildSearch(); 
             $this->_data = $this->_getList( $query, $pagination->limitstart, $pagination->limit );
