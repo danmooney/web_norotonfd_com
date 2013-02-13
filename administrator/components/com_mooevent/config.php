@@ -40,56 +40,59 @@ class MooConfig
     {
         /* THIS SHOULD BE THE ONLY THING YOU NEED TO EDIT */
         self::$pages = array (
-            'moocarousel' => array (
-                'title' => 'Carousel',
-                'file_folder' => 'carousel',
-                'table' => 'moo_carousel_image',
-                'singular' => 'carousel',
+            'mooevent' => array (
+                'title' => 'News & Events',
+                'file_folder' => 'events',
+                'table' => 'moo_event',
+//                'singular' => 'carousel',
 //                'submenu_title' => 'Main Carousel',
-                'alias' => 'i',
-                'default_empty_msg' => 'Sorry, no carousel images could be found!  Please try again.',
+                'alias' => 'e',
+                'default_empty_msg' => 'Sorry, no news or events could be found!  Please try again.',
                 'model' => array (
                     'selects'  => array (
-                        'i.carousel_id',
-                        'i.image_id',
-                        'i.title',
-                        'i.text',
-                        'i.filename',
-                        'i.ordering',
-                        'i.published',
+                        '*'
 //                        'group_concat(cast(concat(i.image_id, ":", i.filename) AS char) ORDER BY r.ordering, i.image_id ASC SEPARATOR ", ") AS images'
                     ),
                     'joins' => array (
 //                        'LEFT JOIN #__moo_carousel_image_ref as r USING (carousel_id)',
 //                        'LEFT JOIN #__moo_carousel AS c USING (carousel_id)'
                     ),
-                    'where' => 'WHERE carousel_id = 1',
+//                    'where' => 'WHERE carousel_id = 1',
 //                    'group_by' => 'carousel_id',
                     'where_fields' => array (
+                        'event_type',
                         'title',
+                        'summary',
+                        'text',
+                        'date'
                     ),
                 ),
                 'view' => array (
                     'all' => array (
+                        'date' => array (
+//                            'formatter' => 'date',
+                            'date_format' => 'F j, Y',
+                            'link' => true,
+                            'sort' => true,
+                            'width' => '6%'
+                        ),
+                        'event_type' => array (
+                            'heading' => 'type',
+                            'sort' => true,
+                            'width' => '3%'
+                        ),
                         'title' => array (
                             'link' => true,
                             'sort' => true,
-                            'width' => '5%',
-                            'align' => 'left',
+                            'width' => '12%',
                         ),
-                        'filename' => array (
-                            'width' => '20%',
-                            'heading' => 'Image',
-                            'formatter' => 'image',
-                            'link' => true,
-                            'use_thumb' => true,
+                        'summary' => array (
+                            'sort' => 'true',
+                            'width' => '20%'
                         ),
                         'text' => array (
-                            'sort' => true
-                        ),
-                        'ordering' => array (
-                            'width' => '5%',
-                            'sort' => true
+                            'sort' => true,
+                            'width' => '30%'
                         ),
                         'published' => array (
                             'width' => '5%',
@@ -97,48 +100,33 @@ class MooConfig
                         )
                     ),
                     'single' => array (
+                        'date' => array (
+                            'formatter' => 'date'
+                        ),
+                        'event_type' => array (
+                            'formatter' => 'select',
+                            'options' => array (
+                                'news' => 'News',
+                                'event' => 'Event',
+                            ),
+                            'use_id_as_value' => true
+                        ),
                         'title' => array (
                             
                         ),
-                        'filename' => array (
-                            'heading' => 'File',
-                            'formatter' => 'file',
-                            'image' => 'true',
-                            'upload_width' => 948,
-                            'upload_height' =>  400,
-                            'upload_thumb_width' => 500
+                        'summary' => array (
+                            'formatter' => 'textarea'
                         ),
                         'text' => array (
                             'formatter' => 'textarea',
                             'allow_html' => true
-                        ),
-                        'carousel_id' => array (
-                            'formatter' => 'hidden',
-                            'value' => 1
-                        ),
-                        'ordering' => array (
-                            'additional_style' => 'width:25px;'
                         ),
                         'published' => array (
                             'formatter' => 'boolean'
                         )
                     )
                 ),
-                'controller' => array (
-                    'table_mapping' => array (
-                        '#__moo_carousel_image_ref' => array (
-                            'multivalue' => true,
-                            'ref' => 'carousel_id',
-                            'count' => 'image_id',
-                            'image_id' => array (
-                                'column' => 'image_id'
-                            ),
-                            'ordering' => array (
-                                'column' => 'ordering',
-                            ),
-                        )
-                    )
-                )
+                'controller' => array ()
             ),
         );
     }

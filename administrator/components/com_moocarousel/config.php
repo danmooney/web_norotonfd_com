@@ -75,7 +75,6 @@ class MooConfig
                             'link' => true,
                             'sort' => true,
                             'width' => '5%',
-                            'align' => 'left',
                         ),
                         'filename' => array (
                             'width' => '20%',
@@ -85,7 +84,8 @@ class MooConfig
                             'use_thumb' => true,
                         ),
                         'text' => array (
-                            'sort' => true
+                            'sort' => true,
+                            'heading' => 'Text Content'
                         ),
                         'ordering' => array (
                             'width' => '5%',
