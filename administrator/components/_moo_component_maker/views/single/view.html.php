@@ -323,7 +323,7 @@ class MooViewSingle extends JView
     
     public function display($tpl = null)
     {
-        $document =& JFactory::getDocument();
+        $document = JFactory::getDocument();
         $document->addStylesheet(JURI::base() . 'components/' . MooConfig::get('option') . '/assets' . '/css' . '/general_override.css');
         $document->addStylesheet(JURI::base() . 'components/' . MooConfig::get('option') . '/assets' . '/css' . '/plus_minus.css');
         $document->addScript(JURI::base() . 'components/' . MooConfig::get('option') . '/assets' . '/js'  . '/jquery-1.7.1-min.js');
@@ -439,7 +439,7 @@ class MooViewSingle extends JView
                $multivalue_bool = true;
 
         if ($this->id) {
-            $row =& $this->row;
+            $row = $this->row;
         } else {
             $row = new stdClass();
         }
@@ -785,7 +785,7 @@ class MooViewSingle extends JView
                         $readonly_bool = isset($field['readonly']);
                         if ($this->id &&
                             $file_str == 'Image' &&
-                            @MooHelper::checkImage(&$row->$name, $use_thumb_bool)
+                            @MooHelper::checkImage($row->$name, $use_thumb_bool)
                         ) {
                             $row_html .= $row->$name;
                         }
@@ -826,7 +826,7 @@ class MooViewSingle extends JView
                             } else {
                                 if ('textarea' === $formatter) {
                                     if (@$field['allow_html']) {
-                                        $editor =& JFactory::getEditor();
+                                        $editor = JFactory::getEditor();
 
                                         if (false === $multivalue_bool) {
                                             $row_html .= '<div class="textarea">';
@@ -898,7 +898,7 @@ class MooViewSingle extends JView
 
                                     if ('textarea' === $formatter) {
                                         if (@$field['allow_html']) {
-                                            $editor =& JFactory::getEditor();
+                                            $editor = JFactory::getEditor();
                                             $row_html .= '<div class="textarea">' . $editor->display($name . $multivalue_str, htmlspecialchars(@$row_ref->$name), $editor_width, '550', '75', '20', false, $name . $nested_count) . '</div>';
                                         } else {
                                             $row_html .= '<textarea style="width:400px;height:200px;font-size:14px;" id="' . $name . '" name="' . $name . $multivalue_str . '">'
@@ -929,7 +929,7 @@ class MooViewSingle extends JView
 
                                 if ('textarea' === $formatter) {
                                     if (@$field['allow_html']) {
-                                        $editor =& JFactory::getEditor();
+                                        $editor = JFactory::getEditor();
                                         $row_html .= '<div class="textarea">' . $editor->display($name . $multivalue_str, htmlspecialchars(@$row_ref->$name), $editor_width, '550', '75', '20', false, $name . $nested_count) . '</div>';
                                     } else {
                                         $row_html .= '<textarea style="width:400px;height:200px;font-size:14px;" id="' . $name . '" name="' . $name . $multivalue_str .'">'
@@ -993,8 +993,8 @@ HIDDEN;
             return;
         }
 
-        $document =& JFactory::getDocument();
-        if (@$field['load_js']) {
+        $document = JFactory::getDocument();
+        if (isset($field['load_js'])) {
             foreach ($field['load_js'] as $script) {
                 if (stristr($script, JURI::base())) {
                     $document->addScript($script);
@@ -1003,7 +1003,7 @@ HIDDEN;
                 }
             }
         }
-        if (@$field['load_css']) {
+        if (isset($field['load_css'])) {
             foreach ($field['load_css'] as $stylesheet) {
                 $document->addStylesheet($stylesheet);
             }
