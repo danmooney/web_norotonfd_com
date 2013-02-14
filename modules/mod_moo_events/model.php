@@ -9,6 +9,12 @@ class ModMooEvents
     private $_type;
 
     /**
+     * Reel subject
+     * @var string
+     */
+    private $_subject;
+
+    /**
      * Header
      * @var string
      */
@@ -58,7 +64,9 @@ class ModMooEvents
 
             $query
                 ->select('*')
-                ->from($this->getTable());
+                ->from($this->getTable())
+                ->where('event_type = ' . $db->quote($this->getSubject()))
+                ->where('published = 1');
 
             $db->setQuery($query);
             $this->_events = $db->loadObjectList();
@@ -67,10 +75,31 @@ class ModMooEvents
         return $this->_events;
     }
 
+    public function clusterEventsByNum($num)
+    {
+        $events = $this->getEvents();
+        if (count($events) !== count($events, COUNT_RECURSIVE)) {
+            return;
+        }
+
+        $this->_events = array_chunk($events, $num);
+    }
+
+    // news or events
+    public function getSubject()
+    {
+        if (!isset($this->_subject)) {
+            $this->_subject = $this->_params->get('reel-subject', 'news');
+        }
+
+        return $this->_subject;
+    }
+
+    // detailed or general
     public function getType()
     {
         if (!isset($this->_type)) {
-            $this->_type = $this->_params->get('reel-type');
+            $this->_type = $this->_params->get('reel-type', 'detailed');
         }
 
         return $this->_type;

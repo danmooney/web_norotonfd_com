@@ -569,6 +569,7 @@ class MooViewSingle extends JView
                                             $options[] = JHTML::_('select.option', $option, $option);
                                         }
                                     }
+                                    $the_right_row = $row;
                                 } elseif (isset($field['table'])) {
                                     if (@$field['order']) {
                                         $order = 'ORDER BY ' . @$field['order'];

@@ -14,4 +14,5 @@ defined('_JEXEC') or die('Restricted Access');
 </div>
 
 <?php
-require_once($model->getType() . '.php');
+include $model->getType() . '.php'; ?>
+<div class="clr"></div>

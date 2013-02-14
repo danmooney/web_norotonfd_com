@@ -19,7 +19,7 @@
                 <field name="header" type="text" label="Header Text" description="The header text that appears above the reel" />
                 <field name="reel-subject" type="radio" default="news" label="Reel subject">
                     <option value="news">News</option>
-					<option value="events">Events</option>
+					<option value="event">Events</option>
                 </field>
                 <field name="reel-type" type="radio" default="detailed" label="Reel display type">
                     <option value="detailed">Detailed</option>

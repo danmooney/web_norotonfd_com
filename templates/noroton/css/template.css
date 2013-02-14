@@ -69,7 +69,7 @@ h1 {
 }
 
 h2 {
-    font-size: 21px;
+    font-size: 24px;
 }
 
 h3 {
@@ -540,4 +540,26 @@ body.article-3 #content ul
     color: #000;
     font-weight: 600;
     background-image: url(../img/arrow_right_large_hover.png);
+}
+
+#content .event-carousel li,
+#content .event-carousel .event
+{
+    float: left;
+}
+
+#content .event-carousel .event {
+    width: 393px;
+}
+
+#content .event-carousel li {
+    margin-left: 45px;
+}
+
+#content .event-carousel .separator {
+    background: url(../img/carousel_item_separator.png) no-repeat;
+    width: 1px;
+    height: 190px;
+    float: left;
+    padding: 0 15px;
 }
