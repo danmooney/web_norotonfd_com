@@ -13,6 +13,15 @@ defined('_JEXEC') or die('Restricted Access');
     </div>
 </div>
 
-<?php
-include $model->getType() . '.php'; ?>
+<div class="event-carousel-container event-carousel-container-<?= $model->getType() ?>">
+    <div class="circle circle-left">
+        <div class="arrow arrow-left"></div>
+    </div>
+    <?php
+        include $model->getType() . '.php';
+    ?>
+    <div class="circle circle-right">
+        <div class="arrow arrow-right"></div>
+    </div>
+</div>
 <div class="clr"></div>

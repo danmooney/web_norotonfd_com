@@ -20,7 +20,7 @@ require_once('setup.php');
         </div>
         <div class="content-container">
             <div class="logo">
-                <a href="#"></a>
+                <a href="<?= JURI::base() ?>"></a>
             </div>
             <ul class="menu top-menu">
                 <li><a href="#">Members Section</a></li>
@@ -98,6 +98,11 @@ require_once('setup.php');
     <div id="image-cache">
         <img src="templates/<?= $this->template ?>/img/header_fb_hover.png" />
         <img src="templates/<?= $this->template ?>/img/header_tw_hover.png" />
-        <img src="templates/<?= $this->template ?>/img/arrow_right_large.png" />
+        <img src="templates/<?= $this->template ?>/img/arrow_right_large_hover.png" />
+        <img src="templates/<?= $this->template ?>/img/circle_large_hover.png" />
+        <img src="templates/<?= $this->template ?>/img/arrow_left_red.png" />
+        <img src="templates/<?= $this->template ?>/img/arrow_left_orange.png" />
+        <img src="templates/<?= $this->template ?>/img/arrow_right_red.png" />
+        <img src="templates/<?= $this->template ?>/img/arrow_right_orange.png" />
     </div>
 </body>
