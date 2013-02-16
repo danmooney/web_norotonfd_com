@@ -48,7 +48,9 @@ require_once('setup.php');
             <div class="clr"></div>
             <div id="hero-image-container-bg"></div>
             <div id="hero-image-container">
-                <div id="hero-image"></div>
+                <div id="hero-image">
+                    <jdoc:include type="modules" name="carousel" />
+                </div>
             </div>
         </div>
     </div>

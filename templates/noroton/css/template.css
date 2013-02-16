@@ -327,7 +327,7 @@ fieldset, legend {
 #hero-image-container {
     background: #FFF;
     padding: 6px;
-    height: 401px;
+    height: /*401*/400px;
     position: relative;
     /*top: -43px;*/
     top: -53px;
@@ -706,4 +706,42 @@ body.article-3 #content ul
 
 #content .event-carousel .event-general {
     margin: 0 6px;
+}
+
+#content .event-carousel-container .circle-small-container {
+    /*margin: 0 auto;*/
+    display: inline-block;
+}
+
+#content .event-carousel-container .circle-small-outer {
+    width: 17px;
+    height: 17px;
+    background: url(../img/circle_white_hollow.png) no-repeat;
+    float: left;
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+#content .event-carousel-container .circle-small-inner {
+    width: 100%;
+    height: 100%;
+    background-position: 44% 47%;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+#content .event-carousel-container .circle-small-outer.active .circle-small-inner {
+    display: block;
+}
+
+#content .event-carousel-container-detailed .circle-small-inner {
+    background-image: url(../img/circle_red_small.png);
+}
+
+#content .event-carousel-container-general .circle-small-inner {
+    background-image: url(../img/circle_orange_small.png);
+}
+
+#content .event-carousel-container-detailed .circle-small-container {
+    margin-top: 25px;
 }

@@ -2,6 +2,8 @@
 
 defined('_JEXEC') or die('Restricted Access');
 
+$use_carousel = (count($model->getEvents()) > 1);
+
 ?>
 
 <div class="events-header-container">
@@ -14,24 +16,39 @@ defined('_JEXEC') or die('Restricted Access');
 </div>
 
 <div class="event-carousel-container event-carousel-container-<?= $model->getType() ?>">
-    <div class="circle circle-left">
-        <div class="arrow arrow-left"></div>
-    </div>
+    <?php
+        if ($use_carousel): ?>
+            <div class="circle circle-left" style="display:none">
+                <div class="arrow arrow-left"></div>
+            </div>
+    <?php
+        endif
+?>
     <div class="overflow-buffer overflow-buffer-left"></div>
 
     <?php
         include $model->getType() . '.php';
+        if ($use_carousel):
     ?>
-    <div class="circle circle-right">
-        <div class="arrow arrow-right"></div>
-    </div>
+            <div class="circle circle-right" style="display:none">
+                <div class="arrow arrow-right"></div>
+            </div>
+    <?php
+        endif
+?>
     <div class="clr"></div>
     <?php
-        if (count($model->getEvents()) > 1):
-        for ($i = 0; $i < count($model->getEvents()); $i += 1): ?>
-            <div class="circle-small"></div>
+        if ($use_carousel): ?>
+            <div class="circle-small-container" style="display:none">
+        <?php
+            for ($i = 0; $i < count($model->getEvents()); $i += 1): ?>
+                <div class="circle-small-outer">
+                    <div class="circle-small-inner"></div>
+                </div>
+        <?php
+            endfor; ?>
+            </div>
     <?php
-        endfor;
         endif ?>
     <div class="overflow-buffer overflow-buffer-right"></div>
 </div>
