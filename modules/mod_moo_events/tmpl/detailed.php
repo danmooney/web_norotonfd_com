@@ -7,6 +7,7 @@ defined('_JEXEC') or die('Restricted Access')
     <?php
         foreach ($model->getEvents() as $event_cluster): ?>
             <li>
+                <div class="event-container">
         <?php
             $i = 0;
             foreach ($event_cluster as $idx => $event):
@@ -39,6 +40,7 @@ defined('_JEXEC') or die('Restricted Access')
 <?php
             $i += 1;
             endforeach; ?>
+                </div>
             </li>
     <?php
         endforeach

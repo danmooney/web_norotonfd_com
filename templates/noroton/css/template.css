@@ -546,13 +546,33 @@ body.article-3 #content ul
     text-align: center;
     margin-top: 15px;
     position:  relative;
+    overflow: hidden;
 }
+
+#content .event-carousel-container .overflow-buffer {
+    width: 41px;
+    height: 100%;
+    background: url(../img/content_bg.jpg) repeat;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+#content .event-carousel-container .overflow-buffer-left {
+    left: 0;
+}
+
+#content .event-carousel-container .overflow-buffer-right {
+    right: 0;
+}
+
 
 #content .event-carousel-container > .circle {
     width: 36px;
     height: 36px;
     background-repeat: no-repeat;
     position: absolute;
+    z-index: 3;
     top: 30%;
     cursor: pointer;
 }
@@ -614,6 +634,18 @@ body.article-3 #content ul
 #content .event-carousel {
     text-align: left;
     display: inline-block;
+    position: absolute;
+    width: 9999px;
+}
+
+#content .event-carousel li {
+    width: 960px;
+}
+
+#content .event-carousel li .event-container[style] {
+    width: 820px !important;
+    /*height: 380px !important;*/
+    padding: 0 70px !important;
 }
 
 #content .event-carousel li,

@@ -66,7 +66,8 @@ class ModMooEvents
                 ->select('*')
                 ->from($this->getTable())
                 ->where('event_type = ' . $db->quote($this->getSubject()))
-                ->where('published = 1');
+                ->where('published = 1')
+                ->order('date DESC');
 
             $db->setQuery($query);
             $this->_events = $db->loadObjectList();
