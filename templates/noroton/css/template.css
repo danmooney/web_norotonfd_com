@@ -11,7 +11,7 @@ html, body {
     width: 100%;
 }
 
-body {
+body#site {
     padding: 0;
     margin: 0;
     font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
@@ -526,7 +526,7 @@ body.article-3 #content ul
     font-size: 14px;
     text-transform: uppercase;
     text-decoration: none;
-    padding: 0 15px;
+    padding-left: 15px;
     display: block;
     background: url(../img/arrow_right_large.png) 86% 49% no-repeat;
 
@@ -664,6 +664,7 @@ body.article-3 #content ul
     /*padding-left: 6px;*/
     width: 408px;
     padding-left: 11px;
+    position: relative;
 }
 
 #content .event-carousel-detailed li {
@@ -687,6 +688,7 @@ body.article-3 #content ul
 
 #content .event-carousel .event-general a {
     color: #FFF;
+    display: block;
 }
 
 #content .event-carousel .event-general .image-container.placeholder {
@@ -747,7 +749,65 @@ body.article-3 #content ul
 }
 
 #content .event-carousel-container-detailed .circle-small-container {
+    visibility: hidden;
     margin-top: 25px;
+}
+
+#content .event img {
+    border: none;
+}
+
+#content .event-detailed img {
+    box-shadow: 0 1px 12px #2E2E2E;
+}
+
+#content .event-general a:hover .image-container {
+    border-color: #EC9B00;
+}
+
+#content .event-general a:hover .image-container .overlay {
+    color: #EC9B00;
+}
+
+#content .event-detailed .summary-container {
+    width: 51%;
+}
+
+#content .event-detailed .summary {
+    margin: 0;
+}
+
+#content .event-detailed .heading {
+    margin: 4px 0 20px;
+}
+
+#content .event-detailed .more-button {
+    background: #393C40;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 127px;
+    height: 32px;
+    line-height: 32px;
+}
+
+#content .event-detailed .more-button a {
+    text-transform: uppercase;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: 600;
+    background: url(../img/arrow_right_red_large.png) 90% 50% no-repeat;
+    text-align: left;
+    display: block;
+    padding-left: 12px;
+}
+
+#content .event-detailed .more-button:hover {
+    background: #555B61;
+}
+
+#content .event-detailed.first .more-button {
+    right: 10px;
 }
 
 #header .carousel li {

@@ -13,7 +13,7 @@ require_once('setup.php');
     <link href='http://fonts.googleapis.com/css?family=Share' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" type="text/css" href="templates/<?= $this->template ?>/css/template.css" />
 </head>
-<body class="<?= $body_class ?>">
+<body id="site" class="<?= $body_class ?>">
     <div id="header">
         <div id="header-bg-container">
             <div id="header-bg"></div>

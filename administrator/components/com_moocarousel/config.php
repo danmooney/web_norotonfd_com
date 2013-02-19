@@ -110,7 +110,10 @@ class MooConfig
                         ),
                         'text' => array (
                             'formatter' => 'textarea',
-                            'allow_html' => true
+                            'allow_html' => true,
+                            'load_css' => array (
+                                '../templates/noroton/css/template.css'
+                            )
                         ),
                         'carousel_id' => array (
                             'formatter' => 'hidden',
@@ -121,7 +124,7 @@ class MooConfig
                         ),
                         'published' => array (
                             'formatter' => 'boolean'
-                        )
+                        ),
                     )
                 ),
                 'controller' => array (

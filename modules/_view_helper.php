@@ -96,7 +96,11 @@ class MooViewHelper
      */
     public function truncate($str, $length = 100)
     {
-        return $str;
+        if (strlen($str) <= $length) {
+            return $str;
+        }
+
+        return substr($str, 0, strpos(wordwrap($str, $length), "\n")) . '...';
     }
 
     private function _outputSuccess($success_bool)

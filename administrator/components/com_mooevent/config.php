@@ -36,6 +36,11 @@ class MooConfig
         return self::$$thing;
     }
 
+    public static function set($thing, $value)
+    {
+        self::$$thing = $value;
+    }
+
     private static function setupPages()
     {
         /* THIS SHOULD BE THE ONLY THING YOU NEED TO EDIT */
@@ -44,21 +49,13 @@ class MooConfig
                 'title' => 'News & Events',
                 'file_folder' => 'events',
                 'table' => 'moo_event',
-//                'singular' => 'carousel',
-//                'submenu_title' => 'Main Carousel',
+                'singular' => 'Event',
                 'alias' => 'e',
                 'default_empty_msg' => 'Sorry, no news or events could be found!  Please try again.',
                 'model' => array (
                     'selects'  => array (
                         '*'
-//                        'group_concat(cast(concat(i.image_id, ":", i.filename) AS char) ORDER BY r.ordering, i.image_id ASC SEPARATOR ", ") AS images'
                     ),
-                    'joins' => array (
-//                        'LEFT JOIN #__moo_carousel_image_ref as r USING (carousel_id)',
-//                        'LEFT JOIN #__moo_carousel AS c USING (carousel_id)'
-                    ),
-//                    'where' => 'WHERE carousel_id = 1',
-//                    'group_by' => 'carousel_id',
                     'where_fields' => array (
                         'event_type',
                         'title',
@@ -66,11 +63,27 @@ class MooConfig
                         'text',
                         'date'
                     ),
+                    'pre_hook' => function (&$row) {
+                        $pages = MooConfig::get('pages');
+                        $thumbnail_arr =& $pages['moo_event']['view']['single']['image'];
+
+                        switch ($row->event_type) {
+                            case 'news':
+                                $thumbnail_arr['upload_thumb_width'] = 175;
+                                $thumbnail_arr['upload_thumb_height'] = 131;
+                                break;
+                            case 'events':
+                                $thumbnail_arr['upload_thumb_width'] = 201;
+                                $thumbnail_arr['upload_thumb_height'] = 140;
+                                break;
+                        }
+
+                        MooConfig::set('pages', $pages);
+                    }
                 ),
                 'view' => array (
                     'all' => array (
                         'date' => array (
-//                            'formatter' => 'date',
                             'date_format' => 'F j, Y',
                             'link' => true,
                             'sort' => true,
@@ -85,6 +98,11 @@ class MooConfig
                             'link' => true,
                             'sort' => true,
                             'width' => '12%',
+                        ),
+                        'image' => array(
+                            'heading' => 'Thumbnail',
+                            'link' => true,
+                            'formatter' => 'image'
                         ),
                         'summary' => array (
                             'sort' => 'true',
@@ -112,7 +130,12 @@ class MooConfig
                             'use_id_as_value' => true
                         ),
                         'title' => array (
-                            
+
+                        ),
+                        'image' => array (
+                            'heading' => 'Thumbnail',
+                            'formatter' => 'file',
+                            'image' => 'true'
                         ),
                         'summary' => array (
                             'formatter' => 'textarea'

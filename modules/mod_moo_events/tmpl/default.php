@@ -37,9 +37,10 @@ $use_carousel = (count($model->getEvents()) > 1);
         endif
 ?>
     <div class="clr"></div>
+    <div class="circle-small-container">
     <?php
         if ($use_carousel): ?>
-            <div class="circle-small-container" style="display:none">
+
         <?php
             for ($i = 0; $i < count($model->getEvents()); $i += 1): ?>
                 <div class="circle-small-outer">
@@ -47,9 +48,10 @@ $use_carousel = (count($model->getEvents()) > 1);
                 </div>
         <?php
             endfor; ?>
-            </div>
+
     <?php
         endif ?>
+    </div>
     <div class="overflow-buffer overflow-buffer-right"></div>
 </div>
 <div class="clr"></div>

@@ -20,17 +20,26 @@ defined('_JEXEC') or die('Restricted Access')
                 }
 ?>
                 <div class="event event-detailed <?= $idx_str ?>">
-                <?= $helper->output($event->title, '<h2 class="semibold">{str}</h2>') ?>
+                <?= $helper->output($event->title, '<h2 class="heading semibold">{str}</h2>') ?>
                 <?= $helper->outputImage($event->image, '<div class="image-container float-l">{str}</div>') ?>
                 <?php
                     $image_output_bool = $helper->outputWasSuccess() ?>
                 <?= $helper->output(
-                        $helper->truncate($event->summary),
+                        $helper->truncate($event->summary, 150),
                         $image_output_bool
                             ? '<div class="summary-container float-r"><p class="summary">{str}</p></div>'
                             : '<p class="summary">{str}</p>'
                     )
                 ?>
+                <?php
+                    if (!empty($event->text)): ?>
+                        <div class="more-button">
+                            <a href="#">
+                                <span>Learn More</span>
+                            </a>
+                        </div>
+                <?php
+                    endif ?>
                 </div>
                 <?php
                     if (intval($idx) === 0): ?>
