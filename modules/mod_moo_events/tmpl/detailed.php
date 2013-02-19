@@ -22,9 +22,11 @@ defined('_JEXEC') or die('Restricted Access')
                 <div class="event event-detailed <?= $idx_str ?>">
                 <?= $helper->output($event->title, '<h2 class="semibold">{str}</h2>') ?>
                 <?= $helper->outputImage($event->image, '<div class="image-container float-l">{str}</div>') ?>
+                <?php
+                    $image_output_bool = $helper->outputWasSuccess() ?>
                 <?= $helper->output(
-                        $event->summary,
-                        $helper->outputWasSuccess()
+                        $helper->truncate($event->summary),
+                        $image_output_bool
                             ? '<div class="summary-container float-r"><p class="summary">{str}</p></div>'
                             : '<p class="summary">{str}</p>'
                     )
@@ -35,7 +37,6 @@ defined('_JEXEC') or die('Restricted Access')
                         <span class="separator"></span>
                 <?php
                     endif;
-
 ?>
 <?php
             $i += 1;

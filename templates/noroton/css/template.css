@@ -685,6 +685,10 @@ body.article-3 #content ul
     border: 2px solid #FFF;
 }
 
+#content .event-carousel .event-general a {
+    color: #FFF;
+}
+
 #content .event-carousel .event-general .image-container.placeholder {
     background: url(../img/carousel_general_placeholder.jpg) no-repeat;
 }
@@ -744,4 +748,16 @@ body.article-3 #content ul
 
 #content .event-carousel-container-detailed .circle-small-container {
     margin-top: 25px;
+}
+
+#header .carousel li {
+    position: relative;
+    height: 400px;
+}
+
+#header .carousel .overlay {
+    background: url(../img/carousel_general_overlay.png) repeat;
+    position: absolute;
+    bottom: 42px;
+    padding: 0 20px;
 }

@@ -94,9 +94,9 @@ class MooViewHelper
      * @param int $length
      * TODO
      */
-    public function truncate($str, $length)
+    public function truncate($str, $length = 100)
     {
-
+        return $str;
     }
 
     private function _outputSuccess($success_bool)

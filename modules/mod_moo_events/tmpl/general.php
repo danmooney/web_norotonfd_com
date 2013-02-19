@@ -24,14 +24,16 @@ defined('_JEXEC') or die('Restricted Access');
                 }
 ?>
                 <div class="event event-general <?= $idx_str ?>">
-                    <div class="image-container <?= $placeholder_str ?>">
-                <?php
-                    if ($image_exists): ?>
-                        <?= $helper->outputImage($event->image) ?>
-                <?php
-                    endif ?>
-                        <?= $helper->output($event->title, '<div class="overlay"><p>{str}</p></div>') ?>
-                    </div>
+                    <a href="#">
+                        <div class="image-container <?= $placeholder_str ?>">
+                    <?php
+                        if ($image_exists): ?>
+                            <?= $helper->outputImage($event->image) ?>
+                    <?php
+                        endif ?>
+                            <?= $helper->output($helper->truncate($event->title), '<div class="overlay"><p>{str}</p></div>') ?>
+                        </div>
+                    </a>
                 </div>
 <?php
             $i += 1;
