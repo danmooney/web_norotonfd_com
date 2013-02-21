@@ -32,7 +32,7 @@ defined('_JEXEC') or die('Restricted Access')
                     )
                 ?>
                 <?php
-                    if (!empty($event->text)): ?>
+                    if (/*!empty($event->text)*/ true === true): ?>
                         <div class="more-button">
                             <a href="#">
                                 <span>Learn More</span>
