@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="Moo Operations List">
+        <message>
+            <![CDATA[Display a list of operations]]>
+        </message>
+    </layout>
+    <!--<fields name="request">-->
+        <!--<fieldset name="request">-->
+            <!--<field name="id" type="category"-->
+                   <!--description="JGLOBAL_CHOOSE_CATEGORY_DESC"-->
+                   <!--extension="com_content"-->
+                   <!--label="JGLOBAL_CHOOSE_CATEGORY_LABEL"-->
+                   <!--required="true"-->
+                    <!--/>-->
+        <!--</fieldset>-->
+    <!--</fields>-->
+
+    <!--<fields name="params">-->
+
+    <!--&lt;!&ndash; Basic options. &ndash;&gt;-->
+    <!--<fieldset name="basic"-->
+    <!--label="COM_CONTENT_ATTRIBS_ARTICLE_SETTINGS_LABEL">-->
+    <!--&lt;!&ndash; an example list and radio field - DM 092812 &ndash;&gt;-->
+    <!--<field-->
+    <!--name="show_title"-->
+    <!--type="list"-->
+    <!--label="JGLOBAL_SHOW_TITLE_LABEL"-->
+    <!--description="JGLOBAL_SHOW_TITLE_DESC">-->
+    <!--<option value="">JGLOBAL_USE_GLOBAL</option>-->
+    <!--<option value="0">JHIDE</option>-->
+    <!--<option value="1">JSHOW</option>-->
+    <!--</field>-->
+    <!--<field name="allow_empty_query"-->
+    <!--type="radio"-->
+    <!--default="0"-->
+    <!--validate="options"-->
+    <!--label="COM_FINDER_ALLOW_EMPTY_QUERY_LABEL"-->
+    <!--description="COM_FINDER_ALLOW_EMPTY_QUERY_DESC">-->
+    <!--<option value="1">JYES</option>-->
+    <!--<option value="0">JNO</option>-->
+    <!--</field>-->
+    <!--</fieldset>-->
+    <!--</fields>-->
+</metadata>

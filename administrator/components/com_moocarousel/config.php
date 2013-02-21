@@ -128,19 +128,19 @@ class MooConfig
                     )
                 ),
                 'controller' => array (
-                    'table_mapping' => array (
-                        '#__moo_carousel_image_ref' => array (
-                            'multivalue' => true,
-                            'ref' => 'carousel_id',
-                            'count' => 'image_id',
-                            'image_id' => array (
-                                'column' => 'image_id'
-                            ),
-                            'ordering' => array (
-                                'column' => 'ordering',
-                            ),
-                        )
-                    )
+//                    'table_mapping' => array (
+//                        '#__moo_carousel_image_ref' => array (
+//                            'multivalue' => true,
+//                            'ref' => 'carousel_id',
+//                            'count' => 'image_id',
+//                            'image_id' => array (
+//                                'column' => 'image_id'
+//                            ),
+//                            'ordering' => array (
+//                                'column' => 'ordering',
+//                            ),
+//                        )
+//                    )
                 )
             ),
         );
