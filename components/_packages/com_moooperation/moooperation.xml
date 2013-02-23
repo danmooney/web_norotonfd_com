@@ -21,7 +21,7 @@
 
     <!-- Site Main File Copy Section -->
     <files folder="site">
-        <filename>moooperations.php</filename>
+        <filename>moooperation.php</filename>
         <folder>views</folder>
     </files>
 
@@ -31,7 +31,7 @@
         <!-- Administration Main File Copy Section -->
         <files folder="admin">
             <!-- Admin Main File Copy Section -->
-            <filename>moooperations.php</filename>
+            <filename>moooperation.php</filename>
         </files>
     </administration>
 
