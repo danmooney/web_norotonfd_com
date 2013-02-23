@@ -1,11 +1,13 @@
 <?php
-
 namespace Moo\Operations;
 
-abstract class ModelAbstract implements ModelInterface
+defined('_JEXEC') or die('Restricted Access');
+
+abstract class ModelAbstract extends \JModel implements ModelInterface
 {
     protected $_table = '#__moo_operation';
     protected $_db;
+    protected $_data;
 
     public function __construct()
     {

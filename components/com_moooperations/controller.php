@@ -1,7 +1,6 @@
 <?php
 namespace Moo\Operations;
 
-
 class Controller extends \JController
 {
     private $_input;

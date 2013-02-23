@@ -7,15 +7,15 @@ defined('_JEXEC') or die('Restricted Access');
 jimport('joomla.application.component.controller');
 jimport('joomla.application.component.model');
 jimport('joomla.application.component.view');
+require_once(JPATH_SITE . DS . 'modules' . DS . '_view_helper.php');
 
 spl_autoload_extensions('.php,.html.php');
-
 spl_autoload_register(function ($class) {
     if (stripos($class, __NAMESPACE__) === false) {
         return;
     }
 
-    $is_interface = (stripos($class, 'Interface') !== false);
+    $is_view = (stripos($class, 'View') !== false);
 
 
     $class = ltrim(str_replace(__NAMESPACE__, '', $class), '\\');
@@ -52,6 +52,10 @@ spl_autoload_register(function ($class) {
         }
     }
 
+    if ($is_view) {
+        $path[] = 'view';
+    }
+
     $include_path_basename = JPATH_COMPONENT . DS . strtolower(implode(DS, $path));
 
     $extensions = explode(',', spl_autoload_extensions());
@@ -67,7 +71,7 @@ spl_autoload_register(function ($class) {
     }
 });
 
-$available_model_names = array_slice(scandir(JPATH_COMPONENT . DS . 'models'), 2);
+//$available_model_names = array_slice(scandir(JPATH_COMPONENT . DS . 'models'), 2);
 
 $params = \JComponentHelper::getParams(basename(dirname(__FILE__)));
 
@@ -82,13 +86,14 @@ $view_name = $controller->correctViewName(
     'list'
 );
 
-//$model_class_name = '\\' . __NAMESPACE__ . '\\ModelList';
+//$controller->redirect();
+
 $model_class_name = '\\' . __NAMESPACE__ . '\\Model' . ucfirst($view_name);
 
-try {
-    new $model_class_name();
-} catch (Exception $e) {
+$model = new $model_class_name();
 
-}
+$view_class_name = '\\' . __NAMESPACE__ . '\\View' . ucfirst($view_name);
 
-$controller->redirect();
+$view = new $view_class_name(new \MooViewHelper(), $model->getData());
+
+$view->display();
