@@ -5,7 +5,7 @@ namespace Moo\Operations;
 defined('_JEXEC') or die('Restricted Access');
 
 
-class ViewList extends \JView
+class ViewSingle extends \JView
 {
     /**
      * @var \MooViewHelper
@@ -13,16 +13,15 @@ class ViewList extends \JView
     public $helper;
 
     /**
-     * @var array
+     * @var \stdClass
      */
-    public $rows;
+    public $row;
 
-    public function __construct(\MooViewHelper $helper, array $rows)
+    public function __construct(\MooViewHelper $helper, \stdClass $row)
     {
         $this->helper = $helper;
-        $this->rows = $rows;
+        $this->row = $row;
 
         parent::__construct();
     }
-
 }

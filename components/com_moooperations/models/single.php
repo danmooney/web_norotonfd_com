@@ -12,6 +12,7 @@ class ModelSingle extends ModelAbstract
     public function __construct($id)
     {
         $this->_id = (int) $id;
+        parent::__construct();
     }
 
     public function getData()
@@ -24,7 +25,11 @@ class ModelSingle extends ModelAbstract
                 ->from($this->_table)
                 ->where('operation_id = ' . $this->_id);
 
+            $this->_db->setQuery($query);
+
             $this->_data = $this->_db->loadObject();
         }
+
+        return $this->_data;
     }
 }

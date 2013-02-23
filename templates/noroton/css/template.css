@@ -902,3 +902,7 @@ body.operations .operation > a:hover .image-container .overlay * {
 body.operations .operation > a:hover .read-more {
     text-decoration: underline;
 }
+
+body.operations .float-l {
+    width: 450px;
+}

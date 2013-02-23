@@ -86,11 +86,13 @@ $view_name = $controller->correctViewName(
     'list'
 );
 
+$cid = $input->get('cid', 0, 'int');
+
 //$controller->redirect();
 
 $model_class_name = '\\' . __NAMESPACE__ . '\\Model' . ucfirst($view_name);
 
-$model = new $model_class_name();
+$model = new $model_class_name($cid);
 
 $view_class_name = '\\' . __NAMESPACE__ . '\\View' . ucfirst($view_name);
 

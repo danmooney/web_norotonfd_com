@@ -46,6 +46,17 @@ class MooViewHelper
         return str_replace('{str}', $str, $formatted_output);
     }
 
+    public function imageExists($src, $image_folder = '')
+    {
+        if (empty($path)) {
+            $path = $this->getImgDir();
+        } else {
+            $path = $this->fixDSDuplication($image_folder . '/');
+        }
+
+        return is_file(JPATH_SITE . '/images/' . $path . '/' . $src);
+    }
+
     public function outputImage($src = '', $formatted_output = '', $image_folder = '')
     {
         if (empty($src)) {
@@ -53,13 +64,7 @@ class MooViewHelper
             return '';
         }
 
-        if (empty($image_folder)) {
-            $path = $this->getImgDir();
-        } else {
-            $path = $this->fixDSDuplication($image_folder . '/');
-        }
-
-        if (!is_file(JPATH_SITE . '/images/' . $path . '/' . $src)) {
+        if (!$this->imageExists($src, $image_folder . '/')) {
             $this->_outputSuccess(false);
             return '';
         }

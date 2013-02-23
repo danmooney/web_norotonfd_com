@@ -39,7 +39,7 @@ defined('_JEXEC') or die('Restricted Access.') ?>
                     <div class="operation <?= $idx_str ?>">
                         <?php
                             if ($can_read_more): ?>
-                                <a href="<?= JRoute::_('index.php?option=com_moooperations&view=single&oid=' . $row->operation_id) ?>">
+                                <a href="<?= JRoute::_('index.php?option=com_moooperations&view=single&cid=' . $row->operation_id) ?>">
                         <?php
                             endif ?>
                                 <div class="image-container <?= $placeholder_str ?>">
