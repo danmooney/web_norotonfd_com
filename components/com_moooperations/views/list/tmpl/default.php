@@ -3,12 +3,17 @@
  * @var $this \Moo\Operations\ViewList
  */
 
-$rows   = $this->rows;
+$rows   = $this->rows['rows'];
+$text   = $this->rows['text'];
 $helper = $this->helper;
 
 $number_per_row = 3;
 
 defined('_JEXEC') or die('Restricted Access.') ?>
+
+<h1 class="bold">Operations</h1>
+<div id="operations-list">
+<?= $helper->output($text->before_text) ?>
 
 <?php
     if (!empty($rows)):
@@ -80,3 +85,7 @@ defined('_JEXEC') or die('Restricted Access.') ?>
 <?php
     endif
 ?>
+
+<?= $helper->output($text->after_text) ?>
+<div class="clr"></div>
+</div>

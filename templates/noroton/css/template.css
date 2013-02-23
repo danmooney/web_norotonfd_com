@@ -831,6 +831,7 @@ body.operations #operations-container {
 
 body.operations .box-light-gray {
     padding: 18px 98px;
+    margin-bottom: 30px;
 }
 
 body.operations .operation .image-container {
@@ -845,7 +846,7 @@ body.operations .operation .overlay {
     position: absolute;
     bottom: 6px;
     width: 100%;
-    height: 42px;
+    /*height: 35px;*/
     overflow: hidden;
     font-weight: 600;
 }
@@ -855,8 +856,9 @@ body.operations .operation > a {
 }
 
 body.operations .operation .overlay * {
-    padding: 0 10px;
+    padding: 4px 10px;
     height: 100%;
+    margin: 0
 }
 
 body.operations #content .operation img {
@@ -903,11 +905,32 @@ body.operations .operation > a:hover .read-more {
     text-decoration: underline;
 }
 
-body.operations .float-l {
+body.operations #operations-list .float-l {
+    width: 390px;
+}
+
+body.operations #operations-list .float-l ul {
+    margin-top: 14px;
+}
+
+
+body.operations #operations-list .float-r {
+    width: 470px;
+}
+
+body.operations #operation-single .float-l {
     width: 450px;
+}
+
+body.operations #operation-single .float-l.no-image {
+    width: 100%;
 }
 
 body.operations #features li {
     list-style-type: disc;
     margin: 3px 0;
+}
+
+body.operations strong {
+    font-weight: 600;
 }

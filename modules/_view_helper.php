@@ -26,7 +26,7 @@ class MooViewHelper
         return $this->_img_dir;
     }
 
-    public function output($str = null, $formatted_output = '')
+    public function output($str, $formatted_output = '')
     {
         $str = trim($str);
 

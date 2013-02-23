@@ -14,6 +14,7 @@ $image_exists_str = !$image_exists
     : '';
 ?>
 
+<div id="operation-single">
 <?= $helper->output($row->title, '<h1 class="bold">{str}</h1>') ?>
 <div class="float-l <?= $image_exists_str ?>">
     <?= $helper->output($row->text, '<div class="description">{str}</div>') ?>
@@ -32,3 +33,5 @@ $image_exists_str = !$image_exists
 </div>
 <?= $helper->outputImage($row->image, '<div class="float-r">{str}</div>') ?>
 <div class="clr"></div>
+</div>
+

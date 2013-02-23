@@ -68,6 +68,14 @@ class MooConfig
                         'category',
                         'features'
                     ),
+                    /**
+                     * Store url alias
+                     */
+                    'pre_hook' => function (&$row) {
+                        if (trim($row->title) !== '') {
+                            $row->alias = MooHelper::makeUrlFriendly($row->title);
+                        }
+                    }
                 ),
                 'view' => array (
                     'all' => array (
