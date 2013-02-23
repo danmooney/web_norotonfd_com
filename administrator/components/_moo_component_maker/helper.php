@@ -372,8 +372,16 @@ class MooHelper
                 } else {
                     $key_readable = $page['submenu_title'];
                 }
-                $bool_current = ($key == MooConfig::get('current_page')) ? true : false;
-                JSubMenuHelper::addEntry(JText::_($key_readable), 'index.php?option=' . MooConfig::get('option') . '&type=' . $key, $bool_current);
+                $bool_current = ($key == MooConfig::get('current_page'));
+
+                if (isset($page['link'])) {
+                    $link = $page['link'];
+                } else {
+                    $link = 'index.php?option=' . MooConfig::get('option') . '&type=' . $key;
+                }
+
+
+                JSubMenuHelper::addEntry(JText::_($key_readable), $link, $bool_current);
             }
         }
     } 

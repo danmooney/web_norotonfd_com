@@ -45,7 +45,7 @@ class MooConfig
                 'file_folder' => 'operations',
                 'table' => 'moo_operation',
                 'singular' => 'operation',
-//                'submenu_title' => 'Main Carousel',
+                'submenu_title' => 'Operations',
                 'alias' => 'o',
                 'default_empty_msg' => 'Sorry, no operations could be found!  Please try again.',
                 'model' => array (
@@ -56,6 +56,7 @@ class MooConfig
                         'o.image',
                         'o.title',
                         'o.text',
+                        'o.features',
                         'o.ordering',
                         'o.published',
                     ),
@@ -64,7 +65,8 @@ class MooConfig
                     'where_fields' => array (
                         'title',
                         'text',
-                        'category'
+                        'category',
+                        'features'
                     ),
                 ),
                 'view' => array (
@@ -96,6 +98,11 @@ class MooConfig
                         'text' => array (
                             'sort' => true,
                             'heading' => 'Text Content'
+                        ),
+                        'features' => array (
+                            'sort' => true,
+                            'formatter' => 'nl2br',
+                            'align' => 'left'
                         ),
                         'ordering' => array (
                             'width' => '5%',
@@ -135,6 +142,9 @@ class MooConfig
 //                                '../templates/noroton/css/template.css'
 //                            )
                         ),
+                        'features' => array (
+                            'formatter' => 'textarea'
+                        ),
                         'ordering' => array (
                             'additional_style' => 'width:25px;'
                         ),
@@ -144,19 +154,52 @@ class MooConfig
                     )
                 ),
                 'controller' => array (
-//                    'table_mapping' => array (
-//                        '#__moo_carousel_image_ref' => array (
-//                            'multivalue' => true,
-//                            'ref' => 'carousel_id',
-//                            'count' => 'image_id',
-//                            'image_id' => array (
-//                                'column' => 'image_id'
-//                            ),
-//                            'ordering' => array (
-//                                'column' => 'ordering',
-//                            ),
-//                        )
-//                    )
+                )
+            ),
+            'text' => array (
+                'link' => 'index.php?option=com_moooperations&type=text&task=edit&cid[]=1',
+                'always_show_submenu' => true,
+                'toolbar' => array (
+                    'edit' => array (
+                        'apply'
+                    ),
+                    'default' => array (
+                        'apply',
+                    )
+                ),
+                'title' => 'Text',
+                'table' => 'moo_operation_text',
+                'alias' => 't',
+                'model' => array (
+                    'selects'  => array (
+                        '*',
+                    ),
+                    'joins' => array (
+                    ),
+                    'where_fields' => array (
+                        'before_text',
+                        'after_text',
+                    ),
+                ),
+                'view' => array (
+                    'single' => array (
+                        'before_text' => array (
+                            'formatter' => 'textarea',
+                            'allow_html' => true,
+                            'heading' => 'Text Before Fleet Operations List'
+                        ),
+                        'after_text' => array (
+                            'formatter' => 'textarea',
+                            'allow_html' => true,
+                            'heading' => 'Text After Fleet Operations List'
+                        ),
+                        'operation_text_id' => array (
+                            'formatter' => 'hidden',
+                            'value' => 1
+                        )
+                    )
+                ),
+                'controller' => array (
                 )
             ),
         );

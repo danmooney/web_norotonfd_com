@@ -906,3 +906,8 @@ body.operations .operation > a:hover .read-more {
 body.operations .float-l {
     width: 450px;
 }
+
+body.operations #features li {
+    list-style-type: disc;
+    margin: 3px 0;
+}

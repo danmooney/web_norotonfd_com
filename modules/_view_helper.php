@@ -43,7 +43,11 @@ class MooViewHelper
             return $str;
         }
 
-        return str_replace('{str}', $str, $formatted_output);
+        if (is_callable($formatted_output)) {
+            return $formatted_output($str);
+        } else {
+            return str_replace('{str}', $str, $formatted_output);
+        }
     }
 
     public function imageExists($src, $image_folder = '')

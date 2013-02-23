@@ -17,7 +17,18 @@ $image_exists_str = !$image_exists
 <?= $helper->output($row->title, '<h1 class="bold">{str}</h1>') ?>
 <div class="float-l <?= $image_exists_str ?>">
     <?= $helper->output($row->text, '<div class="description">{str}</div>') ?>
-    <?= $helper->output($row->features) ?>
+    <?= $helper->output($row->features, function ($feature_str) {
+            $features = explode("\n", $feature_str);
+
+            $html = '<ul id="features">';
+            foreach ($features as $feature) {
+                $html .= '<li>' . $feature . '</li>';
+            }
+            $html .= '</ul>';
+
+            return $html;
+        })
+    ?>
 </div>
 <?= $helper->outputImage($row->image, '<div class="float-r">{str}</div>') ?>
 <div class="clr"></div>
