@@ -1,7 +1,3 @@
-/*@import url(http://fonts.googleapis.com/css?family=Quantico:400,700,400italic,700italic);*/
-/*@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic);*/
-
-/**************** 1651px (GLOBAL) ***********/
 * {
     margin: 0;
     padding: 0;
@@ -33,7 +29,7 @@ object:focus, embed:focus
     outline: none;
 }
 
-button {
+body#site button {
     font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
     font-weight: 600;
 }
@@ -45,7 +41,7 @@ ul, li {
     /*margin: 3px 0;*/
 }
 
-a {
+body#site a {
     text-decoration: none;
     height: 100%;
     font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
@@ -363,6 +359,11 @@ fieldset, legend {
     position: relative;
     top: -10px;
     z-index: 2;
+}
+
+.box-light-gray {
+    border: 1px solid #67686B;
+    background: url(../img/content_bg_2.png) repeat;
 }
 
 #content {
@@ -696,7 +697,7 @@ body.article-3 #content ul
 }
 
 #content .event-carousel .event-general .overlay {
-    background: url(../img/carousel_general_overlay.png) repeat;
+    background: url(../img/general_image_overlay.png) repeat;
     position: absolute;
     bottom: 6px;
     width: 100%;
@@ -816,8 +817,88 @@ body.article-3 #content ul
 }
 
 #header .carousel .overlay {
-    background: url(../img/carousel_general_overlay.png) repeat;
+    background: url(../img/general_image_overlay.png) repeat;
     position: absolute;
     bottom: 42px;
     padding: 0 20px;
+}
+
+/** OPERATIONS **/
+
+body.operations #operations-container {
+    margin-top: 35px;
+}
+
+body.operations .box-light-gray {
+    padding: 18px 98px;
+}
+
+body.operations .operation .image-container {
+    position: relative;
+    width: 188px;
+    height: 127px;
+    border: 2px solid #FFF;
+}
+
+body.operations .operation .overlay {
+    background: url(../img/general_image_overlay.png) repeat;
+    position: absolute;
+    bottom: 6px;
+    width: 100%;
+    height: 42px;
+    overflow: hidden;
+    font-weight: 600;
+}
+
+body.operations .operation > a {
+    display: inline-block;
+}
+
+body.operations .operation .overlay * {
+    padding: 0 10px;
+    height: 100%;
+}
+
+body.operations #content .operation img {
+    border: none;
+}
+
+body.operations .operation.first {
+    margin-left: 0;
+}
+
+body.operations .operation.last {
+    margin-right: 0;
+}
+
+body.operations .operation {
+    float: left;
+    width: 192px;
+    margin: 0 46px 35px;
+
+}
+
+body.operations .operation .description * {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+body.operations .operation .read-more {
+    float: right;
+    text-transform: uppercase;
+    font-size: 14px;
+    background: url(../img/triangle_right_red.png) 100% 50% no-repeat;
+    padding-right: 20px;
+}
+
+body.operations .operation > a:hover .image-container {
+    border-color: #EC9B00;
+}
+
+body.operations .operation > a:hover .image-container .overlay * {
+    color: #EC9B00;
+}
+
+body.operations .operation > a:hover .read-more {
+    text-decoration: underline;
 }

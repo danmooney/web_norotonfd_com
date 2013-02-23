@@ -94,6 +94,6 @@ $model = new $model_class_name();
 
 $view_class_name = '\\' . __NAMESPACE__ . '\\View' . ucfirst($view_name);
 
-$view = new $view_class_name(new \MooViewHelper(), $model->getData());
+$view = new $view_class_name(new \MooViewHelper('operations'), $model->getData());
 
 $view->display();
