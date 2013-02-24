@@ -40,13 +40,12 @@ class MooConfig
     {
         /* THIS SHOULD BE THE ONLY THING YOU NEED TO EDIT */
         self::$pages = array (
-            'mooexternallinks' => array (
-                'title' => 'External Links (for the bottom of the page)',
-                'file_folder' => 'operations',
-                'table' => 'moo_external_link',
-                'singular' => 'External link',
-                'submenu_title' => 'External link',
-                'default_empty_msg' => 'Sorry, no external links could be found!  Please try again.',
+            'moojoin' => array (
+                'title' => 'Join Our Crew Submissions',
+                'table' => 'moo_join_submission',
+                'singular' => 'Join Submission',
+                'submenu_title' => 'Join Submissions',
+                'default_empty_msg' => 'Sorry, no join our crew submissions could be found!  Please try again.',
                 'model' => array (
                     'selects'  => array (
                         '*'
@@ -54,54 +53,94 @@ class MooConfig
                     'joins' => array (
                     ),
                     'where_fields' => array (
-                        'title',
-                        'url',
+                        'first_name',
+                        'last_name',
+                        'state',
+                        'zip',
+                        'phone_number',
+                        'email',
+                        'age',
+                        'occupation',
+                        'birthplace'
                     ),
-                    /**
-                     * Fix url
-                     */
-                    'pre_hook' => function (&$row) {
-                        if (!preg_match("~^(?:f|ht)tps?://~i", $row->url)) {
-                            $row->url = "http://" . $row->url;
-                        }
-                    }
                 ),
                 'view' => array (
                     'all' => array (
-                        'title' => array (
+                        'date' => array (
                             'link' => true,
                             'sort' => true,
                             'width' => '5%',
-                            'align' => 'left'
                         ),
-                        'url' => array (
+                        'first_name' => array (
                             'heading' => 'Links To',
                             'sort' => true,
-                            'external_link' => true,
-                            'align' => 'left'
                         ),
-                        'ordering' => array (
+                        'last_name' => array (
                             'width' => '5%',
                             'sort' => true
                         ),
-                        'published' => array (
+                        'state' => array (
                             'width' => '5%',
+                            'sort' => true
+                        ),
+                        'zip' => array (
+                            'width' => '5%',
+                            'sort' => true
+                        ),
+                        'phone_number' => array (
+                            'width' => '5%',
+                            'sort' => true
+                        ),
+                        'email' => array (
+                            'sort' => true
+                        ),
+                        'age' => array (
+                            'sort' => true
+                        ),
+                        'occupation' => array (
+                            'sort' => true
+                        ),
+                        'dob' => array (
+                            'sort' => true
+                        ),
+                        'birthplace' => array (
                             'sort' => true
                         )
                     ),
                     'single' => array (
-                        'title' => array (
-                            
+                        'date' => array (
+                            'readonly' => true
                         ),
-                        'url' => array (
-                            'heading' => 'Links To'
+                        'first_name' => array (
+                            'readonly' => true
                         ),
-                        'ordering' => array (
-                            'additional_style' => 'width:25px;'
+                        'last_name' => array (
+                            'readonly' => true
                         ),
-                        'published' => array (
-                            'formatter' => 'boolean'
+                        'state' => array (
+                            'readonly' => true
                         ),
+                        'zip' => array (
+                            'readonly' => true
+                        ),
+                        'phone_number' => array (
+                            'readonly' => true
+                        ),
+                        'email' => array (
+                            'readonly' => true
+                        ),
+                        'age' => array (
+                            'readonly' => true
+                        ),
+                        'occupation' => array (
+                            'readonly' => true
+                        ),
+                        'dob' => array (
+                            'readonly' => true
+                        ),
+                        'birthplace' => array (
+                            'readonly' => true
+                        )
                     )
                 ),
                 'controller' => array (
