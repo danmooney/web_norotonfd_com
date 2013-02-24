@@ -1,0 +1,25 @@
+.plus_button {
+    background:url(../images/plus25.png) no-repeat;
+    width:25px;
+    height:25px;
+    cursor:pointer;
+    float:left;
+    margin-right:20px;
+    margin-left:15px;
+}
+
+.minus_button {
+    background:url(../images/minus25.png) no-repeat;
+    width:25px;
+    height:25px;
+    cursor:pointer;
+    float:left;
+}
+
+.plus_button:active {
+    background:url(../images/plus_down25.png) no-repeat;
+}
+
+.minus_button:active {
+    background:url(../images/minus_down25.png) no-repeat;
+}
