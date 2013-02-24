@@ -76,7 +76,8 @@ echo $fillOutValue('errors');
         <input type="text" class="required" id="occupation" name="occupation" placeholder="Occupation" tabindex="10" value="<?= $fillOutValue('occupation') ?>" />
     </div>
     <div class="formline">
-        <input type="text" class="required" id="dob" name="dob" placeholder="Date of Birth (mm/dd/yy)" tabindex="11" data-rule-date="1" value="<?= $fillOutValue('dob') ?>" />
+        <?php /* <input type="text" class="required" id="dob" name="dob" placeholder="Date of Birth (mm/dd/yy)" tabindex="11" data-rule-date="1" value="<?= $fillOutValue('dob') ?>" /> */ ?>
+        <?= JHTML::_('calendar', $fillOutValue('dob'), 'dob', 'dob', '%m/%d/%Y', 'placeholder="Date of Birth (mm/dd/yy)"') ?>
     </div>
     <div class="formline">
         <input type="text" class="required" id="birthplace" name="birthplace" placeholder="Place of Birth" tabindex="12" value="<?= $fillOutValue('birthplace') ?>" />

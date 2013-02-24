@@ -19,7 +19,8 @@ $input = $app->input;
 $form_submit_success = (bool) $app->getUserState('moo.join.form.success');
 $thank_you_link = JRoute::_('index.php?option=com_content&view=article&id=8&Itemid=136');
 
-$is_thank_you_article = ($input->get('Itemid', 'int', 0) === 136);
+$is_thank_you_article = ($input->get('Itemid', 0, 'int') === 136);
+
 
 if ($is_thank_you_article && !$form_submit_success) {
     header('Location: ' . JURI::base());
@@ -43,10 +44,10 @@ if ($is_post) {
             ->sendEmail();
     }
 
-    header('Location: http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
+    header('Location: http://' . $_SERVER['HTTP_HOST'] . html_entity_decode($_SERVER['REQUEST_URI']));
     exit(0);
 } elseif ($form_submit_success && !$is_thank_you_article) {
-    header('Location: ' . 'http://' . $_SERVER['HTTP_HOST'] . $thank_you_link);
+    header('Location: ' . 'http://' . $_SERVER['HTTP_HOST'] . html_entity_decode($thank_you_link));
     exit(0);
 } elseif ($form_submit_success && $is_thank_you_article) {
     $app->setUserState('moo.join.form.success', null);
