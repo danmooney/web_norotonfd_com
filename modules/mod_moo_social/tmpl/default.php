@@ -11,5 +11,5 @@ if (!empty($twitter_link)) {
     $twitter_link = $helper->urlify($twitter_link, true);
 }
 
-echo $helper->output($facebook_link, '<li><div id="fb" class="social"><a href="{str}"></a></div></li>');
-echo $helper->output($twitter_link, '<li><div id="tw" class="social"><a href="{str}"></a></div></li>');
+echo $helper->output($facebook_link, '<li><div id="fb" class="social"><a target="_blank" href="{str}"></a></div></li>');
+echo $helper->output($twitter_link, '<li><div id="tw" class="social"><a target="_blank" href="{str}"></a></div></li>');
