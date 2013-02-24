@@ -431,12 +431,12 @@ body.home #content p.description {
     border: 2px solid #FFF;
 }
 
-#content a {
+body#site #content a {
     color: #FFBA35;
     text-decoration: underline;
 }
 
-#content a:hover {
+body#site #content a:hover {
     text-decoration: none;
 }
 
@@ -979,6 +979,12 @@ body.operations strong {
 
 #box-join .formline {
     margin: 10px 0;
+    position: relative;
+}
+
+#box-join .formline-inner {
+    position: relative;
+    display: inline-block;
 }
 
 #box-join .formline input,
@@ -1007,6 +1013,7 @@ body.operations strong {
 #box-join .formline label {
     margin: 0 6px 0 10px;
 }
+
 
 
 #box-join #first_name,
@@ -1047,6 +1054,32 @@ body.operations strong {
 
 #box-join #dob {
     width: 200px;
+}
+
+#form-join .error-message {
+    position: absolute;
+    top: -41px;
+    left: 150px;
+    /*padding-bottom: 20px;*/
+    z-index: 2;
+}
+
+#form-join .error-message label.error {
+    color: #FFF;
+    padding: 11px 22px;
+    border-radius: 5px;
+    font-size: 14px;
+    background: #AE0008;
+    display: inline-block !important;
+}
+
+
+#form-join .error-message .label-triangle {
+    background: url(../img/form_label_error_triangle.png) 50% /*76*/81% no-repeat;
+    width: 100%;
+    height: 7px;
+    position: absolute;
+    bottom: -6px;
 }
 
 /** EXTERNAL LINKS **/

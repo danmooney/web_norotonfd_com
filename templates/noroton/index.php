@@ -99,7 +99,9 @@ require_once('setup.php');
         </div>
     </div>
     <script src="templates/<?= $this->template ?>/js/jquery.anythingslider-1.8.6-min.js"></script>
+    <script src="templates/<?= $this->template ?>/js/jquery-validation-1.11.0.js"></script>
     <script src="templates/<?= $this->template ?>/js/carousel.js"></script>
+    <script src="templates/<?= $this->template ?>/js/site.js"></script>
     <div id="image-cache">
         <img src="templates/<?= $this->template ?>/img/header_fb_hover.png" />
         <img src="templates/<?= $this->template ?>/img/header_tw_hover.png" />
