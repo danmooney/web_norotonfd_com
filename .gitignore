@@ -11,6 +11,7 @@ sql_dumps/*
 *.ini
 starting_files/*
 !language/en-GB/en-GB.mod_moo*
+!administrator/language/en-GB/en-GB.com_moo*
 
 administrator/cache/*
 administrator/components/com_admin/*
