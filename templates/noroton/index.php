@@ -32,6 +32,8 @@ require_once('setup.php');
                 <li>
                     <span class="separator"></span>
                 </li>
+                <jdoc:include type="modules" name="social-icons" />
+                <?php /*
                 <li>
                     <div id="fb" class="social">
                         <a href="#"></a>
@@ -41,7 +43,7 @@ require_once('setup.php');
                     <div id="tw" class="social">
                         <a href="#"></a>
                     </div>
-                </li>
+                </li> */ ?>
             </ul>
             <jdoc:include type="modules" name="top-menu" />
             <jdoc:include type="modules" name="main-menu" />

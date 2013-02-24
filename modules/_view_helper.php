@@ -84,6 +84,19 @@ class MooViewHelper
         return $this->_img_dir;
     }
 
+    public function urlify($value, $https = false)
+    {
+        if (!preg_match("~^(?:f|ht)tps?://~i", $value)) {
+            if (false === $https) {
+                $value = "http://" . $value;
+            } else {
+                $value = "https://" . $value;
+            }
+        }
+
+        return $value;
+    }
+
     public function output($str, $formatted_output = '')
     {
         $str = trim($str);

@@ -2,6 +2,7 @@
 /**
  * @var $params JRegistry
  */
+// TODO - test mailer
 defined('_JEXEC') or die('Restricted Access');
 
 require_once(JPATH_SITE . DS . 'modules' . DS . '_view_helper.php');
