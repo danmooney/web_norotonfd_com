@@ -2,7 +2,7 @@
 
 class MooJoinModel
 {
-    public $validators = array(
+    public $field_validator_map = array(
         'first_name' => 'alpha',
         'last_name' => 'alpha',
         'state' => 'state',
@@ -15,4 +15,13 @@ class MooJoinModel
         'birthplace' => 'filled',
         'hp' => 'empty'
     );
+
+    public $field_value_map = array();
+
+    public function __construct(JInput $input)
+    {
+        foreach (array_keys($this->field_validator_map) as $field) {
+            $this->field_value_map[$field] = trim($input->get('field', null, 'string'));
+        }
+    }
 }

@@ -1014,8 +1014,6 @@ body.operations strong {
     margin: 0 6px 0 10px;
 }
 
-
-
 #box-join #first_name,
 #box-join #last_name
 {
@@ -1024,6 +1022,10 @@ body.operations strong {
 
 #box-join #last_name {
 
+}
+
+#box-join #hp {
+    width: 250px;
 }
 
 #box-join #address,

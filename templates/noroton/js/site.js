@@ -8,9 +8,15 @@
         );
 
         $.validator.addMethod('zip', function (value, element) {
-            return this.optional(element) || /^\d{5}(-\d{4})?$/.text(value);
+            return this.optional(element) || /^\d{5}(-\d{4})?$/.test(value);
         },
             'Please enter a valid zip code.'
+        );
+
+        $.validator.addMethod('phone', function (value, element) {
+            return this.optional(element) || /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/.test(value);
+        },
+            'Please enter a valid phone number.'
         );
 
         function positionLabel (label, element) {
@@ -115,6 +121,7 @@
     }
 
     $(document).ready(function () {
+        $('form').find('#hp').parent().hide(); // hide honeypot
         validateForms();
     });
 }(jQuery));

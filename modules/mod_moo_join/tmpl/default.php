@@ -21,7 +21,7 @@ defined('_JEXEC') or die('Restricted Access') ?>
         <input class="last required" type="text" id="zip" name="zip" placeholder="Zip Code" tabindex="5" data-rule-number="1" data-rule-zip="1" />
     </div>
     <div class="formline">
-        <input type="text" id="phone" name="phone" placeholder="Phone Number" tabindex="6" />
+        <input type="text" id="phone" class="required" name="phone" placeholder="Phone Number" tabindex="6" />
     </div>
     <div class="formline">
         <input type="text" id="email" class="required" name="email" placeholder="Email Address" tabindex="7" data-rule-email="1" />
@@ -30,7 +30,7 @@ defined('_JEXEC') or die('Restricted Access') ?>
         <input type="text" id="confirm_email" class="required" name="confirm_email" placeholder="Confirm Email Address" tabindex="8" data-rule-email="1" data-rule-equalto="#email" />
     </div>
     <div class="formline">
-        <input type="text" class="required" id="age" name="age" placeholder="Age" tabindex="9" data-rule-number="1" />
+        <input type="text" class="required" id="age" name="age" placeholder="Age" tabindex="9" data-rule-digits="1" />
     </div>
     <div class="formline">
         <input type="text" class="required" id="occupation" name="occupation" placeholder="Occupation" tabindex="10" />
@@ -40,6 +40,9 @@ defined('_JEXEC') or die('Restricted Access') ?>
     </div>
     <div class="formline">
         <input type="text" class="required" id="birthplace" name="birthplace" placeholder="Place of Birth" tabindex="12" />
+    </div>
+    <div class="formline">
+        <input type="text" class="required" id="hp" name="hp" placeholder="Leave blank for verification purposes" />
     </div>
     <div class="formline">
         <span>Are you a U.S. citizen?</span>
