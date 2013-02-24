@@ -64,6 +64,10 @@ class MooConfig
                         'date'
                     ),
                     'pre_hook' => function (&$row) {
+                        if (trim($row->title) !== '') {
+                            $row->alias = MooHelper::makeUrlFriendly($row->title);
+                        }
+
                         $pages = MooConfig::get('pages');
                         $thumbnail_arr =& $pages['moo_event']['view']['single']['image'];
 

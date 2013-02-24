@@ -934,3 +934,55 @@ body.operations #features li {
 body.operations strong {
     font-weight: 600;
 }
+
+/** JOIN OUR CREW FORM **/
+#box-join {
+    padding: 20px 30px;
+}
+
+#box-join .heading > h2 {
+    font-weight: 600;
+    text-align: center;
+}
+
+#box-join p {
+    margin: 5px 0;
+}
+
+#box-join .heading > p {
+    text-align: center;
+}
+
+#box-join > ul {
+    margin: 20px 0 !important;
+}
+#box-join #submit-join {
+    background: #393939;
+    color: #FFF;
+    border-radius: 0;
+    /*border: 1px solid #707070;*/
+    padding: 10px 20px;
+    text-transform: uppercase;
+    float: right;
+}
+
+#box-join .formline {
+
+}
+
+#box-join .formline input {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+#box-join .formline span, label {
+    font-size: 14px;
+}
+
+#box-join .formline span {
+    margin-right: 10px;
+}
+
+#box-join .formline span, label {
+    margin: 0 6px 0 10px;
+}
