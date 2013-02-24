@@ -61,7 +61,7 @@ echo $fillOutValue('errors');
         <input class="last required" type="text" id="zip" name="zip" placeholder="Zip Code" tabindex="5" data-rule-number="1" data-rule-zip="1" value="<?= $fillOutValue('zip') ?>" />
     </div>
     <div class="formline">
-        <input type="text" id="phone" class="required" name="phone_number" placeholder="Phone Number" tabindex="6" data-rule-phone="1" value="<?= $fillOutValue('zip') ?>" />
+        <input type="text" id="phone" class="required" name="phone_number" placeholder="Phone Number" tabindex="6" data-rule-phone="1" value="<?= $fillOutValue('phone_number') ?>" />
     </div>
     <div class="formline">
         <input type="text" id="email" class="required" name="email" placeholder="Email Address" tabindex="7" data-rule-email="1" value="<?= $fillOutValue('email') ?>" />
@@ -77,7 +77,7 @@ echo $fillOutValue('errors');
     </div>
     <div class="formline">
         <?php /* <input type="text" class="required" id="dob" name="dob" placeholder="Date of Birth (mm/dd/yy)" tabindex="11" data-rule-date="1" value="<?= $fillOutValue('dob') ?>" /> */ ?>
-        <?= JHTML::_('calendar', $fillOutValue('dob'), 'dob', 'dob', '%m/%d/%Y', 'placeholder="Date of Birth (mm/dd/yy)"') ?>
+        <?= JHTML::_('calendar', $fillOutValue('dob'), 'dob', 'dob', '%m/%d/%Y', 'class="required" placeholder="Date of Birth (mm/dd/yy)" data-rule-moodate="1"') ?>
     </div>
     <div class="formline">
         <input type="text" class="required" id="birthplace" name="birthplace" placeholder="Place of Birth" tabindex="12" value="<?= $fillOutValue('birthplace') ?>" />

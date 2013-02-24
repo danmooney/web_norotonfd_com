@@ -32,6 +32,8 @@ class MooJoinProcessor
     {
         require_once(JPATH_ADMINISTRATOR . DS . 'components' . DS . '_moo_component_maker' . DS . 'table.php');
 
+        $this->_model->formatFields();
+
         $table = new MooTable($this->_model->table);
         $table->bind($this->_model->field_value_map);
 

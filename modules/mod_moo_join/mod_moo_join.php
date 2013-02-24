@@ -51,6 +51,8 @@ if ($is_post) {
     exit(0);
 } elseif ($form_submit_success && $is_thank_you_article) {
     $app->setUserState('moo.join.form.success', null);
+    $app->setUserState('moo.join.form.field.errors', null);
+    $app->setUserState('moo.join.form.field.values', null);
 } else {
     require JModuleHelper::getLayoutPath('mod_moo_join');
 }

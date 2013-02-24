@@ -11,7 +11,7 @@ class MooJoinValidator
         'zip' => 'Please enter a valid zip code.',
         'phone' => 'Please enter a valid phone number.',
         'number' => '%s must be a number.',
-        'date' => '%s must be a valid date.',
+        'date' => '%s must be a valid date in format MM/DD/YYYY.',
         'filled' => '%s must be filled out.',
         'empty' => '%s must be empty.',
         'email' => 'Please enter a valid email.'
@@ -67,7 +67,7 @@ class MooJoinValidator
 
     private function _validateDate($value)
     {
-
+        return (bool) preg_match('/^\d{2}\/\d{2}\/\d{4}$/', $value);
     }
 
     private function _validatePhone($value)

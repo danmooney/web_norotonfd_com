@@ -19,6 +19,12 @@
             'Please enter a valid phone number.'
         );
 
+        $.validator.addMethod('moodate', function (value, element) {
+            return this.optional(element) || /^\d{2}\/\d{2}\/\d{4}$/.test(value);
+        },
+            'Please enter a date in format MM/DD/YYYY.'
+        );
+
         function positionLabel (label, element) {
             if (label.length === 0) {
                 return;

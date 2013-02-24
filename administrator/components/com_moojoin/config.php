@@ -66,18 +66,21 @@ class MooConfig
                 ),
                 'view' => array (
                     'all' => array (
-                        'date' => array (
+                        'timestamp' => array (
+                            'heading' => 'Submitted On',
                             'link' => true,
                             'sort' => true,
                             'width' => '5%',
                         ),
                         'first_name' => array (
-                            'heading' => 'Links To',
+                            'width' => '5%',
                             'sort' => true,
+                            'link' => true,
                         ),
                         'last_name' => array (
                             'width' => '5%',
-                            'sort' => true
+                            'sort' => true,
+                            'link' => true
                         ),
                         'state' => array (
                             'width' => '5%',
@@ -92,23 +95,37 @@ class MooConfig
                             'sort' => true
                         ),
                         'email' => array (
-                            'sort' => true
+                            'sort' => true,
+                            'width' => '7%'
                         ),
                         'age' => array (
+                            'width' => '2%',
                             'sort' => true
                         ),
                         'occupation' => array (
                             'sort' => true
                         ),
                         'dob' => array (
-                            'sort' => true
+                            'heading' => 'Date of Birth',
+                            'sort' => true,
+                            'width' => '8%'
                         ),
                         'birthplace' => array (
                             'sort' => true
+                        ),
+                        'citizen' => array (
+                            'sort' => true,
+                            'width' => '2%'
+                        ),
+                        'published' => array (
+                            'width' => '3%',
+                            'sort' => true,
+                            'heading' => 'Contacted'
                         )
                     ),
                     'single' => array (
-                        'date' => array (
+                        'timestamp' => array (
+                            'heading' => 'Submitted On',
                             'readonly' => true
                         ),
                         'first_name' => array (
@@ -140,6 +157,13 @@ class MooConfig
                         ),
                         'birthplace' => array (
                             'readonly' => true
+                        ),
+                        'citizen' => array (
+                            'readonly' => true
+                        ),
+                        'published' => array (
+                            'heading' => 'Contacted',
+                            'formatter' => 'boolean'
                         )
                     )
                 ),
