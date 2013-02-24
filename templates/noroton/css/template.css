@@ -406,6 +406,7 @@ fieldset, legend {
 #footer p
 {
     font-size: 12px;
+    margin-bottom: 0;
 }
 
 #footer a:hover {
@@ -908,6 +909,7 @@ body.operations .operation > a:hover .image-container .overlay * {
 
 body.operations .operation > a:hover .read-more {
     text-decoration: underline;
+    font-weight: 600;
 }
 
 body.operations #operations-list .float-l {
@@ -1032,4 +1034,9 @@ body.operations strong {
 
 #box-join #dob {
     width: 200px;
+}
+
+/** EXTERNAL LINKS **/
+#footer .external-links-menu {
+    margin-top: 16px;
 }

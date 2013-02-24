@@ -94,6 +94,7 @@ require_once('setup.php');
             </ul>*/ ?>
             <div class="clr"></div>
             <jdoc:include type="modules" name="external-links-menu" />
+            <div class="clr"></div>
             <p>Designed by <a class="bold" target="_blank" href="http://scsdesigninc.com">ScSDesignInc.com</a> and developed by <a target="_blank" class="bold" href="http://www.danronmoon.com/">DanRonMoon.com</a></p>
         </div>
     </div>
