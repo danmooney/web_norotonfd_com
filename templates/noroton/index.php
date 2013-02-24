@@ -23,12 +23,12 @@ require_once('setup.php');
                 <a href="<?= JURI::base() ?>"></a>
             </div>
             <ul class="menu top-menu">
-                <li><a href="#">Members Section</a></li>
+                <li><a href="<?= JRoute::_('index.php?option=com_content&view=article&id=9&Itemid=137') ?>">Members Section</a></li>
                 <li>
                     <span class="separator"></span>
                 </li>
                 <?php // TODO - obviously use form tokens and stuff ?>
-                <li><a href="#">Log In</a></li>
+                <li><a href="<?= JRoute::_('index.php?option=com_content&view=article&id=9&Itemid=137') ?>">Log In</a></li>
                 <li>
                     <span class="separator"></span>
                 </li>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+    type="module"
+    version="2.5"
+    client="site"
+    method="upgrade">
+    <name>Moo Members</name>
+    <author>Dan Mooney</author>
+    <creationDate>February 2013</creationDate>
+    <copyright>Copyright (C) 2013 DanRonMoon</copyright>
+    <authorEmail>dan.r.mooney@gmail.com</authorEmail>
+    <authorUrl>www.danronmoon.com</authorUrl>
+    <description>Members Area</description>
+    <files>
+    </files>
+    <!--<config>-->
+        <!--<fields name="params">-->
+            <!--<fieldset name="basic">-->
+                <!--<field name="facebook" type="text" size="100" default="" label="Facebook" />-->
+                <!--<field name="twitter" type="text"  size="100" default="" label="Twitter" />-->
+            <!--</fieldset>-->
+        <!--</fields>-->
+    <!--</config>-->
+</extension>
