@@ -4,12 +4,12 @@ defined('_JEXEC') or die('Restricted Access') ?>
 <form action="" method="POST" id="form-join">
     <div class="formline">
         <input type="text" id="first_name" name="first_name" placeholder="First Name" />
-        <input type="text" id="last_name" name="last_name" placeholder="Last Name" />
+        <input class="last" type="text" id="last_name" name="last_name" placeholder="Last Name" />
     </div>
     <div class="formline">
         <input type="text" id="address" name="address" placeholder="Street Address" />
         <input type="text" id="state" name="state" placeholder="State" />
-        <input type="text" id="zip" name="zip" placeholder="Zip Code" />
+        <input class="last" type="text" id="zip" name="zip" placeholder="Zip Code" />
     </div>
     <div class="formline">
         <input type="text" id="phone" name="phone" placeholder="Phone Number" />
@@ -27,7 +27,7 @@ defined('_JEXEC') or die('Restricted Access') ?>
         <input type="text" id="occupation" name="occupation" placeholder="Occupation" />
     </div>
     <div class="formline">
-        <input type="text" id="dob" name="dob" placeholder="Date of Birth (dd/mm/yy)" />
+        <input type="text" id="dob" name="dob" placeholder="Date of Birth (mm/dd/yy)" />
     </div>
     <div class="formline">
         <input type="text" id="birthplace" name="birthplace" placeholder="Place of Birth" />

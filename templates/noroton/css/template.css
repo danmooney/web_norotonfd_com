@@ -10,9 +10,16 @@ html, body {
 body#site {
     padding: 0;
     margin: 0;
-    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
     color: #FFF;
     background: #720101;
+}
+
+body#site,
+body#site button,
+body#site a,
+body#site input
+{
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
 }
 
 object, embed {
@@ -30,7 +37,6 @@ object:focus, embed:focus
 }
 
 body#site button {
-    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
     font-weight: 600;
 }
 
@@ -44,7 +50,6 @@ ul, li {
 body#site a {
     text-decoration: none;
     height: 100%;
-    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
     color: #FFF;
 }
 
@@ -967,12 +972,18 @@ body.operations strong {
 }
 
 #box-join .formline {
-
+    margin: 10px 0;
 }
 
 #box-join .formline input {
     padding: 5px 10px;
     font-size: 14px;
+    margin-right: 5px;
+}
+
+#box-join .formline input.last {
+    margin-right: 0;
+    float: right;
 }
 
 #box-join .formline span, label {
@@ -985,4 +996,40 @@ body.operations strong {
 
 #box-join .formline span, label {
     margin: 0 6px 0 10px;
+}
+
+
+#box-join #first_name,
+#box-join #last_name
+{
+    width: 417px;
+}
+
+#box-join #last_name {
+
+}
+
+#box-join #address,
+#box-join #birthplace
+{
+    width: 538px;
+}
+
+#box-join #phone {
+    width: 250px;
+}
+
+#box-join #age {
+    width: 75px;
+}
+
+#box-join #email,
+#box-join #confirm_email,
+#box-join #occupation
+{
+    width: 400px;
+}
+
+#box-join #dob {
+    width: 200px;
 }
