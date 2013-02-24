@@ -29,7 +29,7 @@
             var top,
                 left;
 
-            top = (label.height() * -1) - 20;
+            top = (label.height() * -1) - element.height();
 
             left = element.position().left - (label.width() / 2) + (element.width() / 2);
 
@@ -37,6 +37,8 @@
                 top += Math.floor(
                     parseInt(element.height() / 2, 10) + parseInt(element.css('padding-top'), 10)
                 );
+            } else {
+                top += element.height();
             }
 
             label.css({

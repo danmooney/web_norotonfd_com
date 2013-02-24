@@ -2,6 +2,7 @@
 
 class MooJoinValidator
 {
+    public $errors = array();
     public $validator_map = array();
 
     public function validate(array $field_value_map)
@@ -13,15 +14,15 @@ class MooJoinValidator
                 trigger_error($validate_fn . ' does not exist', E_USER_WARNING);
             }
 
-            $result = $validate_fn($field_value_map[$field]);
+            $result = $this->$validate_fn($field_value_map[$field]);
 
             if (false === $result) {
-                die($validate_fn . ' ' . $field . ' ' . $field_value_map[$field] . ' failed');
-                return false;
+                die($validate_fn . ' ' . $field . ' failed: ' . $field_value_map[$field]);
+                $this->errors[] = $field;
             }
         }
 
-        return true;
+        return count($this->errors) === 0;
     }
 
     private function _validateAlpha($value)

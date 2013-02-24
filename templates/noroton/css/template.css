@@ -457,19 +457,21 @@ body.article-4 #content h4 {
     margin: 20px 0 5px;
 }
 
-body.article-4 #content ul li h4 {
-    font-weight: 100;
+body.article-4 #content ul#protect-your-family-from-fire-list li h4 {
+    /*font-weight: 100;*/
+    display: inline-block;
 }
 
 body.article-4 #content ul li {
     clear: both;
+
 }
 
 body.article-4 #content .anchor-pointer-container h5 {
     font-size: 18px;
 }
 
-body.article-4 #content .anchor-pointer-container a {
+body#site.article-4 #content .anchor-pointer-container a {
     text-decoration: underline;
     color: #FFF;
 }
@@ -528,7 +530,7 @@ body.article-3 #content ul
     margin-top: 8px;
 }
 
-#content .events-header-container .more-button a {
+body#site #content .events-header-container .more-button a {
     color: #FFF;
     font-size: 14px;
     text-transform: uppercase;
@@ -693,7 +695,7 @@ body.article-3 #content ul
     border: 2px solid #FFF;
 }
 
-#content .event-carousel .event-general a {
+body#site #content .event-carousel .event-general a {
     color: #FFF;
     display: block;
 }
@@ -712,7 +714,7 @@ body.article-3 #content ul
     font-weight: 600;
 }
 
-#content .event-carousel .event-general .overlay p {
+body#site #content .event-carousel .event-general .overlay p {
     margin: 0 10px;
     height: 100%;
 }
@@ -798,7 +800,7 @@ body.article-3 #content ul
     line-height: 32px;
 }
 
-#content .event-detailed .more-button a {
+body#site #content .event-detailed .more-button a {
     text-transform: uppercase;
     color: #FFF;
     text-decoration: none;
@@ -940,6 +942,11 @@ body.operations #features li {
 
 body.operations strong {
     font-weight: 600;
+}
+
+body#site.operations #content a {
+    color: #FFF;
+    text-decoration: none;
 }
 
 /** JOIN OUR CREW FORM **/

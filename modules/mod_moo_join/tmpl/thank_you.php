@@ -1,0 +1,1 @@
+<h5><?= $model->params->get('thank_you', 'Thank you for your interest.  We will contact you shortly.') ?></h5>

@@ -21,7 +21,7 @@ defined('_JEXEC') or die('Restricted Access') ?>
         <input class="last required" type="text" id="zip" name="zip" placeholder="Zip Code" tabindex="5" data-rule-number="1" data-rule-zip="1" />
     </div>
     <div class="formline">
-        <input type="text" id="phone" class="required" name="phone" placeholder="Phone Number" tabindex="6" />
+        <input type="text" id="phone" class="required" name="phone" placeholder="Phone Number" tabindex="6" data-rule-phone="1" />
     </div>
     <div class="formline">
         <input type="text" id="email" class="required" name="email" placeholder="Email Address" tabindex="7" data-rule-email="1" />

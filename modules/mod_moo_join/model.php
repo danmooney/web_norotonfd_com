@@ -16,12 +16,21 @@ class MooJoinModel
         'hp' => 'empty'
     );
 
+    /**
+     * @var JRegistry
+     */
+    public $params;
+
+    public $table = '#__moo_join_submission';
+
     public $field_value_map = array();
 
-    public function __construct(JInput $input)
+    public function __construct(JInput $input, JRegistry $params)
     {
         foreach (array_keys($this->field_validator_map) as $field) {
-            $this->field_value_map[$field] = trim($input->get('field', null, 'string'));
+            $this->field_value_map[$field] = trim($input->get($field, null, 'string'));
         }
+
+        $this->params = $params;
     }
 }

@@ -111,5 +111,6 @@ require_once('setup.php');
         <img src="templates/<?= $this->template ?>/img/arrow_left_orange.png" />
         <img src="templates/<?= $this->template ?>/img/arrow_right_red.png" />
         <img src="templates/<?= $this->template ?>/img/arrow_right_orange.png" />
+        <img src="templates/<?= $this->template ?>/img/form_label_error_triangle.png" />
     </div>
 </body>
