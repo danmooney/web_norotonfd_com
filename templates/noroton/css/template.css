@@ -947,6 +947,10 @@ body.operations strong {
     padding: 20px 30px;
 }
 
+#box-join #form-join {
+    margin-top: 30px;
+}
+
 #box-join .heading > h2 {
     font-weight: 600;
     text-align: center;
@@ -977,10 +981,14 @@ body.operations strong {
     margin: 10px 0;
 }
 
-#box-join .formline input {
+#box-join .formline input,
+#box-join .formline select
+{
     padding: 5px 10px;
     font-size: 14px;
     margin-right: 5px;
+    border: 1px solid #707070;
+    outline-color: #EA9A25;
 }
 
 #box-join .formline input.last {
@@ -1030,6 +1038,11 @@ body.operations strong {
 #box-join #occupation
 {
     width: 400px;
+}
+
+#box-join #form-join select#state {
+    width: 144px;
+    margin-left: 10px;
 }
 
 #box-join #dob {

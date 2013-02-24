@@ -8,7 +8,16 @@ defined('_JEXEC') or die('Restricted Access') ?>
     </div>
     <div class="formline">
         <input type="text" id="address" name="address" placeholder="Street Address" />
-        <input type="text" id="state" name="state" placeholder="State" />
+        <?php
+            $options = array();
+            $options[] = JHTML::_('select.option', 'NULL', 'State');
+            foreach ($helper->states as $state) {
+                $options[] = JHTML::_('select.option', $state, $state);
+            }
+            echo JHtml::_('select.genericList', $options, 'state', 'class="inputbox" style=" font-size:14px;"', 'value', 'text', '');
+        ?>
+
+        <?php // <input type="text" id="state" name="state" placeholder="State" /> ?>
         <input class="last" type="text" id="zip" name="zip" placeholder="Zip Code" />
     </div>
     <div class="formline">
