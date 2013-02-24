@@ -5,6 +5,18 @@ class MooJoinValidator
     public $errors = array();
     public $validator_map = array();
 
+    public $messages = array (
+        'alpha' => '%s must only consist of the alphabet, spaces, hyphens (-), periods (.) and single quotes (\').',
+        'state' => 'Please select a state.',
+        'zip' => 'Please enter a valid zip code.',
+        'phone' => 'Please enter a valid phone number.',
+        'number' => '%s must be a number.',
+        'date' => '%s must be a valid date.',
+        'filled' => '%s must be filled out.',
+        'empty' => '%s must be empty.',
+        'email' => 'Please enter a valid email.'
+    );
+
     public function validate(array $field_value_map)
     {
         foreach ($this->validator_map as $field => $validator) {
@@ -17,8 +29,8 @@ class MooJoinValidator
             $result = $this->$validate_fn($field_value_map[$field]);
 
             if (false === $result) {
-                die($validate_fn . ' ' . $field . ' failed: ' . $field_value_map[$field]);
-                $this->errors[] = $field;
+//                die($validate_fn . ' ' . $field . ' failed: ' . $field_value_map[$field]);
+                $this->errors[$field] = sprintf($this->messages[$validator], ucwords(str_replace('_', ' ', $field)));
             }
         }
 

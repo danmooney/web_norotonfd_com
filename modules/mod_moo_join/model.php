@@ -13,6 +13,7 @@ class MooJoinModel
         'occupation' => 'filled',
         'dob' => 'date',
         'birthplace' => 'filled',
+        'citizen' => 'filled',
         'hp' => 'empty'
     );
 

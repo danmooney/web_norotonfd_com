@@ -4,7 +4,7 @@
         $.validator.addMethod('alpha', function (value, element) {
             return this.optional(element) || /^[\sa-z\-\.']+$/i.test(value);
         },
-            'This field should only consist of the alphabet, spaces, hyphens (-), periods (.) and single quotes (\')'
+            'This field must only consist of the alphabet, spaces, hyphens (-), periods (.) and single quotes (\')'
         );
 
         $.validator.addMethod('zip', function (value, element) {

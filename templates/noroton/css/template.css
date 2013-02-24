@@ -1091,6 +1091,23 @@ body#site.operations #content a {
     bottom: -6px;
 }
 
+#box-join .box-errors {
+    background: #FBB;
+    border: 2px dotted #F00;
+    padding: 10px 0;
+    margin-top: 30px;
+}
+
+/*#box-join .box-errors ul,*/
+/*#box-join .box-errors li*/
+/*{*/
+    /*margin: 0;*/
+/*}*/
+
+#box-join .box-errors ul li {
+    color: #000;
+}
+
 /** EXTERNAL LINKS **/
 #footer .external-links-menu {
     margin-top: 16px;
