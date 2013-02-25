@@ -12,6 +12,22 @@ require_once('setup.php');
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Share' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" type="text/css" href="templates/<?= $this->template ?>/css/template.css" />
+    <noscript>
+        <style>
+            #content .event-carousel {
+                position: static;
+                width: auto;
+            }
+
+            #content .event-carousel .event-container {
+                margin: 0 auto;
+            }
+
+            #content .event-carousel li {
+                width: auto;
+            }
+        </style>
+    </noscript>
 </head>
 <body id="site" class="<?= $body_class ?>">
     <div id="header">
