@@ -1,0 +1,50 @@
+/* JOOMLA 2.5 COMPLETELY SCREWS UP THE SELECT.BOOLEANLIST JHTML TEMPLATE */
+@import url(http://fonts.googleapis.com/css?family=Quantico:400,700);
+
+.boolean label {
+    clear: none !important;
+    min-width: 30px !important;
+}
+
+/* AND IMAGES IN SINGLE VIEW */
+.admintable img {
+    float: none !important;
+}
+
+/* TABLE HEADING PADDING LEFT DOESN'T MATCH THAT OF TABLE DATA */
+.adminlist th {
+    padding-left: 8px !important;
+}
+
+tr.relative td.key {
+    display: inline-block;
+    margin-top: 8px;
+}
+
+td span.readonly {
+    margin-left: 10px;
+}
+
+.boolean #published0, .boolean > input:first-child {
+    margin-left: 10px;
+}
+
+td.json {
+    padding-left: 11px;
+}
+
+/** ORDERING MESSED UP TOO **/
+.jgrid span.state {
+    background-repeat: no-repeat;
+}
+
+span.multifield {
+    float: left;
+    margin-left: 20px;
+    margin-right: 10px;
+    line-height: 31px;
+}
+
+div.textarea {
+    float: left;
+}
