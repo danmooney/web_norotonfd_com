@@ -41,32 +41,27 @@ class MooConfig
         /* THIS SHOULD BE THE ONLY THING YOU NEED TO EDIT */
         self::$pages = array (
             'moomembers' => array (
-                'title' => 'Operations',
-                'file_folder' => 'operations',
-                'table' => 'moo_operation',
-                'singular' => 'operation',
-                'submenu_title' => 'Operations',
+                'title' => 'Members Area - Calendar',
+                'file_folder' => 'calendar',
+                'table' => 'moo_calendar_event',
+                'singular' => 'event',
+                'submenu_title' => 'Calendar Events',
                 'alias' => 'o',
-                'default_empty_msg' => 'Sorry, no operations could be found!  Please try again.',
+                'default_empty_msg' => 'Sorry, no calendar events could be found!  Please try again.',
                 'model' => array (
                     'selects'  => array (
-                        'o.operation_id',
-                        'o.category',
-                        'o.thumbnail_image',
-                        'o.image',
-                        'o.title',
-                        'o.text',
-                        'o.features',
-                        'o.ordering',
-                        'o.published',
+                        '*'
                     ),
                     'joins' => array (
                     ),
                     'where_fields' => array (
+                        'location',
+                        'email',
+                        'phone',
                         'title',
+                        'summary',
                         'text',
-                        'category',
-                        'features'
+                        'published',
                     ),
                     /**
                      * Store url alias
@@ -79,42 +74,36 @@ class MooConfig
                 ),
                 'view' => array (
                     'all' => array (
+                        'date' => array (
+                            'date_format' => 'F j, Y',
+                            'link' => true,
+                            'sort' => true,
+                            'width' => '6%'
+                        ),
                         'title' => array (
+                            'sort' => true,
+                            'width' => '3%'
+                        ),
+                        'location' => array (
+                            'sort' => true,
+                            'width' => '3%'
+                        ),
+                        'address' => array (
                             'link' => true,
                             'sort' => true,
-                            'width' => '5%',
+                            'width' => '12%',
                         ),
-                        'category' => array (
-                            'heading' => 'Type of Operation',
+                        'email' => array (
+                            'sort' => 'true',
+                            'width' => '20%'
+                        ),
+                        'phone' => array (
                             'sort' => true,
-                            'width' => '4%'
-                        ),
-                        'thumbnail_image' => array (
-                            'width' => '10%',
-                            'heading' => 'Thumbnail Image',
-                            'formatter' => 'image',
-                            'link' => true,
-//                            'use_thumb' => true,
-                        ),
-                        'image' => array (
-                            'width' => '20%',
-                            'heading' => 'Image',
-                            'formatter' => 'image',
-                            'link' => true,
-                            'use_thumb' => true,
+                            'width' => '30%'
                         ),
                         'text' => array (
                             'sort' => true,
-                            'heading' => 'Text Content'
-                        ),
-                        'features' => array (
-                            'sort' => true,
-                            'formatter' => 'nl2br',
-                            'align' => 'left'
-                        ),
-                        'ordering' => array (
-                            'width' => '5%',
-                            'sort' => true
+                            'width' => '3%'
                         ),
                         'published' => array (
                             'width' => '5%',
@@ -122,93 +111,158 @@ class MooConfig
                         )
                     ),
                     'single' => array (
+                        'date' => array (
+                            'formatter' => 'date'
+                        ),
                         'title' => array (
-                            
-                        ),
-                        'category' => array (
-                            'heading' => 'Type of Operation'
-                        ),
-                        'thumbnail_image' => array (
-                            'heading' => 'Thumbnail Image',
-                            'formatter' => 'file',
-                            'image' => 'true',
-                            'upload_width' => 188,
-                            'upload_height' => 127,
-//                            'upload_thumb_width' => 300
-                        ),
-                        'image' => array (
-                            'heading' => 'Image',
-                            'formatter' => 'file',
-                            'image' => 'true',
-                            'upload_width' => 483,
-                            'upload_thumb_width' => 300
+
                         ),
                         'text' => array (
                             'formatter' => 'textarea',
-                            'allow_html' => true,
-//                            'load_css' => array (
-//                                '../templates/noroton/css/template.css'
-//                            )
-                        ),
-                        'features' => array (
-                            'formatter' => 'textarea'
-                        ),
-                        'ordering' => array (
-                            'additional_style' => 'width:25px;'
+                            'allow_html' => true
                         ),
                         'published' => array (
                             'formatter' => 'boolean'
-                        ),
+                        )
                     )
                 ),
-                'controller' => array (
-                )
+                'controller' => array ()
             ),
-            'text' => array (
-                'link' => 'index.php?option=com_moooperations&type=text&task=edit&cid[]=1',
-                'always_show_submenu' => true,
-                'toolbar' => array (
-                    'edit' => array (
-                        'apply'
-                    ),
-                    'default' => array (
-                        'apply',
-                    )
-                ),
-                'title' => 'Text',
-                'table' => 'moo_operation_text',
-                'alias' => 't',
+            'notice' => array (
+                'title' => 'Members Area - Notices',
+                'file_folder' => 'notices',
+                'table' => 'moo_notice',
+                'singular' => 'notice',
+                'submenu_title' => 'Notices',
+                'alias' => 'n',
+                'default_empty_msg' => 'Sorry, no notices could be found!  Please try again.',
                 'model' => array (
                     'selects'  => array (
-                        '*',
+                        '*'
                     ),
                     'joins' => array (
                     ),
                     'where_fields' => array (
-                        'before_text',
-                        'after_text',
+                        'date',
+                        'title',
+                        'text',
                     ),
+                    /**
+                     * Store url alias
+                     */
+                    'pre_hook' => function (&$row) {
+                        if (trim($row->title) !== '') {
+                            $row->alias = MooHelper::makeUrlFriendly($row->title);
+                        }
+                    }
                 ),
                 'view' => array (
+                    'all' => array (
+                        'date' => array (
+                            'date_format' => 'F j, Y',
+                            'link' => true,
+                            'sort' => true,
+                            'width' => '6%'
+                        ),
+                        'title' => array (
+                            'sort' => true,
+                            'width' => '3%'
+                        ),
+                        'text' => array (
+                            'sort' => true,
+                            'width' => '3%'
+                        ),
+                        'published' => array (
+                            'width' => '5%',
+                            'sort' => true
+                        )
+                    ),
                     'single' => array (
-                        'before_text' => array (
-                            'formatter' => 'textarea',
-                            'allow_html' => true,
-                            'heading' => 'Text Before Fleet Operations List'
+                        'date' => array (
+                            'formatter' => 'date'
                         ),
-                        'after_text' => array (
-                            'formatter' => 'textarea',
-                            'allow_html' => true,
-                            'heading' => 'Text After Fleet Operations List'
+                        'title' => array (
+
                         ),
-                        'operation_text_id' => array (
-                            'formatter' => 'hidden',
-                            'value' => 1
+                        'text' => array (
+                            'formatter' => 'textarea',
+                            'allow_html' => true
+                        ),
+                        'published' => array (
+                            'formatter' => 'boolean'
                         )
                     )
                 ),
-                'controller' => array (
-                )
+                'controller' => array ()
+            ),
+            'documents' => array (
+                'title' => 'Members Area - Documents',
+                'file_folder' => '../files', // TODO - see if this'll work
+                'table' => 'moo_document',
+                'singular' => 'document',
+                'submenu_title' => 'Documents',
+                'alias' => 'd',
+                'default_empty_msg' => 'Sorry, no documents could be found!  Please try again.',
+                'model' => array (
+                    'selects'  => array (
+                        '*'
+                    ),
+                    'joins' => array (
+                    ),
+                    'where_fields' => array (
+                        'date',
+                        'title',
+                        'filename',
+                    ),
+                    /**
+                     * Store url alias
+                     */
+                    'pre_hook' => function (&$row) {
+                        if (trim($row->title) !== '') {
+                            $row->alias = MooHelper::makeUrlFriendly($row->title);
+                        }
+                    }
+                ),
+                'view' => array (
+                    'all' => array (
+                        'date' => array (
+                            'date_format' => 'F j, Y',
+                            'link' => true,
+                            'sort' => true,
+                            'width' => '6%'
+                        ),
+                        'title' => array (
+                            'sort' => true,
+                            'width' => '3%'
+                        ),
+                        'filename' => array (
+                            'heading' => 'File',
+                            'sort' => true,
+                            'link' => true,
+                            'width' => '3%'
+                        ),
+                        'published' => array (
+                            'width' => '5%',
+                            'sort' => true
+                        )
+                    ),
+                    'single' => array (
+                        'date' => array (
+                            'formatter' => 'date'
+                        ),
+                        'title' => array (
+
+                        ),
+                        'filename' => array (
+                            'heading' => 'File',
+                            'formatter' => 'file'
+                        ),
+                        'published' => array (
+                            'formatter' => 'boolean'
+                        )
+                    )
+                ),
+                'controller' => array ()
             ),
         );
     }
