@@ -1113,3 +1113,27 @@ body#site.operations #content a {
 #footer .external-links-menu {
     margin-top: 16px;
 }
+
+/** MEMBERS **/
+body.article-9 #calendar-container {
+    padding: 10px 150px 30px;
+}
+
+body.article-9 #calendar-container .heading {
+    margin: 10px 0 25px;
+}
+
+/** FULL CALENDAR **/
+.fc-content {
+    background: #FFF;
+    color: #000;
+}
+
+.fc-event[style] {
+    position: relative !important;
+    display: inline-block;
+}
+
+.fc-event-title {
+    font-size: 13px;
+}

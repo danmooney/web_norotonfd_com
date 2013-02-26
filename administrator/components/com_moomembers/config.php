@@ -59,7 +59,6 @@ class MooConfig
                         'email',
                         'phone',
                         'title',
-                        'summary',
                         'text',
                         'published',
                     ),
@@ -78,7 +77,10 @@ class MooConfig
                             'date_format' => 'F j, Y',
                             'link' => true,
                             'sort' => true,
-                            'width' => '6%'
+                            'width' => '2%'
+                        ),
+                        'time' => array (
+                            'width' => '2%'
                         ),
                         'title' => array (
                             'sort' => true,
@@ -95,11 +97,11 @@ class MooConfig
                         ),
                         'email' => array (
                             'sort' => 'true',
-                            'width' => '20%'
+                            'width' => '6%'
                         ),
                         'phone' => array (
                             'sort' => true,
-                            'width' => '30%'
+                            'width' => '5%'
                         ),
                         'text' => array (
                             'sort' => true,
@@ -114,7 +116,22 @@ class MooConfig
                         'date' => array (
                             'formatter' => 'date'
                         ),
+                        'time' => array (
+                            'additional_style' => 'width: 70px'
+                        ),
                         'title' => array (
+
+                        ),
+                        'location' => array (
+
+                        ),
+                        'address' => array (
+
+                        ),
+                        'email' => array (
+
+                        ),
+                        'phone' => array (
 
                         ),
                         'text' => array (
