@@ -2,6 +2,16 @@
 
 class MooMembersModel
 {
+    /**
+     * @var MooViewHelper
+     */
+    private $_helper;
+
+    public function __construct(MooViewHelper $helper)
+    {
+        $this->_helper = $helper;
+    }
+
     public function getCalendarEvents()
     {
         $db = JFactory::getDBO();
@@ -17,9 +27,9 @@ class MooMembersModel
 
         // TODO - add url to each
         foreach ($results as $result) {
+            $result->title = $this->_helper->truncate($result->title, 30);
             $result->url = 'http://www.google.com/';
         }
-
 
         return $results;
     }

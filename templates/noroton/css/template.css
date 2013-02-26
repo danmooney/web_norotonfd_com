@@ -1123,6 +1123,25 @@ body.article-9 #calendar-container .heading {
     margin: 10px 0 25px;
 }
 
+body.article-9 #calendar-container {
+    margin-bottom: 25px;
+}
+
+body.article-9 .half-box {
+    padding: 10px 25px 45px;
+    width: 417px;
+
+}
+
+body.article-9 .half-box .heading {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #FFF;
+}
+
+body.article-9 .half-box-container {
+    position: relative;
+}
+
 /** FULL CALENDAR **/
 .fc-content {
     background: #FFF;

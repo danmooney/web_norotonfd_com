@@ -12,8 +12,8 @@ $document = JFactory::getDocument();
 $document->addScript(JURI::base() . 'templates/noroton/js/fullcalendar.min.js');
 $document->addStyleSheet(JURI::base() . 'templates/noroton/css/fullcalendar.css');
 
-$model = new MooMembersModel();
 $helper = new MooViewHelper();
+$model = new MooMembersModel($helper);
 
 $calendar_events = $model->getCalendarEvents();
 $notices = $model->getNotices();
