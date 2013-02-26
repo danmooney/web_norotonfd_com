@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="2.5.0" method="upgrade">
-    <name>Moo News Component</name>
+    <name>moo_news</name>
     <!-- The following elements are optional and free of formatting constraints -->
     <creationDate>February 2013</creationDate>
     <author>Dan Mooney</author>

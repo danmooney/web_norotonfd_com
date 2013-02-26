@@ -34,7 +34,7 @@ defined('_JEXEC') or die('Restricted Access')
                 <?php
                     if (/*!empty($event->text)*/ true === true): ?>
                         <div class="more-button">
-                            <a href="#">
+                            <a href="<?= JRoute::_('index.php?option=com_moonews&nid=' . $event->news_id) ?>">
                                 <span>Learn More</span>
                             </a>
                         </div>

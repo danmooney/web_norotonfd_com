@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <metadata>
-    <layout title="Moo Operations List">
+    <layout title="Moo News List">
         <message>
-            <![CDATA[Display a list of operations]]>
+            <![CDATA[Display a list of news]]>
         </message>
     </layout>
     <!--<fields name="request">-->
