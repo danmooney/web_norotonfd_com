@@ -49,17 +49,6 @@ require_once('setup.php');
                     <span class="separator"></span>
                 </li>
                 <jdoc:include type="modules" name="social-icons" />
-                <?php /*
-                <li>
-                    <div id="fb" class="social">
-                        <a href="#"></a>
-                    </div>
-                </li>
-                <li>
-                    <div id="tw" class="social">
-                        <a href="#"></a>
-                    </div>
-                </li> */ ?>
             </ul>
             <jdoc:include type="modules" name="top-menu" />
             <jdoc:include type="modules" name="main-menu" />
@@ -84,32 +73,6 @@ require_once('setup.php');
         <div id="footer-bg-top"></div>
         <div class="content-container center">
             <jdoc:include type="modules" name="bottom-menu" />
-            <?php /*
-            <ul class="menu">
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <span class="separator">|</span>
-                <li>
-                    <a href="#">History</a>
-                </li>
-                <span class="separator">|</span>
-                <li>
-                    <a href="#">Operations</a>
-                </li>
-                <span class="separator">|</span>
-                <li>
-                    <a href="#">Fire Safety</a>
-                </li>
-                <span class="separator">|</span>
-                <li>
-                    <a href="#">Fundraising</a>
-                </li>
-                <span class="separator">|</span>
-                <li>
-                    <a href="#">Join Our Crew</a>
-                </li>
-            </ul>*/ ?>
             <div class="clr"></div>
             <jdoc:include type="modules" name="external-links-menu" />
             <div class="clr"></div>
@@ -117,6 +80,7 @@ require_once('setup.php');
         </div>
     </div>
     <script src="templates/<?= $this->template ?>/js/jquery.anythingslider-1.8.6-min.js"></script>
+    <script src="templates/<?= $this->template ?>/js/jquery.aviaslider.min.js"></script>
     <script src="templates/<?= $this->template ?>/js/jquery-validation-1.11.0.js"></script>
     <script src="templates/<?= $this->template ?>/js/carousel.js"></script>
     <script src="templates/<?= $this->template ?>/js/site.js"></script>

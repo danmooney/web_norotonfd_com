@@ -1,7 +1,20 @@
 (function($) {
     'use strict';
+
+    $(document).ready(function setupFader () {
+        $('#header').find('.carousel').aviaSlider({
+            animationSpeed : 2000,
+            transition: 'fade',
+            blockSize: {
+                height: 400,
+                width: 948
+            }
+        });
+    });
+
+
     var thisSlider;
-    $(document).ready(function () {
+    $(document).ready(function setupReels () {
         var body = $('body'),
             containerEl = $('.event-carousel-container'),
             carouselEl = containerEl.find('.event-carousel'),

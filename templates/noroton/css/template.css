@@ -339,6 +339,7 @@ fieldset, legend {
 #hero-image {
     background: #000;
     height: 100%;
+    overflow: hidden;
 }
 
 #hero-image-container-bg {
@@ -820,9 +821,14 @@ body#site #content .event-detailed .more-button a {
     right: 10px;
 }
 
+#header .carousel {
+    position: relative;
+}
+
 #header .carousel li {
     position: relative;
     height: 400px;
+    float: left;
 }
 
 #header .carousel .overlay {
