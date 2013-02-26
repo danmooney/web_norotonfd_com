@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="2.5.0" method="upgrade">
-    <name>Moo News</name>
+    <name>Moo News Component</name>
     <!-- The following elements are optional and free of formatting constraints -->
     <creationDate>February 2013</creationDate>
     <author>Dan Mooney</author>
@@ -25,14 +25,14 @@
         <folder>views</folder>
     </files>
 
-    <!--<administration>-->
-        <!--&lt;!&ndash; Administration Menu Section &ndash;&gt;-->
-        <!--<menu>Moo News</menu>-->
-        <!--&lt;!&ndash; Administration Main File Copy Section &ndash;&gt;-->
-        <!--<files folder="admin">-->
-            <!--&lt;!&ndash; Admin Main File Copy Section &ndash;&gt;-->
-            <!--<filename>moonews.php</filename>-->
-        <!--</files>-->
-    <!--</administration>-->
+    <administration>
+        <!-- Administration Menu Section -->
+        <menu>Moo News Component</menu>
+        <!-- Administration Main File Copy Section -->
+        <files folder="admin">
+            <!-- Admin Main File Copy Section -->
+            <filename>moonews.php</filename>
+        </files>
+    </administration>
 
 </extension>
