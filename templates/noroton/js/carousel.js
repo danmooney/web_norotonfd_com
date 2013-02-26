@@ -2,6 +2,9 @@
     'use strict';
 
     $(document).ready(function setupFader () {
+        if ($('#header').find('.carousel').find('li').length <= 1) {
+            return;
+        }
         $('#header').find('.carousel').aviaSlider({
             animationSpeed : 2000,
             transition: 'fade',
@@ -11,7 +14,6 @@
             }
         });
     });
-
 
     var thisSlider;
     $(document).ready(function setupReels () {

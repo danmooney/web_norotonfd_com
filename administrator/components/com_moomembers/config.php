@@ -84,16 +84,16 @@ class MooConfig
                         ),
                         'title' => array (
                             'sort' => true,
-                            'width' => '3%'
+                            'width' => '5%'
                         ),
                         'location' => array (
                             'sort' => true,
-                            'width' => '3%'
+                            'width' => '5%'
                         ),
                         'address' => array (
                             'link' => true,
                             'sort' => true,
-                            'width' => '12%',
+                            'width' => '6%',
                         ),
                         'email' => array (
                             'sort' => 'true',
@@ -105,10 +105,10 @@ class MooConfig
                         ),
                         'text' => array (
                             'sort' => true,
-                            'width' => '3%'
+                            'width' => '10%'
                         ),
                         'published' => array (
-                            'width' => '5%',
+                            'width' => '1%',
                             'sort' => true
                         )
                     ),
