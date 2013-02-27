@@ -1,5 +1,5 @@
 <?php
-namespace Moo\Operations;
+namespace Moo\News;
 
 defined('_JEXEC') or die('Restricted Access');
 

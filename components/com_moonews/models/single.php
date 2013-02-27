@@ -1,6 +1,6 @@
 <?php
 
-namespace Moo\Operations;
+namespace Moo\News;
 
 class ModelSingle extends ModelAbstract
 {
@@ -23,7 +23,7 @@ class ModelSingle extends ModelAbstract
             $query
                 ->select('*')
                 ->from($this->_table)
-                ->where('operation_id = ' . $this->_id);
+                ->where('news_id = ' . $this->_id);
 
             $this->_db->setQuery($query);
 

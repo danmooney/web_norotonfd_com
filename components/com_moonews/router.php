@@ -2,13 +2,13 @@
 
 defined('_JEXEC') or die('Restricted Access.');
 
-function MooOperationsBuildRoute(&$query)
+function MooNewsBuildRoute(&$query)
 {
     $segments = array();
     if (isset($query['cid'])) {
 
         if (is_numeric($query['cid'])) {
-            $segments[] = getAliasById($query['cid']);
+            $segments[] = getNewsById($query['cid']);
         }
 
         unset($query['cid']);
@@ -18,7 +18,7 @@ function MooOperationsBuildRoute(&$query)
     return $segments;
 }
 
-function MooOperationsParseRoute(&$segments)
+function MooNewsParseRoute(&$segments)
 {
     $vars = array();
 
@@ -27,25 +27,25 @@ function MooOperationsParseRoute(&$segments)
             $vars['cid'] = $segments[0];
         } else {
             $name = str_replace(':', '-', $segments[0]);
-            $id = getIdByName($name);
+
+            $id = getNewsIdByName($name);
             if (null === $id) {
                 return JError::raiseError(404, JText::_('Page not found'));
             }
             $vars['cid'] = $id;
+            $vars['view'] = 'single';
         }
     }
-
-    $vars['view'] = 'single';
 
     return $vars;
 }
 
-function getIdByName($name)
+function getNewsIdByName($name)
 {
     $db = \JFactory::getDBO();
     $query = $db->getQuery(true);
-    $query->select('operation_id')
-          ->from('#__moo_operation')
+    $query->select('news_id')
+          ->from('#__moo_news')
           ->where('alias = ' . $db->quote($name));
 
     $db->setQuery($query);
@@ -53,14 +53,14 @@ function getIdByName($name)
     return $result;
 }
 
-function getAliasById($id)
+function getNewsById($id)
 {
     $db = \JFactory::getDBO();
     $query = $db->getQuery(true);
     $query
         ->select('alias')
-        ->from('#__moo_operation')
-        ->where('operation_id = ' . (int) $id);
+        ->from('#__moo_news')
+        ->where('news_id = ' . (int) $id);
 
     $db->setQuery($query);
     $result = $db->loadResult();

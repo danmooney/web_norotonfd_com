@@ -1,5 +1,5 @@
 <?php
-namespace Moo\Operations;
+namespace Moo\News;
 
 class Controller extends \JController
 {

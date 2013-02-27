@@ -8,7 +8,7 @@ function MooOperationsBuildRoute(&$query)
     if (isset($query['cid'])) {
 
         if (is_numeric($query['cid'])) {
-            $segments[] = getAliasById($query['cid']);
+            $segments[] = getOperationAliasById($query['cid']);
         }
 
         unset($query['cid']);
@@ -27,7 +27,7 @@ function MooOperationsParseRoute(&$segments)
             $vars['cid'] = $segments[0];
         } else {
             $name = str_replace(':', '-', $segments[0]);
-            $id = getIdByName($name);
+            $id = getOperationIdByName($name);
             if (null === $id) {
                 return JError::raiseError(404, JText::_('Page not found'));
             }
@@ -40,7 +40,7 @@ function MooOperationsParseRoute(&$segments)
     return $vars;
 }
 
-function getIdByName($name)
+function getOperationIdByName($name)
 {
     $db = \JFactory::getDBO();
     $query = $db->getQuery(true);
@@ -53,7 +53,7 @@ function getIdByName($name)
     return $result;
 }
 
-function getAliasById($id)
+function getOperationAliasById($id)
 {
     $db = \JFactory::getDBO();
     $query = $db->getQuery(true);
