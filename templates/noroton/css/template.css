@@ -380,6 +380,13 @@ fieldset, legend {
     margin-top: 100px;
 }
 
+#content .line-horizontal {
+    background: url(../img/line_horizontal.png) repeat;
+    height: 2px;
+    width: 100%;
+    margin: 30px 0;
+}
+
 #footer-bg-top {
     background: url(../img/footer_bg_top.png) repeat-x;
     height: 26px;
