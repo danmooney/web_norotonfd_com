@@ -4,6 +4,7 @@ defined('_JEXEC') or die('Restricted Access');
 
 ?>
 
+<div id="carousel-controls"></div>
 <ul class="carousel">
     <?php
         foreach ($images as $image):

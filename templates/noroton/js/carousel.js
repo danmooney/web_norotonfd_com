@@ -11,6 +11,9 @@
             blockSize: {
                 height: 400,
                 width: 948
+            },
+            appendControlls: function () {
+
             }
         });
     });

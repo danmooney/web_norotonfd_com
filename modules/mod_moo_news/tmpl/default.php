@@ -11,7 +11,7 @@ $use_carousel = (count($model->getNews()) > 1);
         NEWS
     </div>
     <div class="more-button">
-        <a href="#">More</a>
+        <a href="<?= JRoute::_('index.php?option=com_moonews') ?>">More</a>
     </div>
 </div>
 

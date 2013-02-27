@@ -838,6 +838,30 @@ body#site #content .event-detailed .more-button a {
     padding: 0 20px;
 }
 
+#header #carousel-controls {
+    position: absolute;
+    bottom: 15px;
+    z-index: 21;
+    width: 948px;
+    text-align: center;
+}
+
+#header #carousel-controls .carousel-button {
+    background: url(../img/carousel_circle_red.png) no-repeat;
+    width: 20px;
+    height: 19px;
+    display: block;
+    float: left;
+}
+
+#header #carousel-controls .carousel-button.active-button {
+    background-image: url(../img/carousel_circle_orange.png);
+}
+
+#header #carousel-controls .slide-controls {
+    display: inline-block;
+}
+
 /** OPERATIONS **/
 
 body.operations #operations-container {
