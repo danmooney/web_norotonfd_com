@@ -7,14 +7,12 @@ $helper = $this->helper;
 
 defined('_JEXEC') or die('Restricted Access.');
 
-$image_exists = $helper->imageExists($row->image);
+//$image_exists = $helper->imageExists($row->image);
+//
+//$image_exists_str = !$image_exists
+//    ? 'no-image'
+//    : '';
 
-$image_exists_str = !$image_exists
-    ? 'no-image'
-    : '';
 
-?>
-
-<?= $helper->output($row->title, '<h1 class="bold">' . $row->title . '</h1>') ?>
-
-<?= $helper->output($row->text) ?>
+echo $helper->output($row->title, '<h1 class="bold">' . $row->title . '</h1>');
+echo $helper->output($row->text);
