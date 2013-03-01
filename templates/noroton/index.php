@@ -8,16 +8,18 @@ require_once('setup.php');
 <html>
 <head>
     <script src="templates/<?= $this->template ?>/js/jquery-1.9.0-src.js"></script>
+    <script>com_noroton = {};</script>
     <jdoc:include type="head" />
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Share' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" type="text/css" href="templates/<?= $this->template ?>/css/template.css" />
     <noscript>
         <style>
-            #content .event-carousel {
-                position: static;
-                width: auto;
-            }
+            /*#content .event-carousel {*/
+                /*position: static;*/
+                /*width: auto;*/
+                /*margin-left: 50px;*/
+            /*}*/
 
             #content .event-carousel .event-container {
                 margin: 0 auto;

@@ -651,8 +651,10 @@ body#site #content .events-header-container .more-button a {
 #content .event-carousel {
     text-align: left;
     display: inline-block;
-    position: absolute;
+    /*position: absolute;*/
     width: 9999px;
+    /** **/
+    margin-left: 48px;
 }
 
 #content .event-carousel li {
@@ -735,6 +737,7 @@ body#site #content .event-carousel .event-general .overlay p {
 #content .event-carousel-container .circle-small-container {
     /*margin: 0 auto;*/
     display: inline-block;
+    visibility: hidden;
 }
 
 #content .event-carousel-container .circle-small-outer {
@@ -751,7 +754,7 @@ body#site #content .event-carousel .event-general .overlay p {
     height: 100%;
     background-position: 44% 47%;
     background-repeat: no-repeat;
-    display: none;
+    /*display: none;*/
 }
 
 #content .event-carousel-container .circle-small-outer.active .circle-small-inner {
@@ -767,7 +770,6 @@ body#site #content .event-carousel .event-general .overlay p {
 }
 
 #content .event-carousel-container-detailed .circle-small-container {
-    visibility: hidden;
     margin-top: 25px;
 }
 

@@ -25,6 +25,12 @@ class ModMooCarousel
         return $this->_table;
     }
 
+
+    public function getDelay()
+    {
+        return $this->_params->get('delay', 4000);
+    }
+
     /**
      * @var JRegistry
      */

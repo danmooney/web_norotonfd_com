@@ -13,19 +13,11 @@
     <description>Lists out images for carousel</description>
     <files>
     </files>
-    <!--<config>-->
-        <!--<fields name="params">-->
-            <!--<fieldset name="basic">-->
-                <!--<field name="header" type="text" label="Header Text" description="The header text that appears above the reel" />-->
-                <!--<field name="reel-subject" type="radio" default="news" label="Reel subject">-->
-                    <!--<option value="news">News</option>-->
-					<!--<option value="event">Events</option>-->
-                <!--</field>-->
-                <!--<field name="reel-type" type="radio" default="detailed" label="Reel display type">-->
-                    <!--<option value="detailed">Detailed</option>-->
-                    <!--<option value="general">General</option>-->
-                <!--</field>-->
-            <!--</fieldset>-->
-        <!--</fields>-->
-    <!--</config>-->
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="speed" default="6" type="text" label="Delay (seconds)" description="The number of seconds to pause carousel before going to next slide" />
+            </fieldset>
+        </fields>
+    </config>
 </extension>
