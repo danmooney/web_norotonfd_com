@@ -48,7 +48,7 @@ spl_autoload_register(function ($class) {
                 ? 's'
                 : '';
 
-            $path[] = (string) implode('', array_slice($class_letters, $idx, $next_idx)) . $plural_appendage;
+            $path[] = (string) implode('', array_slice($class_letters, $idx, $next_idx - $idx)) . $plural_appendage;
         }
     }
 

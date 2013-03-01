@@ -92,7 +92,7 @@ class ModMooNews
     public function getTitle()
     {
         if (!isset($this->_title)) {
-            $this->_title = $this->_params->get('header');
+            $this->_title = $this->_params->get('header', 'NEWS');
         }
 
         return $this->_title;
