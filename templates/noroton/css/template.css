@@ -769,7 +769,7 @@ body#site #content .event-carousel .event-general .overlay p {
     background-image: url(../img/circle_orange_small.png);
 }
 
-#content .event-carousel-container-detailed .circle-small-container {
+#content .event-carousel-container .circle-small-container {
     margin-top: 25px;
 }
 

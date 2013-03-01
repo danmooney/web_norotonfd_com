@@ -2,7 +2,7 @@
 
 defined('_JEXEC') or die('Restricted Access');
 
-$use_carousel = (count($model->getNews()) > 1);
+$use_carousel = (count($model->getEvents()) > 1);
 
 ?>
 
@@ -11,7 +11,7 @@ $use_carousel = (count($model->getNews()) > 1);
         <?= $model->getTitle() ?>
     </div>
     <div class="more-button">
-        <a href="<?= JRoute::_('index.php?option=com_moonews&view=list&Itemid=141') ?>">More</a>
+        <a href="#">More</a>
     </div>
 </div>
 
@@ -42,7 +42,7 @@ $use_carousel = (count($model->getNews()) > 1);
         if ($use_carousel): ?>
 
         <?php
-            for ($i = 0; $i < count($model->getNews()); $i += 1): ?>
+            for ($i = 0; $i < count($model->getEvents()); $i += 1): ?>
                 <div class="circle-small-outer">
                     <div class="circle-small-inner"></div>
                 </div>

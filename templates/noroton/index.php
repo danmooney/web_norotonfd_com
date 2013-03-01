@@ -15,12 +15,6 @@ require_once('setup.php');
     <link rel="stylesheet" type="text/css" href="templates/<?= $this->template ?>/css/template.css" />
     <noscript>
         <style>
-            /*#content .event-carousel {*/
-                /*position: static;*/
-                /*width: auto;*/
-                /*margin-left: 50px;*/
-            /*}*/
-
             #content .event-carousel .event-container {
                 margin: 0 auto;
             }

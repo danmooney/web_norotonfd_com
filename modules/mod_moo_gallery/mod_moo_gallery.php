@@ -8,11 +8,10 @@ defined('_JEXEC') or die('Restricted Access');
 require_once('model.php');
 require_once(JPATH_SITE . DS . 'modules' . DS . '_view_helper.php');
 
+$model  = new ModMooEvents($params);
+$helper = new MooViewHelper('gallery');
 
-$model  = new ModMooNews($params);
-$helper = new MooViewHelper('news');
-
-$model->getNews();
+$model->getEvents();
 
 if ($model->getType() === 'detailed') {
     $model->clusterEventsByNum(2);
@@ -20,4 +19,4 @@ if ($model->getType() === 'detailed') {
     $model->clusterEventsByNum(4);
 }
 
-require JModuleHelper::getLayoutPath('mod_moo_news');
+require JModuleHelper::getLayoutPath('mod_moo_gallery');

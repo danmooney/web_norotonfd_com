@@ -4,19 +4,19 @@
     version="2.5"
     client="site"
     method="upgrade">
-    <name>Moo News</name>
+    <name>Moo Gallery Reel</name>
     <author>Dan Mooney</author>
     <creationDate>February 2013</creationDate>
     <copyright>Copyright (C) 2013 DanRonMoon</copyright>
     <authorEmail>dan.r.mooney@gmail.com</authorEmail>
     <authorUrl>www.danronmoon.com</authorUrl>
-    <description>List news in a reel fashion</description>
+    <description>List gallery in a reel fashion</description>
     <files>
     </files>
     <config>
         <fields name="params">
             <fieldset name="basic">
-                <field name="header" type="text" label="Header Text" default="NEWS" size="60" description="The header text that appears above the reel" />
+                <field name="header" type="text" label="Header Text" size="60" description="The header text that appears above the reel" default="What's Going On at Noroton" />
                 <!--<field name="reel-subject" type="radio" default="news" label="Reel subject">-->
                     <!--<option value="news">News</option>-->
 					<!--<option value="event">Events</option>-->
