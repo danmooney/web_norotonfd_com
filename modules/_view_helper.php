@@ -123,7 +123,7 @@ class MooViewHelper
 
     public function imageExists($src, $image_folder = '')
     {
-        if (empty($path)) {
+        if ($image_folder === '/') {
             $path = $this->getImgDir();
         } else {
             $path = $this->fixDSDuplication($image_folder . '/');
@@ -146,7 +146,14 @@ class MooViewHelper
 
         $this->_outputSuccess(true);
 
-        $image_src = sprintf('<img src="%s" />', $this->fixDSDuplication('images/' . $this->getImgDir() . '/' . $src));
+        if (empty($image_folder)) {
+            $image_src_path = $this->fixDSDuplication('images/' . $this->getImgDir() . '/' . $src);
+        } else {
+            $image_src_path = $this->fixDSDuplication('images/' . $image_folder . '/' . $src);
+        }
+
+
+        $image_src = sprintf('<img src="%s" />', $image_src_path);
 
         return $this->output($image_src, $formatted_output);
     }

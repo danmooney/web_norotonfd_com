@@ -78,7 +78,7 @@ class ModMooEvents
                 ->clear()
                 ->select('*')
                 ->from($this->getTable() . '_image')
-                ->where('placeholder = 1');
+                ->where('published = 1');
 
             $db->setQuery($query);
             $images = $db->loadObjectList('gallery_id');

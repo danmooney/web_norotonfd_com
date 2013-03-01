@@ -9,7 +9,7 @@ defined('_JEXEC') or die('Restricted Access');
         <?php
             $i = 0;
             foreach ($event_cluster as $idx => $event):
-                $image_exists = is_file(JPATH_SITE . DS . 'images' . DS . $helper->getImgDir() . DS . $event->filename);
+                $image_exists = is_file(JPATH_SITE . DS . 'images' . DS . $helper->getImgDir() . DS . 'thumbs' . DS . $event->filename);
 
                 $placeholder_str = !$image_exists
                     ? 'placeholder'
@@ -28,7 +28,7 @@ defined('_JEXEC') or die('Restricted Access');
                         <div class="image-container <?= $placeholder_str ?>">
                     <?php
                         if ($image_exists): ?>
-                            <?= $helper->outputImage($event->filename) ?>
+                            <?= $helper->outputImage($event->filename, null, $helper->getImgDir() . '/thumbs') ?>
                     <?php
                         endif ?>
                             <?= $helper->output($helper->truncate($event->title), '<div class="overlay"><p>{str}</p></div>') ?>

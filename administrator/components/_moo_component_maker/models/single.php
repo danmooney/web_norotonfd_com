@@ -57,11 +57,19 @@ class MooModelSingle extends JModel
             if ($file_str == 'Image') {
                 $arr_current_page  =  MooConfig::get('arr_current_page');
                 $arr_image_dims    =& $arr_current_page['view']['single'][$field_name_without_new];
-                
+
+                $image_size = getimagesize($target);
+
                 if (isset($arr_image_dims['upload_width']) ||
                     isset($arr_image_dims['upload_height'])
                 ) {
-                    $resize_image = true;    
+                    if (isset($arr_image_dims['upload_max_width']) &&
+                        intval($arr_image_dims['upload_max_width']) <= intval($image_size[0])
+                    ) {
+                        $resize_image = false;
+                    } else {
+                        $resize_image = true;
+                    }
                 } else {
                     $resize_image = false;
                 }
@@ -75,7 +83,7 @@ class MooModelSingle extends JModel
                 }
                  
                 if ($resize_image || $create_thumb) {
-                    $image_size = getimagesize($target);
+
                     require_once(MooConfig::get('wideimage_path'));
                     if ($resize_image) {
                         if (!isset($arr_image_dims['upload_height'])) {
