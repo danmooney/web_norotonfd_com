@@ -49,6 +49,8 @@ class MooConfig
                 'title' => 'News',
                 'file_folder' => 'news',
                 'table' => 'moo_news',
+                'default_ordering_field' => 'date',
+                'default_order' => 'DESC',
                 'singular' => 'News',
                 'alias' => 'n',
                 'default_empty_msg' => 'Sorry, no news could be found!  Please try again.',
