@@ -11,7 +11,7 @@ $use_carousel = (count($model->getEvents()) > 1);
         <?= $model->getTitle() ?>
     </div>
     <div class="more-button">
-        <a href="#">More</a>
+        <a href="<?= JRoute::_('index.php?option=com_moogallery&Itemid=144') ?>">More</a>
     </div>
 </div>
 

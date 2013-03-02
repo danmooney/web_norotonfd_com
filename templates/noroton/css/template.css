@@ -654,7 +654,7 @@ body#site #content .events-header-container .more-button a {
     /*position: absolute;*/
     width: 9999px;
     /** **/
-    margin-left: 48px;
+    margin-left: /*48*/47px;
 }
 
 #content .event-carousel li {
@@ -1198,21 +1198,20 @@ body.article-9 .half-box-container {
 
 /** NEWS LIST **/
 
-body#site.news h1 {
+body #news-list h1 {
     margin-bottom: 20px;
 }
 
-body#site.news .news-list li {
+body #news-list li {
     margin: 10px 0;
     list-style-type: disc;
 }
 
-body#site.news #content .news-list li a {
+body #content #news-list li a {
     color: #FFF;
     text-decoration: none;
-
 }
 
-body#site.news #content .news-list li a:hover {
+body #content #news-list li a:hover {
     text-decoration: underline;
 }
