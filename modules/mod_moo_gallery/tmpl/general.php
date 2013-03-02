@@ -24,7 +24,7 @@ defined('_JEXEC') or die('Restricted Access');
                 }
 ?>
                 <div class="event event-general <?= $idx_str ?>">
-                    <a href="<?= JRoute::_('index.php?option=com_moogallery&Itemid=144&cid=' . $event->gallery_id) ?>">
+                    <a data-cid="<?= $event->gallery_id ?>" href="<?= JRoute::_('index.php?option=com_moogallery&Itemid=144&cid=' . $event->gallery_id) ?>">
                         <div class="image-container <?= $placeholder_str ?>">
                     <?php
                         if ($image_exists): ?>

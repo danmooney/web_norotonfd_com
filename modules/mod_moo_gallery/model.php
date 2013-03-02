@@ -66,19 +66,21 @@ class ModMooEvents
                 ->select(array(
                     '*'
                 ))
-                ->from($this->getTable())
-//                ->join('INNER', $this->getTable() . ' AS g USING (gallery_id)')
-                ->where('published = 1')
-                ->order('date DESC');
+                ->from($this->getTable() . ' AS g')
+                ->join('INNER', $this->getTable() . '_image AS i USING (gallery_id)') // has to be at least one image
+                ->where('g.published = 1')
+                ->order('g.date DESC')
+                ->group('g.gallery_id');
 
             $db->setQuery($query);
             $events = $db->loadObjectList();
 
+            // get placeholders
             $query
                 ->clear()
                 ->select('*')
                 ->from($this->getTable() . '_image')
-                ->where('published = 1');
+                ->where('published = 1'); // placeholder image
 
             $db->setQuery($query);
             $images = $db->loadObjectList('gallery_id');

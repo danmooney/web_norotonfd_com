@@ -1,5 +1,5 @@
 (function($) {
-
+    'use strict';
     function validateForms () {
         $.validator.addMethod('alpha', function (value, element) {
             return this.optional(element) || /^[\sa-z\-\.']+$/i.test(value);
@@ -127,6 +127,68 @@
             }
         });
     }
+
+    (function bindPopups () {
+        var cidArr = [];
+
+        (function() {
+            $('.event-general').children('a').on('click', function (e) {
+                e.preventDefault();
+
+                var cid = $(this).data('cid');
+
+                if (cidArr[cid]) {
+                    return;
+                }
+
+                cidArr[cid] = true;
+
+                // TODO - show fancybox loader thing
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/',
+                    data: {
+                        ajax: 1,
+                        cid: cid
+                    },
+                    cid: cid,
+                    success: function (data) {
+                        console.log(data);
+
+                        var that = this,
+                            img,
+                            imgEl,
+                            i;
+
+                        try {
+                            data = $.parseJSON(data);
+                        } catch (e) {
+                            this.error();
+                        }
+
+                        for (i = 0; i < data.length; i += 1) {
+                            img = new Image();
+                            img.onload = function () {
+                                imgEl = $('<img />');
+                                imgEl.attr({
+                                    rel: 'gallery-' + that.cid,
+                                    src: this.src
+                                });
+
+                                imgEl.appendTo($('#image-cache'));
+                            };
+
+                            img.src = '/images/gallery/' + data[i];
+                        }
+                    },
+                    error: function (data) {
+                        console.dir(data);
+                    }
+                });
+            });
+        }());
+    }());
 
     $(document).ready(function () {
         $('form').find('#hp').parent().hide(); // hide honeypot

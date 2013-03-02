@@ -13,6 +13,7 @@ require_once('setup.php');
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700' rel='stylesheet' type='text/css' />
     <link href='http://fonts.googleapis.com/css?family=Share' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" type="text/css" href="templates/<?= $this->template ?>/css/template.css" />
+    <link rel="stylesheet" type="text/css" href="templates/<?= $this->template ?>/css/fancybox/jquery.fancybox.css" />
     <noscript>
         <style>
             #content .event-carousel .event-container {
@@ -80,6 +81,7 @@ require_once('setup.php');
     <script src="templates/<?= $this->template ?>/js/jquery-validation-1.11.0.js"></script>
     <script src="templates/<?= $this->template ?>/js/carousel.js"></script>
     <script src="templates/<?= $this->template ?>/js/site.js"></script>
+    <script src="templates/<?= $this->template ?>/js/jquery.fancybox.js"></script>
     <div id="image-cache">
         <img src="templates/<?= $this->template ?>/img/header_fb_hover.png" />
         <img src="templates/<?= $this->template ?>/img/header_tw_hover.png" />
