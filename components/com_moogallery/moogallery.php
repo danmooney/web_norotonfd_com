@@ -96,6 +96,6 @@ $model = new $model_class_name($cid);
 
 $view_class_name = '\\' . __NAMESPACE__ . '\\View' . ucfirst($view_name);
 
-$view = new $view_class_name(new \MooViewHelper('names'), $model->getData());
+$view = new $view_class_name(new \MooViewHelper('gallery'), $model->getData());
 
 $view->display();

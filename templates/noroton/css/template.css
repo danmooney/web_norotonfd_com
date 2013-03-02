@@ -1215,3 +1215,25 @@ body #content #news-list li a {
 body #content #news-list li a:hover {
     text-decoration: underline;
 }
+
+/** GALLERY SINGLE **/
+#gallery-container {
+    margin-top: 15px;
+}
+
+#gallery-container .image-container {
+    float: left;
+    margin: 9px 20px;
+}
+
+#gallery-container .image-container.last {
+    margin-right: 0;
+}
+
+#gallery-container .image-container.first {
+    margin-left: 0;
+}
+
+#gallery-container .image-container a:hover img {
+    border-color: #EC9B00;
+}

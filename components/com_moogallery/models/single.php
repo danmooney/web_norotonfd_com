@@ -28,6 +28,17 @@ class ModelSingle extends ModelAbstract
             $this->_db->setQuery($query);
 
             $this->_data = $this->_db->loadObject();
+
+            $query
+                ->clear()
+                ->select('*')
+                ->from($this->_table . '_image')
+                ->where('gallery_id = ' . $this->_id)
+                ->order('ordering');
+
+            $this->_db->setQuery($query);
+
+            $this->_data->images = $this->_db->loadObjectList();
         }
 
         return $this->_data;
