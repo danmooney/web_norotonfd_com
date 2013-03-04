@@ -15,6 +15,7 @@ if ($is_tmpl_component): ?>
 endif ?>
     <?= $helper->output($row->title, '<h1 class="bold">' . $row->title . '</h1>') ?>
     <?= $helper->output($row->date, '<p><span class="bold">Date:</span> ' .  date('F j, Y', strtotime($row->date)) . '</p>') ?>
+    <?= $helper->output($row->time, '<p><span class="bold">Time:</span> {str}</p>') ?>
     <?= $helper->output($row->address, '<p><span class="bold">Address:</span> {str}</p>') ?>
     <?= $helper->output($row->email, '<p><span class="bold">Email:</span> {str}</p>') ?>
     <?= $helper->output($row->phone, '<p><span class="bold">Phone:</span> {str}</p>') ?>
