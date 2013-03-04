@@ -256,7 +256,9 @@ fieldset, legend {
     background: url(../img/header_tw_hover.png) no-repeat;
 }
 
-#header .top-menu a {
+#header .top-menu a,
+#header .top-menu .button
+{
     color: #EC9B00;
     padding: 0 12px;
 }
@@ -287,7 +289,9 @@ fieldset, legend {
 
 }
 
-#header .menu a {
+#header .menu a,
+#header .menu .button
+{
     font-family: "Share", Helvetica, sans-serif;
     font-size: 16px;
     line-height: 26px;
@@ -1260,4 +1264,16 @@ body #content #news-list li a:hover {
 /** Calendar popup background **/
 body.article-9 .fancybox-iframe {
     background: #FFF;
+}
+
+/** Logout Button **/
+.top-menu .logout-button .button {
+    background: none;
+    border: none;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.top-menu .logout-button .button:hover {
+    text-decoration: underline;
 }

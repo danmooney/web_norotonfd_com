@@ -41,7 +41,19 @@ require_once('setup.php');
                     <span class="separator"></span>
                 </li>
                 <?php // TODO - obviously use form tokens and stuff ?>
-                <li><a href="<?= JRoute::_('index.php?option=com_content&view=article&id=9&Itemid=137') ?>">Log In</a></li>
+                <?php
+                if (!$is_logged_in):
+?>
+                <li><a href="<?= JRoute::_('index.php?option=com_content&view=article&id=10&Itemid=138') ?>">Log In</a></li>
+                <?php
+                else:
+                    $logout = JModuleHelper::getModules('logout');
+                    $logout = $logout[0];
+                    echo '<li>' . JModuleHelper::renderModule($logout) . '</li>';
+?>
+                <?php
+                endif
+?>
                 <li>
                     <span class="separator"></span>
                 </li>

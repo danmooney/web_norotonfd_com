@@ -75,5 +75,7 @@ if ($success_message || $error_message) {
     $has_messages_bool = false;
 }
 
+$is_logged_in = !JFactory::getUser()->guest;
+
 $session->clear('success_message');
 $session->clear('error_message');
