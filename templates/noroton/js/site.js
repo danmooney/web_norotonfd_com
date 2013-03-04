@@ -245,6 +245,12 @@
             $('.image-container').children('a').fancybox({
                 padding: [15, 80, 15, 80]
             });
+        } else if ($('#calendar-container').length > 0) {
+            $('a.fc-event').fancybox({
+                type: 'iframe',
+//                height: 600,
+                autoSize: false
+            });
         }
     });
 }(jQuery));

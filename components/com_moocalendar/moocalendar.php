@@ -77,6 +77,8 @@ $params = \JComponentHelper::getParams(basename(dirname(__FILE__)));
 
 $input = \JFactory::getApplication()->input;
 
+$is_tmpl_component = ($input->get('tmpl', null, 'string') === 'component');
+
 $controller = new Controller($input, $params);
 
 $available_view_names = array_slice(scandir(JPATH_COMPONENT . DS . 'views'), 2);
@@ -96,6 +98,6 @@ $model = new $model_class_name($cid);
 
 $view_class_name = '\\' . __NAMESPACE__ . '\\View' . ucfirst($view_name);
 
-$view = new $view_class_name(new \MooViewHelper('news'), $model->getData());
+$view = new $view_class_name(new \MooViewHelper('news'), $model->getData(), $is_tmpl_component);
 
 $view->display();

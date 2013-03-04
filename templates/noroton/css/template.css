@@ -1256,3 +1256,8 @@ body #content #news-list li a:hover {
 .fancybox-nav span {
     visibility: visible !important;
 }
+
+/** Calendar popup background **/
+body.article-9 .fancybox-iframe {
+    background: #FFF;
+}

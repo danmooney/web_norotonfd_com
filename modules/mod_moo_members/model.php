@@ -27,7 +27,7 @@ class MooMembersModel
 
         foreach ($results as $result) {
             $result->title = $this->_helper->truncate($result->title, 30);
-            $result->url = JRoute::_('index.php?option=com_moocalendar&Itemid=146&cid=' . $result->event_id);
+            $result->url = JRoute::_('index.php?option=com_moocalendar&Itemid=146&tmpl=component&cid=' . $result->event_id);
         }
 
         return $results;

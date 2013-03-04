@@ -1,0 +1,32 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700);
+
+body.contentpane {
+    padding-bottom: 300px;
+}
+
+#calendar-event-popup-container {
+    padding: 0 10px /*30px*/;
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    width: 97%;
+}
+
+#calendar-event-popup-container h1 {
+    font-size: 18px;
+}
+
+#calendar-event-popup-container p {
+    margin: 0;
+    font-size: 14px;
+}
+
+#calendar-event-popup-container .semibold {
+    font-weight: 600;
+}
+
+#calendar-event-popup-container .bold {
+    font-weight: bold;
+}
+
+#calendar-event-popup-container .event-text {
+    margin-top: 20px;
+}
