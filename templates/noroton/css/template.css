@@ -1237,3 +1237,8 @@ body #content #news-list li a:hover {
 #gallery-container .image-container a:hover img {
     border-color: #EC9B00;
 }
+
+/** FANCYBOX OVERRIDES **/
+.fancybox-close {
+    height: 36px !important;
+}

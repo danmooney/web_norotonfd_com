@@ -127,71 +127,116 @@
             }
         });
     }
+    function bindPopups () {
+        $.fancybox.helpers.overlay.onReady($.fancybox.opts, $.fancybox.helpers.overlay);
+        (function bindPopups () {
+            var cidArr = [];
 
-    (function bindPopups () {
-        var cidArr = [];
+            function openGallery (cid) {
+                $('.first.gallery-' + cid).trigger('click');
+            }
 
-        (function() {
-            $('.event-general').children('a').on('click', function (e) {
-                e.preventDefault();
+            (function() {
+                $('.event-general').children('a').on('click', function (e) {
+                    e.preventDefault();
 
-                var cid = $(this).data('cid');
+                    var cid = $(this).data('cid');
 
-                if (cidArr[cid]) {
-                    return;
-                }
+                    if (cidArr[cid]) {
+                        openGallery(cid);
+                        return;
+                    }
 
-                cidArr[cid] = true;
+                    cidArr[cid] = true;
 
-                // TODO - show fancybox loader thing
+                    // show fancybox loading
+                    $.fancybox.helpers.overlay.open();
+                    $.fancybox.showLoading();
 
-                $.ajax({
-                    type: 'POST',
-                    url: '/',
-                    data: {
-                        ajax: 1,
-                        cid: cid
-                    },
-                    cid: cid,
-                    success: function (data) {
-                        console.log(data);
+                    $.ajax({
+                        type: 'POST',
+                        url: '/',
+                        data: {
+                            ajax: 1,
+                            cid: cid
+                        },
+                        cid: cid,
+                        success: function (data) {
+//                            console.log(data);
 
-                        var that = this,
-                            img,
-                            imgEl,
-                            i;
+                            var that = this,
+                                img,
+                                imgEl,
+                                anchorEl,
+                                src,
+                                i;
 
-                        try {
-                            data = $.parseJSON(data);
-                        } catch (e) {
-                            this.error();
-                        }
+                            try {
+                                data = $.parseJSON(data);
+                            } catch (e) {
+                                this.error();
+                            }
 
-                        for (i = 0; i < data.length; i += 1) {
-                            img = new Image();
-                            img.onload = function () {
-                                imgEl = $('<img />');
-                                imgEl.attr({
+                            for (i = 0; i < data.length; i += 1) {
+                                src = '/images/gallery/' + data[i];
+
+                                anchorEl = $('<a></a>');
+
+                                anchorEl.attr({
+                                    'class': 'gallery-' + that.cid,
                                     rel: 'gallery-' + that.cid,
-                                    src: this.src
+                                    href: src
                                 });
 
-                                imgEl.appendTo($('#image-cache'));
-                            };
+                                if (0 === i) {
+                                    anchorEl.addClass('first');
+                                }
 
-                            img.src = '/images/gallery/' + data[i];
+                                anchorEl.appendTo($('#image-cache'));
+
+                                img = new Image();
+                                img.onload = function () {
+                                    imgEl = $('<img />');
+//                                    imgEl.attr({
+//                                        'class': 'gallery-' + that.cid,
+//                                        rel: 'gallery-' + that.cid,
+//                                        src: this.src
+//                                    });
+
+                                    if (this.src.indexOf(data[0]) !== -1) { // first image loaded, let's go!
+                                        $.fancybox.hideLoading();
+    //                                    $(document).on('click', function () {
+    //                                        $(this).fancybox();
+    //                                    }, '.gallery-' + that.cid);
+
+                                        openGallery(that.cid);
+                                    }
+                                };
+
+                                img.src = src;
+
+                                if (i === (data.length - 1)) {
+                                    $('.gallery-' + that.cid).fancybox();
+                                }
+
+                            }
+                        },
+                        error: function (data) {
+                            alert('An error has occurred.  Please try again later.');
+                            $.fancybox.helpers.overlay.close();
+                            $.fancybox.hideLoading();
+//                            console.dir(data);
                         }
-                    },
-                    error: function (data) {
-                        console.dir(data);
-                    }
+                    });
                 });
-            });
+            }());
         }());
-    }());
+    }
+
 
     $(document).ready(function () {
         $('form').find('#hp').parent().hide(); // hide honeypot
         validateForms();
+        bindPopups();
     });
 }(jQuery));
