@@ -25,10 +25,9 @@ class MooMembersModel
         $db->setQuery($query);
         $results = (array) $db->loadObjectList();
 
-        // TODO - add url to each
         foreach ($results as $result) {
             $result->title = $this->_helper->truncate($result->title, 30);
-            $result->url = 'http://www.google.com/';
+            $result->url = JRoute::_('index.php?option=com_moocalendar&Itemid=146&cid=' . $result->event_id);
         }
 
         return $results;

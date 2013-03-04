@@ -80,9 +80,11 @@ class MooConfig
                             'width' => '2%'
                         ),
                         'time' => array (
-                            'width' => '2%'
+                            'width' => '2%',
+                            'sort' => true,
                         ),
                         'title' => array (
+                            'link' => true,
                             'sort' => true,
                             'width' => '5%'
                         ),
