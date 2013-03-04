@@ -1337,9 +1337,17 @@ body.article-9 .fancybox-iframe {
     color: #000;
 }
 
+#content #login-message {
+    height: 30px;
+    text-align: center;
+    position: relative;
+    top: -20px;
+}
+
 /** Joomla System Message Container **/
 #system-message {
     background: url(../img/content_bg_2.png) repeat;
     border:  1px solid #67686B;
     padding: 10px 20px;
+    margin-bottom: 20px;
 }

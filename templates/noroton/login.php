@@ -24,11 +24,30 @@ defined('_JEXEC') or die;
     <div id="content">
         <h3 style="text-align:center">Members Log In</h3>
 	    <jdoc:include type="component" />
+        <div id="login-message"></div>
     </div>
 <script type="text/javascript">
     jQuery(document).ready(function ($) {
+        var messageEl = $('#login-message');
+
+        function showMessage (textStr) {
+            messageEl.text(textStr).show();
+        }
+
+        function hideMessage () {
+            messageEl.hide();
+        }
+
         $('form').on('submit', function (e) {
             e.preventDefault();
+
+            var username = $.trim($('#modlgn-username').val()),
+                password = $('#modlgn-passwd').val();
+
+            if (!username || !password) {
+                showMessage('Your username and password must be filled out.');
+                return;
+            }
 
             $.ajax({
                 type: 'POST',
@@ -39,10 +58,14 @@ defined('_JEXEC') or die;
                     password: $('#modlgn-passwd').val()
                 },
                 success: function (data) {
-                    console.log(data);
+                    if ('success' === data) {
+                        showMessage('Successful login!  Please wait...');
+                        window.parent.location.reload();
+                    } else {
+                        showMessage('Your username and/or password are incorrect.');
+                    }
                 },
                 error: function (data) {
-                    console.log(data);
 //                    alert('An error has occurred.  Please try again later.');
                 }
             });
