@@ -237,6 +237,9 @@
 
 
     $(document).ready(function () {
+        var loginAnchorEl,
+            loginAnchorHref;
+
         $('form').find('#hp').parent().hide(); // hide honeypot
         validateForms();
         if ($('.event-container').length > 0) {
@@ -250,6 +253,23 @@
                 type: 'iframe',
 //                height: 600,
                 autoSize: false
+            });
+        }
+
+        if ($('#login-menu-item').length > 0) {
+            loginAnchorEl = $('#login-menu-item').children('a'),
+            loginAnchorHref = loginAnchorEl.attr('href');
+
+            if (loginAnchorHref.indexOf('?') !== -1) {
+                loginAnchorHref += '&tmpl=login';
+            } else {
+                loginAnchorHref += '?tmpl=login';
+            }
+
+            loginAnchorEl.attr('href', loginAnchorHref);
+
+            loginAnchorEl.fancybox({
+                type: 'iframe'
             });
         }
     });

@@ -1196,6 +1196,15 @@ body.article-9 .half-box-container {
     display: inline-block;
 }
 
+body#site #content a.fc-event {
+    color: #FFF;
+    text-decoration: none;
+}
+
+body#site #content a.fc-event:hover {
+    text-decoration: underline;
+}
+
 .fc-event-title {
     font-size: 13px;
 }
@@ -1329,7 +1338,7 @@ body.article-9 .fancybox-iframe {
 }
 
 /** Joomla System Message Container **/
-#system-message-container {
+#system-message {
     background: url(../img/content_bg_2.png) repeat;
     border:  1px solid #67686B;
     padding: 10px 20px;

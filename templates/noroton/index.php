@@ -44,7 +44,7 @@ require_once('setup.php');
                 <?php
                 if (!$is_logged_in):
 ?>
-                <li><a href="<?= JRoute::_('index.php?option=com_content&view=article&id=10&Itemid=138') ?>">Log In</a></li>
+                <li id="login-menu-item"><a href="<?= JRoute::_('index.php?option=com_content&view=article&id=10&Itemid=138') ?>">Log In</a></li>
                 <?php
                 else:
                     $logout = JModuleHelper::getModules('logout');
