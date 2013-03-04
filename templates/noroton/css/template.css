@@ -1242,3 +1242,17 @@ body #content #news-list li a:hover {
 .fancybox-close {
     height: 36px !important;
 }
+
+.fancybox-skin {
+    background: #000 !important;
+    border-radius: 0 !important;
+    border: 2px solid #FFF !important;
+}
+
+.fancybox-outer {
+    position: static !important;
+}
+
+.fancybox-nav span {
+    visibility: visible !important;
+}

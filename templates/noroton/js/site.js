@@ -216,7 +216,9 @@
                                 img.src = src;
 
                                 if (i === (data.length - 1)) {
-                                    $('.gallery-' + that.cid).fancybox();
+                                    $('.gallery-' + that.cid).fancybox({
+                                        padding: [15, 80, 15, 80]
+                                    });
                                 }
 
                             }
