@@ -35,7 +35,7 @@ if (empty($row->images)):
 
         echo $helper->outputImage(
                 $image->filename,
-                sprintf('<div class="image-container %s"><a href="/images/gallery/%s">{str}</a></div>', $idx_str, $image->filename),
+                sprintf('<div class="image-container %s"><a rel="gallery" href="/images/gallery/%s">{str}</a></div>', $idx_str, $image->filename),
                 'gallery/thumbs'
         );
 

@@ -127,9 +127,9 @@
             }
         });
     }
-    function bindPopups () {
+    function bindGalleryHomepagePopups () {
         $.fancybox.helpers.overlay.onReady($.fancybox.opts, $.fancybox.helpers.overlay);
-        (function bindPopups () {
+        (function() {
             var cidArr = [];
 
             function openGallery (cid) {
@@ -239,6 +239,12 @@
     $(document).ready(function () {
         $('form').find('#hp').parent().hide(); // hide honeypot
         validateForms();
-        bindPopups();
+        if ($('.event-container').length > 0) {
+            bindGalleryHomepagePopups();
+        } else if ($('#gallery-container').length > 0) {
+            $('.image-container').children('a').fancybox({
+                padding: [15, 80, 15, 80]
+            });
+        }
     });
 }(jQuery));
