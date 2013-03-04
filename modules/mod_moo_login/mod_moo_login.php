@@ -14,8 +14,13 @@ require_once dirname(__FILE__).'/helper.php';
 
 $params->def('greeting', 1);
 
-$type	= modLoginHelper::getType();
-$return	= modLoginHelper::getReturnURL($params, $type);
+$type	= modMooLoginHelper::getType();
+$return	= modMooLoginHelper::getReturnURL($params, $type);
 $user	= JFactory::getUser();
+
+if (!$user->guest) { // this is only used for login, so redirect!
+    header('Location:' . JURI::base());
+    exit(0);
+}
 
 require JModuleHelper::getLayoutPath('mod_moo_login', $params->get('layout', 'default'));

@@ -74,7 +74,19 @@ require_once('setup.php');
         <div id="content-bg">
             <div id="content-bg-top"></div>
             <div class="content-container">
+                <jdoc:include type="message" />
+                <?php
+                if (!$is_com_users):
+?>
+
                 <jdoc:include type="component" />
+                <?php
+                else:
+                    $login = JModuleHelper::getModules('login-form');
+                    $login = $login[0];
+                    echo JModuleHelper::renderModule($login);
+                endif
+?>
             </div>
         </div>
     </div>

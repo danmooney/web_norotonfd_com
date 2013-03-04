@@ -77,5 +77,7 @@ if ($success_message || $error_message) {
 
 $is_logged_in = !JFactory::getUser()->guest;
 
+$is_com_users = $input->get('option', null, 'string') === 'com_users';
+
 $session->clear('success_message');
 $session->clear('error_message');

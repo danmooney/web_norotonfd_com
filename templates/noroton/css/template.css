@@ -1277,3 +1277,60 @@ body.article-9 .fancybox-iframe {
 .top-menu .logout-button .button:hover {
     text-decoration: underline;
 }
+
+/** Login Form **/
+#content #login-form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#content #login-form .inputbox {
+    padding: 5px 10px;
+    font-size: 14px;
+    border: 1px solid #707070;
+    outline-color: #EA9A25;
+    width: 200px;
+}
+
+#content #login-form fieldset.userdata #form-login-username,
+#content #login-form fieldset.userdata #form-login-password,
+#content #login-form fieldset.userdata #form-login-remember
+{
+    /*width: 270px;*/
+}
+
+#content #login-form fieldset.userdata #form-login-username,
+#content #login-form fieldset.userdata #form-login-remember
+{
+    float: left;
+}
+
+#content #login-form fieldset.userdata #form-login-password,
+#content #login-form .button
+{
+    float: right;
+}
+
+#content #login-form .button {
+    background: #323232;
+    color: #FFF;
+    text-transform: uppercase;
+    border: 1px solid #646464;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 10px 20px;
+    font-size: 13px;
+    outline-color: #EA9A25;
+}
+
+#content #login-form .button:hover {
+    background: #E88500;
+    color: #000;
+}
+
+/** Joomla System Message Container **/
+#system-message-container {
+    background: url(../img/content_bg_2.png) repeat;
+    border:  1px solid #67686B;
+    padding: 10px 20px;
+}
