@@ -381,7 +381,7 @@ plugins/captcha/*
 plugins/content/*
 plugins/finder/*
 plugins/quickicon/*
-plugins/system/*
+#plugins/system/*
 plugins/authentication/example/*
 plugins/authentication/gmail/*
 plugins/authentication/joomla/*
@@ -414,6 +414,7 @@ plugins/search/content/*
 plugins/search/newsfeeds/*
 plugins/search/weblinks/*
 plugins/search/index.html
+!plugins/system/moo/*
 plugins/system/cache/*
 plugins/system/debug/*
 plugins/system/languagefilter/*
@@ -423,6 +424,8 @@ plugins/system/p3p/*
 plugins/system/redirect/*
 plugins/system/remember/*
 plugins/system/sef/*
+plugins/system/highlight/*
+plugins/system/languagecode/*
 plugins/system/index.html
 plugins/user/contactcreator/*
 plugins/user/example/*

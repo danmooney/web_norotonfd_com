@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system">
+	<name>Moo Ajax Listener Plugin</name>
+	<author>Dan Mooney</author>
+	<creationDate>March 2013</creationDate>
+	<copyright>Copyright 2012 Moo Digital</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>dan@moodigital.com</authorEmail>
+	<authorUrl>moodigital.com</authorUrl>
+	<version>0.1.0</version>
+	<description>Loads Ajax Requests</description>
+	<files>
+		<filename plugin="moo">moo.php</filename>
+		<filename>index.html</filename>
+	</files>
+</extension>
