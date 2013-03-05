@@ -100,6 +100,7 @@ require_once('setup.php');
             <p>Designed by <a class="bold" target="_blank" href="http://scsdesigninc.com">ScSDesignInc.com</a> and developed by <a target="_blank" class="bold" href="http://www.danronmoon.com/">DanRonMoon.com</a></p>
         </div>
     </div>
+    <script src="templates/<?= $this->template ?>/js/modernizr.js"></script>
     <script src="templates/<?= $this->template ?>/js/jquery.anythingslider-1.8.6-min.js"></script>
     <script src="templates/<?= $this->template ?>/js/jquery.aviaslider.min.js"></script>
     <script src="templates/<?= $this->template ?>/js/jquery-validation-1.11.0.js"></script>

@@ -88,9 +88,9 @@ echo $fillOutValue('errors');
     <div class="formline">
         <span>Are you a U.S. citizen?</span>
         <label for="citizen_yes">Yes</label>
-        <input id="citizen_yes" type="radio" name="citizen" value="yes" tabindex="13" class="required" />
+        <input id="citizen_yes" type="radio" name="citizen" value="yes" tabindex="13" class="required checkbox-input" />
         <label for="citizen_no">No</label>
-        <input id="citizen_no" type="radio" name="citizen" value="no" tabindex="14" class="required" />
+        <input id="citizen_no" type="radio" name="citizen" value="no" tabindex="14" class="required checkbox-input" />
     </div>
     <button id="submit-join" type="submit">Submit</button>
     <div class="clr"></div>

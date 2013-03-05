@@ -53,6 +53,31 @@
             });
         }
 
+        if (!Modernizr.input.placeholder) {
+            $('#form-join').find('[placeholder]').not('[type="password"]').each(function () {
+                var inputEl = $(this),
+                    placeholderStr = inputEl.attr('placeholder'),
+                    valStr;
+
+                if (inputEl.val() === '') {
+                    inputEl.val(placeholderStr);
+                }
+
+                inputEl.on('blur', function () {
+                    valStr = inputEl.val();
+                    if ($.trim(valStr) === '') { // placeholder equals value; remove!
+                        inputEl.val(placeholderStr);
+                    }
+                }).on('focus', function () {
+                    valStr = inputEl.val();
+                    if (valStr === placeholderStr) {
+                        inputEl.val('');
+                    }
+                });
+            });
+        }
+
+
         $('#form-join').validate({
             wrapper: 'div',
             focusInvalid: false,
@@ -271,4 +296,15 @@
             });
         }
     });
+
+    // fix calendar top calculation for IE
+    setInterval(function () {
+        if ($('div.calendar').length > 0) {
+            $('div.calendar').css('top', '1945px');
+        }
+    }, 30);
+
 }(jQuery));
+
+
+

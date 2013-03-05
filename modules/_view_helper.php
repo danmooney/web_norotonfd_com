@@ -123,13 +123,13 @@ class MooViewHelper
 
     public function imageExists($src, $image_folder = '')
     {
-        if ($image_folder === '/') {
+        if (empty($image_folder) || $image_folder === '/') {
             $path = $this->getImgDir();
         } else {
             $path = $this->fixDSDuplication($image_folder . '/');
         }
 
-        return is_file(JPATH_SITE . '/images/' . $path . '/' . $src);
+        return $this->fixDSDuplication(is_file(JPATH_SITE . '/images/' . $path . '/' . $src));
     }
 
     public function outputImage($src = '', $formatted_output = '', $image_folder = '')
@@ -160,7 +160,7 @@ class MooViewHelper
 
     public function fixDSDuplication($str)
     {
-        return str_replace('//', '/', $str);
+        return preg_replace('/(\/)+/', '/', $str);
     }
 
     /**
