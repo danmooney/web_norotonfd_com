@@ -67,6 +67,7 @@ class MooConfig
 //                    'group_by' => 'carousel_id',
                     'where_fields' => array (
                         'title',
+                        'text',
                     ),
                 ),
                 'view' => array (

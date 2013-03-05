@@ -13,8 +13,12 @@ echo $helper->output($row->title, '<h1 class="bold">{str}</h1>');
 
 if (empty($row->images)):
     echo 'There are currently no images for this gallery.';
- else:
+else:
+
+    echo $helper->output($row->text);
+
     $i = 0;
+
 ?>
     <div id="gallery-container">
 <?php

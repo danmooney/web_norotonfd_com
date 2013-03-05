@@ -55,6 +55,7 @@ class MooConfig
                     'where_fields' => array (
                         'first_name',
                         'last_name',
+                        'address',
                         'state',
                         'zip',
                         'phone_number',
@@ -81,6 +82,11 @@ class MooConfig
                             'width' => '5%',
                             'sort' => true,
                             'link' => true
+                        ),
+                        'address' => array (
+                            'width' => '5%',
+                            'sort' => true,
+//                            'link' => true
                         ),
                         'state' => array (
                             'width' => '5%',
@@ -132,6 +138,9 @@ class MooConfig
                             'readonly' => true
                         ),
                         'last_name' => array (
+                            'readonly' => true
+                        ),
+                        'address' => array (
                             'readonly' => true
                         ),
                         'state' => array (
