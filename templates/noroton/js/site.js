@@ -58,8 +58,6 @@
             focusInvalid: false,
             focusCleanup: true,
             errorPlacement: function (label, element) {
-                console.log(arguments);
-
                 $('<div></div>').attr('class', 'label-triangle').appendTo(label);
                 label.removeAttr('for').addClass('error-message').insertBefore(element);
 
