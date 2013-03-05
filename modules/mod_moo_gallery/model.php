@@ -132,7 +132,7 @@ class ModMooEvents
     public function getTitle()
     {
         if (!isset($this->_title)) {
-            $this->_title = $this->_params->get('header');
+            $this->_title = $this->_params->get('header', "What's Going On at Noroton");
         }
 
         return $this->_title;

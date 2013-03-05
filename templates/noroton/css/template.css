@@ -1179,10 +1179,37 @@ body.article-9 .half-box {
 body.article-9 .half-box .heading {
     padding-bottom: 10px;
     border-bottom: 1px solid #FFF;
+    margin-bottom: 20px;
 }
 
 body.article-9 .half-box-container {
     position: relative;
+}
+
+body.article-9 .half-box ul {
+    /*margin-top: 20px;*/
+}
+
+body.article-9 .half-box ul li > * {
+    display: inline-block;
+}
+
+body.article-9 .half-box ul li .date {
+    width: 65px;
+}
+
+body.article-9 .half-box ul li .separator {
+    width: 30px;
+    text-align: center;
+}
+
+body#site.article-9 #content .half-box ul li > a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+body#site.article-9 #content .half-box ul li > a:hover {
+    text-decoration: underline;
 }
 
 /** FULL CALENDAR **/

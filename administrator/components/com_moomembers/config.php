@@ -170,9 +170,9 @@ class MooConfig
                      * Store url alias
                      */
                     'pre_hook' => function (&$row) {
-                        if (trim($row->title) !== '') {
-                            $row->alias = MooHelper::makeUrlFriendly($row->title);
-                        }
+//                        if (trim($row->title) !== '') {
+//                            $row->alias = MooHelper::makeUrlFriendly($row->title);
+//                        }
                     }
                 ),
                 'view' => array (

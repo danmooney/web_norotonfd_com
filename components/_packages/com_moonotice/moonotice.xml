@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+    <name>moonotice</name>
+    <!-- The following elements are optional and free of formatting constraints -->
+    <creationDate>March 2013</creationDate>
+    <author>Dan Mooney</author>
+    <authorEmail>dan@moodigital.com</authorEmail>
+    <authorUrl>http://www.moodigital.com/</authorUrl>
+    <copyright>2013</copyright>
+    <license>GPL V3</license>
+    <!--  The version string is recorded in the components table -->
+    <version>0.0.1</version>
+    <!-- The description is optional and defaults to the name -->
+    <description>Displays Notice Event Details</description>
+
+    <!--<update>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update> -->
+
+    <!-- Site Main File Copy Section -->
+    <files folder="site">
+        <filename>moonotice.php</filename>
+        <folder>views</folder>
+    </files>
+
+    <administration>
+        <!-- Administration Menu Section -->
+        <menu>Moo Notice Component</menu>
+        <!-- Administration Main File Copy Section -->
+        <files folder="admin">
+            <!-- Admin Main File Copy Section -->
+            <filename>moonotice.php</filename>
+        </files>
+    </administration>
+
+</extension>
