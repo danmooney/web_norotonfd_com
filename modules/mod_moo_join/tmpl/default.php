@@ -58,7 +58,7 @@ echo $fillOutValue('errors');
         ?>
 
         <?php // <input type="text" id="state" name="state" placeholder="State" /> ?>
-        <input class="last required" type="text" id="zip" name="zip" placeholder="Zip Code" tabindex="5" data-rule-number="1" data-rule-zip="1" value="<?= $fillOutValue('zip') ?>" />
+        <input class="last required" type="text" id="zip" name="zip" placeholder="Zip Code" tabindex="5" data-rule-zip="1" value="<?= $fillOutValue('zip') ?>" />
     </div>
     <div class="formline">
         <input type="text" id="phone" class="required" name="phone_number" placeholder="Phone Number" tabindex="6" data-rule-phone="1" value="<?= $fillOutValue('phone_number') ?>" />

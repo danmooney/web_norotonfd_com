@@ -53,7 +53,7 @@
             });
         }
 
-        $('form').validate({
+        $('#form-join').validate({
             wrapper: 'div',
             focusInvalid: false,
             focusCleanup: true,
