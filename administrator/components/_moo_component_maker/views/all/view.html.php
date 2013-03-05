@@ -179,7 +179,7 @@ class MooViewAll extends JView
                     $link_start = '<a href="' . MooHelper::linkify(@$row->$name) . '" target="_blank">'; 
                     $link_end   = '</a>';
                 } elseif (@$table_header['file_link']) {
-                    $link_start = '<a href="' . JURI::root() . 'images/' . MooConfig::get('current_page') . '/' . @$row->$name . '" target="_blank">'; 
+                    $link_start = '<a href="' . JURI::root() . 'files/' . MooConfig::get('current_page') . '/' . @$row->$name . '" target="_blank">';
                     $link_end   = '</a>';
                 } else {
                     $link_start = NULL;

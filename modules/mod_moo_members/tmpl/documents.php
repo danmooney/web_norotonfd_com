@@ -3,7 +3,11 @@
 
       <ul>
     <?php foreach ($documents as $document): ?>
-              <li><?= date('m.d.Y', strtotime($document->date)) . '|' . '<a href="#">' . $helper->truncate($document->title, 80) . '</a>' ?></li>
+              <li>
+                  <?=
+                      '<span class="date">' . date('m.d.Y', strtotime($document->date)) . '</span><span class="separator">|</span>'
+                    . '<a target="_blank" href="/files/documents/' . $document->filename . '">' . $helper->truncate($document->title, 80) . '</a>'
+                  ?></li>
     <?php endforeach ?>
       </ul>
 <?php else: ?>

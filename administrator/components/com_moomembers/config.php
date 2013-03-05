@@ -216,7 +216,7 @@ class MooConfig
             ),
             'documents' => array (
                 'title' => 'Members Area - Documents',
-                'file_folder' => '../files', // TODO - see if this'll work
+                'file_folder' => 'documents', // TODO - see if this'll work
                 'table' => 'moo_document',
                 'singular' => 'document',
                 'submenu_title' => 'Documents',
@@ -237,9 +237,9 @@ class MooConfig
                      * Store url alias
                      */
                     'pre_hook' => function (&$row) {
-                        if (trim($row->title) !== '') {
-                            $row->alias = MooHelper::makeUrlFriendly($row->title);
-                        }
+//                        if (trim($row->title) !== '') {
+//                            $row->alias = MooHelper::makeUrlFriendly($row->title);
+//                        }
                     }
                 ),
                 'view' => array (
@@ -257,8 +257,8 @@ class MooConfig
                         'filename' => array (
                             'heading' => 'File',
                             'sort' => true,
-                            'link' => true,
-                            'width' => '3%'
+                            'width' => '3%',
+                            'file_link' => true
                         ),
                         'published' => array (
                             'width' => '5%',

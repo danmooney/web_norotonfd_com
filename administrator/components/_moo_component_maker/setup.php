@@ -2,7 +2,7 @@
 /**
  *  @package MOO ABSTRACT COMPONENT MAKER
  *  @author Dan Mooney
- *  @version 2/28/13
+ *  @version 3/4/13
  *  - Add upload_image_thumb width/height calculation based on missing width/height
  *  - Add alias support
  *  - Add support for multiple primary keys in table.php
