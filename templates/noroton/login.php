@@ -11,6 +11,7 @@ defined('_JEXEC') or die;
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>" dir="<?php echo $this->direction; ?>">
 <head>
     <script src="templates/<?= $this->template ?>/js/jquery-1.9.0-src.js"></script>
+    <script src="templates/<?= $this->template ?>/js/modernizr.js"></script>
 	<jdoc:include type="head" />
 	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/system/css/general.css" type="text/css" />
 	<link rel="stylesheet" href="<?php echo $this->baseurl ?>/templates/<?php echo $this->template; ?>/css/template.css" type="text/css" />
@@ -28,6 +29,14 @@ defined('_JEXEC') or die;
     </div>
 <script type="text/javascript">
     jQuery(document).ready(function ($) {
+
+        if (!Modernizr.input.placeholder) {
+            $('<label for="modlgn-username">Username</label>').prependTo('#form-login-username');
+            $('<label for="modlgn-passwd">Password</label>').prependTo('#form-login-password');
+            $('#login-form').width(610);
+        }
+
+
         var messageEl = $('#login-message');
 
         function showMessage (textStr) {

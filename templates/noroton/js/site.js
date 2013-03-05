@@ -280,7 +280,7 @@
         }
 
         if ($('#login-menu-item').length > 0) {
-            loginAnchorEl = $('#login-menu-item').children('a'),
+            loginAnchorEl = $('#login-menu-item').children('a');
             loginAnchorHref = loginAnchorEl.attr('href');
 
             if (loginAnchorHref.indexOf('?') !== -1) {

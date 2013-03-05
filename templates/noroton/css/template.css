@@ -1384,6 +1384,10 @@ input.checkbox-input {
     border: none !important;
 }
 
+#content #login-form input.checkbox-input {
+    width: 20px !important;
+}
+
 #dob_img {
     position: relative;
     z-index: 50;
