@@ -42,13 +42,18 @@ class plgSystemMoo extends JPlugin
 
             $username = $input->get('username', '', 'string');
             $password = $input->get('password', '', 'string');
+            $remember = (bool) $input->get('remember', 0, 'int');
 
             $credentials = array(
                 'username' => $username,
                 'password' => $password
             );
 
-            if ($app->login($credentials)) { // success
+            $options = array(
+                'remember' => $remember
+            );
+
+            if ($app->login($credentials, $options)) { // success
                 echo 'success';
             } else { // failure
                 echo 'failure';

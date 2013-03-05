@@ -55,7 +55,8 @@ defined('_JEXEC') or die;
                 data: {
                     ajax: 1,
                     username: $('#modlgn-username').val(),
-                    password: $('#modlgn-passwd').val()
+                    password: $('#modlgn-passwd').val(),
+                    remember: $('#modlgn-remember').is(':checked') ? 1 : 0
                 },
                 success: function (data) {
                     if ('success' === data) {
