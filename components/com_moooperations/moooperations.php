@@ -99,3 +99,9 @@ $view_class_name = '\\' . __NAMESPACE__ . '\\View' . ucfirst($view_name);
 $view = new $view_class_name(new \MooViewHelper('operations'), $model->getData());
 
 $view->display();
+
+$document = \JFactory::getDocument();
+$app = \JFactory::getApplication();
+$title = $app->getCfg('sitename');
+$doc_title = $document->getTitle();
+$document->setTitle($doc_title . ' - ' . $title);
