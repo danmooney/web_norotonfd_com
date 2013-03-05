@@ -249,7 +249,7 @@
                 padding: [15, 80, 15, 80]
             });
         } else if ($('#calendar-container').length > 0) {
-            $('a.fc-event').fancybox({
+            $('a.fc-event, #notices-container a').fancybox({
                 type: 'iframe',
 //                height: 600,
                 autoSize: false
