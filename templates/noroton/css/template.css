@@ -1188,7 +1188,11 @@ body.article-9 .half-box-container {
 }
 
 body.article-9 .half-box ul {
-    /*margin-top: 20px;*/
+    margin-top: 20px;
+}
+
+body.article-9 .half-box ul li {
+    margin-bottom: 10px;
 }
 
 body.article-9 .half-box ul li > * {
@@ -1220,8 +1224,11 @@ body#site.article-9 #content .half-box ul li > a:hover {
 }
 
 .fc-event[style] {
-    position: relative !important;
     display: inline-block;
+}
+
+.fc-event-inner {
+    height: auto;
 }
 
 body#site #content a.fc-event {
