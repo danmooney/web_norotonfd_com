@@ -94,7 +94,7 @@ class MooConfig
                         ),
                         'text' => array (
                             'sort' => true,
-                            'width' => '30%'
+                            'width' => '30%',
                         ),
                         'published' => array (
                             'width' => '5%',

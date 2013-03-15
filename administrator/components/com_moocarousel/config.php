@@ -102,9 +102,9 @@ class MooConfig
                             
                         ),
                         'filename' => array (
-                            'heading' => 'File',
+                            'heading' => 'Image',
                             'formatter' => 'file',
-                            'image' => 'true',
+                            'image' => true,
                             'upload_width' => 948,
                             'upload_height' =>  400,
                             'upload_thumb_width' => 500

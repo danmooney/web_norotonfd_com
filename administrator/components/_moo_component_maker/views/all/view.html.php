@@ -185,7 +185,9 @@ class MooViewAll extends JView
                     $link_start = NULL;
                     $link_end   = NULL;
                 }
-                                    
+
+                $row->$name = str_replace('<img src="images', '<img src="/images', $row->$name);
+
                 $align = @$table_header['align'] ? $table_header['align'] : 'center';
                 $table_rows_html .= '<td align="' . $align  . '" class="' . $name . '">' . @$link_start . @$row->$name .  @$link_end . '</td>';
             }

@@ -10,6 +10,7 @@ sql_dumps/*
 .htaccess
 *.ini
 starting_files/*
+images_backup/*
 !language/en-GB/en-GB.mod_moo*
 !administrator/language/en-GB/en-GB.com_moo*
 

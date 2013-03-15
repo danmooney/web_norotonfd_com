@@ -11,7 +11,7 @@
 
 function debug($string, $dieBool = true) {
     if ($_SERVER['REMOTE_ADDR'] !== '71.9.158.10' &&
-        $_SERVER['REMOTE_ADDR'] !== '108.200.220.35'
+        $_SERVER['REMOTE_ADDR'] !== '108.199.116.227'
     ) {
         return;
     }

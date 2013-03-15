@@ -40,7 +40,7 @@ body#site button {
     font-weight: 600;
 }
 
-ul, li {
+body#site ul, body#site li {
     list-style-position: inside;
     list-style-type: none;
     font-size: /*13*/14px;
@@ -53,48 +53,48 @@ body#site a {
     color: #FFF;
 }
 
-p {
+body#site p {
     font-size: 14px;
     line-height: 20px;
     margin: 14px 0 20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+body#site h1, body#site h2, body#site h3, body#site h4, body#site h5, body#site h6 {
     font-weight: normal;
     margin-bottom: 5px;
     margin-top: 10px;
 }
 
-h1 {
+body#site h1 {
     font-size: 30px;
 }
 
-h2 {
+body#site h2 {
     font-size: 24px;
 }
 
-h3 {
+body#site h3 {
     font-size: 19px;
 }
 
-h4 {
+body#site h4 {
     font-size: 18px;
 }
 
-h5 {
+body#site h5 {
     font-size: 17px;
 }
 
-h6 {
+body#site h6 {
     font-size: 16px;
 }
 
-img {
+body#site img {
     border: 0;
     outline: 0;
 }
 
-a:focus, img, iframe {
+body#site a:focus, body#site img, body#site iframe {
     border: none;
     outline: none;
 }
@@ -115,11 +115,11 @@ a:focus, img, iframe {
     margin: 0 !important;
 }
 
-.bold {
+body#site .bold {
     font-weight: bold !important;
 }
 
-.semibold {
+body#site .semibold, body#site strong {
     font-weight: 600 !important;
 }
 
@@ -783,6 +783,7 @@ body#site #content .event-carousel .event-general .overlay p {
 
 #content .event-detailed img {
     box-shadow: 0 1px 12px #2E2E2E;
+    width: 175px;
 }
 
 #content .event-general a:hover .image-container {
