@@ -112,8 +112,11 @@ class MooConfig
                             'heading' => 'Thumbnail',
                             'formatter' => 'file',
                             'image' => true,
-                            'upload_thumb_width' => 175,
-                            'upload_thumb_height' => 131
+//                            'upload_width' => 483,  // FROM OPERATIONS
+                            'upload_width' => 175,
+                            'upload_height' => 131
+//                            'upload_thumb_width' => 175,
+//                            'upload_thumb_height' => 131
                         ),
                         'summary' => array (
                             'formatter' => 'textarea'
