@@ -439,7 +439,7 @@ body.home #content p.description {
     width: 48%;
 }
 
-#content img {
+body#site #content img {
     border: 2px solid #FFF;
 }
 
@@ -914,7 +914,7 @@ body.operations .operation .overlay * {
     margin: 0
 }
 
-body.operations #content .operation img {
+body#site.operations #content .operation img {
     border: none;
 }
 
@@ -1282,7 +1282,7 @@ body #content #news-list li a:hover {
     margin-left: 0;
 }
 
-#gallery-container .image-container a:hover img {
+body#site #gallery-container .image-container a:hover img {
     border-color: #EC9B00;
 }
 
