@@ -431,6 +431,7 @@ fieldset, legend {
 
 body.home #content p.description {
     width: 70%;
+    margin: 0 auto;
 }
 
 #content .item-page > div.float-l,
@@ -777,7 +778,7 @@ body#site #content .event-carousel .event-general .overlay p {
     margin-top: 25px;
 }
 
-#content .event img {
+body#site #content .event img {
     border: none;
 }
 
