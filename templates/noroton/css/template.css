@@ -155,8 +155,9 @@ body#site .semibold, body#site strong {
     vertical-align: middle;
 }
 
-#content > .item-page {
+#content .item-page {
     /*display: none !important;*/
+    display: inline-block;
 }
 
 fieldset, legend {
