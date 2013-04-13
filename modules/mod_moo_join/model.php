@@ -11,10 +11,10 @@ class MooJoinModel
         'phone_number' => 'phone',
         'email' => 'email',
         'age' => 'number',
-        'occupation' => 'filled',
-        'dob' => 'date',
-        'birthplace' => 'filled',
-        'citizen' => 'filled',
+//        'occupation' => 'filled',
+//        'dob' => 'date',
+//        'birthplace' => 'filled',
+//        'citizen' => 'filled',
         'hp' => 'empty'
     );
 

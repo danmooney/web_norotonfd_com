@@ -1112,6 +1112,10 @@ body#site.operations #content a {
     width: 200px;
 }
 
+#box-join #zip {
+    width: 139px;
+}
+
 #form-join .error-message {
     position: absolute;
     top: -41px;

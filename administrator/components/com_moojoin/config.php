@@ -61,8 +61,8 @@ class MooConfig
                         'phone_number',
                         'email',
                         'age',
-                        'occupation',
-                        'birthplace'
+//                        'occupation',
+//                        'birthplace'
                     ),
                 ),
                 'view' => array (
@@ -108,21 +108,21 @@ class MooConfig
                             'width' => '2%',
                             'sort' => true
                         ),
-                        'occupation' => array (
-                            'sort' => true
-                        ),
-                        'dob' => array (
-                            'heading' => 'Date of Birth',
-                            'sort' => true,
-                            'width' => '8%'
-                        ),
-                        'birthplace' => array (
-                            'sort' => true
-                        ),
-                        'citizen' => array (
-                            'sort' => true,
-                            'width' => '2%'
-                        ),
+//                        'occupation' => array (
+//                            'sort' => true
+//                        ),
+//                        'dob' => array (
+//                            'heading' => 'Date of Birth',
+//                            'sort' => true,
+//                            'width' => '8%'
+//                        ),
+//                        'birthplace' => array (
+//                            'sort' => true
+//                        ),
+//                        'citizen' => array (
+//                            'sort' => true,
+//                            'width' => '2%'
+//                        ),
                         'published' => array (
                             'width' => '3%',
                             'sort' => true,
@@ -158,18 +158,18 @@ class MooConfig
                         'age' => array (
                             'readonly' => true
                         ),
-                        'occupation' => array (
-                            'readonly' => true
-                        ),
-                        'dob' => array (
-                            'readonly' => true
-                        ),
-                        'birthplace' => array (
-                            'readonly' => true
-                        ),
-                        'citizen' => array (
-                            'readonly' => true
-                        ),
+//                        'occupation' => array (
+//                            'readonly' => true
+//                        ),
+//                        'dob' => array (
+//                            'readonly' => true
+//                        ),
+//                        'birthplace' => array (
+//                            'readonly' => true
+//                        ),
+//                        'citizen' => array (
+//                            'readonly' => true
+//                        ),
                         'published' => array (
                             'heading' => 'Contacted',
                             'formatter' => 'boolean'

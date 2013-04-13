@@ -72,26 +72,27 @@ echo $fillOutValue('errors');
     <div class="formline">
         <input type="text" class="required" id="age" name="age" placeholder="Age" tabindex="9" data-rule-digits="1" value="<?= $fillOutValue('age') ?>" />
     </div>
+    <?php /*
     <div class="formline">
         <input type="text" class="required" id="occupation" name="occupation" placeholder="Occupation" tabindex="10" value="<?= $fillOutValue('occupation') ?>" />
     </div>
     <div class="formline">
-        <?php /* <input type="text" class="required" id="dob" name="dob" placeholder="Date of Birth (mm/dd/yy)" tabindex="11" data-rule-date="1" value="<?= $fillOutValue('dob') ?>" /> */ ?>
-        <?= JHTML::_('calendar', $fillOutValue('dob'), 'dob', 'dob', '%m/%d/%Y', 'class="required" placeholder="Date of Birth (mm/dd/yy)" data-rule-moodate="1"') ?>
+        <?php echo JHTML::_('calendar', $fillOutValue('dob'), 'dob', 'dob', '%m/%d/%Y', 'class="required" placeholder="Date of Birth (mm/dd/yy)" data-rule-moodate="1"') ?>
     </div>
     <div class="formline">
         <input type="text" class="required" id="birthplace" name="birthplace" placeholder="Place of Birth" tabindex="12" value="<?= $fillOutValue('birthplace') ?>" />
-    </div>
+    </div> */ ?>
     <div class="formline">
         <input type="text" class="required" id="hp" name="hp" placeholder="Leave blank for verification purposes" value="<?= $fillOutValue('hp') ?>" />
     </div>
+    <?php /*
     <div class="formline">
         <span>Are you a U.S. citizen?</span>
         <label for="citizen_yes">Yes</label>
         <input id="citizen_yes" type="radio" name="citizen" value="yes" tabindex="13" class="required checkbox-input" />
         <label for="citizen_no">No</label>
         <input id="citizen_no" type="radio" name="citizen" value="no" tabindex="14" class="required checkbox-input" />
-    </div>
+    </div>*/ ?>
     <button id="submit-join" type="submit">Submit</button>
     <div class="clr"></div>
 </form>
