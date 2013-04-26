@@ -66,8 +66,9 @@ class MooJoinProcessor
             $config->getValue('config.fromname')
         );
         $mailer->setSender($sender);
-        $mailer->addRecipient($params->email_to);
-        $mailer->setSubject($params->subject);
+
+        $mailer->addRecipient($params->get('email_to'));
+        $mailer->setSubject($params->get('subject'));
         $mailer->setBody($body);
         $mailer->isHTML(true);
         $mailer->encoding = 'base64';
