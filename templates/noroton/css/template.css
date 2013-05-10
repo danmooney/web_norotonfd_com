@@ -1392,6 +1392,10 @@ body#site.members-section .item-page
     display: block;
 }
 
+#system-message dt.message {
+    display: none;
+}
+
 /** Joomla System Message Container **/
 #system-message {
     background: url(../img/content_bg_2.png) repeat;
