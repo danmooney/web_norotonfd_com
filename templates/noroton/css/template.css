@@ -1385,6 +1385,13 @@ body.article-9 .fancybox-iframe {
     top: -20px;
 }
 
+body#site.contentpane .item-page,
+body#site.login .item-page,
+body#site.members-section .item-page
+{
+    display: block;
+}
+
 /** Joomla System Message Container **/
 #system-message {
     background: url(../img/content_bg_2.png) repeat;
